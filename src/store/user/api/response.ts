@@ -8,6 +8,11 @@ namespace UserResponse {
         isActivation: boolean
         birthday: string
     }
+
+    export type Update = {
+        user: UserDTO
+        accessToken: string
+    }
 }
 
 export default UserResponse
