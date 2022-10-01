@@ -1,48 +1,44 @@
-import { Axios, AxiosRequestConfig } from 'axios'
+import axios, { Axios, AxiosRequestConfig } from 'axios'
 import { ErrorResponse } from '../utility/type'
 import Initialize from './initialize'
-import token from './token'
 
 class HandleAPI {
-    readonly network 
+    private readonly network 
 
     constructor(config?: ConstructorParameters<typeof Axios>[0]) {
-        this.network = this.getNetwork(config)
+        this.network = this._createNetwork(config)
+        this._setRequestInterceptor()
+        this._setResponseInterceptor()
     }
 
-    async handleJson<Response>(config: AxiosRequestConfig): Promise<Response | ErrorResponse> {
-        return this.network.request(config)
-            .then(Initialize.json)
-            .catch(() => this.network.request(config))
+    public async json<Response>(config: AxiosRequestConfig): Promise<Response | ErrorResponse> {
+        return this.network.request<Response>(config)
+            .then((response) => response.data)
+            .catch(() => this.json<Response>(config))
     }
 
-    private getNetwork(config?: ConstructorParameters<typeof Axios>[0]) {
-        const network = new Axios({
+    private _createNetwork(config?: ConstructorParameters<typeof Axios>[0]) {
+        const network = axios.create({
             baseURL: (process.env.NEXT_PUBLIC_BASE_URL || '') + (config?.url || ''),
             withCredentials: true,
-            validateStatus: () => true,
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8',
-                withCredentials: true,
-            },
             responseType: 'json',
             ...config
         })
-    
-        network.interceptors.request.use((config) => {
-            if (config.headers) {
-                config.headers.authorization = `Bearer ${token.read() || ''}`
-            }
-            config.data = JSON.stringify(config.data)
-            return config
-        })
-    
-        network.interceptors.response.use((config) => {
-            config.data = JSON.parse(config.data)
-            return config
-        })
-    
         return network
+    }
+
+    private _setRequestInterceptor() {
+        this.network.interceptors.request.use(
+            Initialize.requestOnFulfilled.bind(Initialize), 
+            Initialize.requestOnRejected.bind(Initialize)
+        )
+    }
+
+    private _setResponseInterceptor() {
+        this.network.interceptors.response.use(
+            Initialize.responseOnFulfilled.bind(Initialize), 
+            Initialize.responseOnRejected.bind(Initialize)
+        )
     }
 }
 
