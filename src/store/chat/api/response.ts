@@ -1,7 +1,7 @@
 import { JsonResponse } from '../../../utility/type'
 
 namespace ChatResponse {
-    type Chat = {
+    export type Chat = {
         id: number
         name: string
         privacyId: number
