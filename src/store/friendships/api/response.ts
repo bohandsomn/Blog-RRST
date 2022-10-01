@@ -1,14 +1,9 @@
 import { JsonResponse } from '../../../utility/type'
+import SubscribeResponse from '../../subscribe/api/response'
 
 namespace FriendshipsResponse {
-    type SubscribeDTO = {
-        id: number
-        userId: number
-        subscriberId: number    
-    }
-    
-    export type Subscribers = JsonResponse<SubscribeDTO[]>
-    export type Subscriptions = JsonResponse<SubscribeDTO[]>
+    export type Subscribers = JsonResponse<SubscribeResponse.SubscribeDTO[]>
+    export type Subscriptions = JsonResponse<SubscribeResponse.SubscribeDTO[]>
 }
 
 export default FriendshipsResponse
