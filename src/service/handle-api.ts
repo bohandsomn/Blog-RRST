@@ -14,7 +14,6 @@ class HandleAPI {
     protected async json<Response>(config: AxiosRequestConfig): Promise<Response | ErrorResponse> {
         return this.network.request<Response>(config)
             .then((response) => response.data)
-            .catch(() => this.json<Response>(config))
     }
 
     private _createNetwork(config?: ConstructorParameters<typeof Axios>[0]) {
@@ -30,14 +29,14 @@ class HandleAPI {
     private _setRequestInterceptor() {
         this.network.interceptors.request.use(
             Initialize.requestOnFulfilled.bind(Initialize), 
-            Initialize.requestOnRejected.bind(Initialize)
+            Initialize.requestOnRejected.bind(Initialize),
         )
     }
 
     private _setResponseInterceptor() {
         this.network.interceptors.response.use(
             Initialize.responseOnFulfilled.bind(Initialize), 
-            Initialize.responseOnRejected.bind(Initialize)
+            Initialize.responseOnRejected.bind(Initialize, this.network),
         )
     }
 }

@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import AuthorizationResponse from '../store/authorization/api/response'
 import { ErrorResponse } from '../utility/type'
 import tokenRepository from './tokenRepository'
@@ -31,10 +31,10 @@ class Initialize {
         return config
     }
 
-    public static async responseOnRejected(error: AxiosError) {
+    public static async responseOnRejected(network: AxiosInstance, error: AxiosError) {
         if (error.response?.status !== 401 || this.isRefreshed) {
             this.isRefreshed = false
-            return 
+            return error.response
         }
         
         const accessToken = await this.refresh()
@@ -43,8 +43,10 @@ class Initialize {
             : tokenRepository.delete()
         
         if (tokenRepository.read() !== null) {
-            throw new Error() // Go to .catch() and re-request the original request 
+            return network.request(error.config)
         }
+
+        return error.response
     }
 }
 
