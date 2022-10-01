@@ -11,7 +11,7 @@ class HandleAPI {
         this._setResponseInterceptor()
     }
 
-    public async json<Response>(config: AxiosRequestConfig): Promise<Response | ErrorResponse> {
+    protected async json<Response>(config: AxiosRequestConfig): Promise<Response | ErrorResponse> {
         return this.network.request<Response>(config)
             .then((response) => response.data)
             .catch(() => this.json<Response>(config))

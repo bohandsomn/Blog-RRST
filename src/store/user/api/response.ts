@@ -1,3 +1,5 @@
+import { JsonResponse } from '../../../utility/type'
+
 namespace UserResponse {
     export type UserDTO = {
         id: number
@@ -6,13 +8,14 @@ namespace UserResponse {
         email: string
         login: string
         isActivation: boolean
-        birthday: string
+        birthday: string | null
     }
-
-    export type Update = {
+    type UserData = {
         user: UserDTO
         accessToken: string
     }
+    export type Update = JsonResponse<UserData>
+    export type GetOne = JsonResponse<UserDTO>
 }
 
 export default UserResponse
