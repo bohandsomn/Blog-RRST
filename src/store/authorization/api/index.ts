@@ -4,24 +4,22 @@ import AuthorizationResponse from './response'
 
 class AuthorizationAPI extends HandleAPI {
     async registration(data: AuthorizationRequest.Registration) {
-        return this.handleJson<AuthorizationResponse.Registration>({method: 'post', url: '/registration', data})
+        return this.json<AuthorizationResponse.Registration>({method: 'post', url: '/registration', data})
     }
 
     async login(data: AuthorizationRequest.Login) {
-        return this.handleJson<AuthorizationResponse.Login>({method: 'post', url: '/login', data})
+        return this.json<AuthorizationResponse.Login>({method: 'post', url: '/login', data})
     }
 
     async autoLogin() {
-        return this.handleJson<AuthorizationResponse.AutoLogin>({method: 'get', url: '/auto-login'})
-    }
-
-    async refresh() {
-        return this.handleJson<AuthorizationResponse.Refresh>({method: 'get', url: '/refresh'})
+        return this.json<AuthorizationResponse.AutoLogin>({method: 'get', url: '/auto-login'})
     }
 
     async logout() {
-        return this.handleJson<AuthorizationResponse.Logout>({method: 'get', url: '/logout'})
+        return this.json<AuthorizationResponse.Logout>({method: 'get', url: '/logout'})
     }
 }
 
-export default new AuthorizationAPI({url: 'authorization'})
+const authorizationAPI = new AuthorizationAPI({url: 'authorization'})
+
+export default authorizationAPI
