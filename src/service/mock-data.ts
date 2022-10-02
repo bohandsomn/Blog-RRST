@@ -1,7 +1,7 @@
 import { ErrorResponse, JsonResponse, MockTest } from '../utility/type'
 
-class MockData<SuccessfullRequest, SuccessfullResponse extends JsonResponse<any>> {
-    private successfull: MockTest<SuccessfullRequest | null, JsonResponse<SuccessfullResponse | null>> = {
+class MockData<SuccessfullRequest, SuccessfullResponseData> {
+    private successfull: MockTest<SuccessfullRequest | null, JsonResponse<SuccessfullResponseData | null>> = {
         request: null,
         response: {
             data: null,
@@ -9,9 +9,9 @@ class MockData<SuccessfullRequest, SuccessfullResponse extends JsonResponse<any>
         }
     }
     private resolvedValue = {
-        data: null,
+        data: null as SuccessfullResponseData,
         message: 'string'
-    } as SuccessfullResponse
+    }
     private erroneously: MockTest<null, ErrorResponse> = {
         request: null,
         response: {
@@ -27,7 +27,7 @@ class MockData<SuccessfullRequest, SuccessfullResponse extends JsonResponse<any>
         return this
     }
 
-    setSuccessfullResponseData(successfullResponseData: SuccessfullResponse['data']) {
+    setSuccessfullResponseData(successfullResponseData: SuccessfullResponseData) {
         this.successfull = {
             ...this.successfull,
             response: {
@@ -38,7 +38,7 @@ class MockData<SuccessfullRequest, SuccessfullResponse extends JsonResponse<any>
         return this
     }
 
-    setResolvedValueData(resolvedValueData: SuccessfullResponse['data']) {
+    setResolvedValueData(resolvedValueData: SuccessfullResponseData) {
         this.resolvedValue = {
             ...this.resolvedValue,
             data: resolvedValueData
@@ -54,9 +54,9 @@ class MockData<SuccessfullRequest, SuccessfullResponse extends JsonResponse<any>
         }
 
         return data as {
-            readonly successfull: MockData<SuccessfullRequest, SuccessfullResponse>['successfull'],
-            readonly erroneously: MockData<SuccessfullRequest, SuccessfullResponse>['erroneously'],
-            readonly resolvedValue: MockData<SuccessfullRequest, SuccessfullResponse>['resolvedValue'],
+            readonly successfull: MockData<SuccessfullRequest, SuccessfullResponseData>['successfull'],
+            readonly erroneously: MockData<SuccessfullRequest, SuccessfullResponseData>['erroneously'],
+            readonly resolvedValue: MockData<SuccessfullRequest, SuccessfullResponseData>['resolvedValue'],
         }
     }
 }
