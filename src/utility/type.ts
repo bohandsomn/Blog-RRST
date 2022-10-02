@@ -1,9 +1,14 @@
 export type JsonResponse<Data> = {
-    data: Data
-    message: string
+    readonly data: Data
+    readonly message: string
 }
 
 export type ErrorResponse = {
-    data: undefined
-    message: string
+    readonly data?: undefined
+    readonly message: string
+}
+
+export type MockTest<Request, Response> = {
+    readonly request: Request
+    readonly response: Response
 }
