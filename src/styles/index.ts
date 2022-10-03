@@ -14,6 +14,9 @@ const STYLES = {
     "border-radius--border-radius": {
         "border-radius": "var(--border-radius)"
     },
+    "box-shadow--main-bg-lilear": {
+        "box-shadow": "var(--main-bg-lilear)"
+    },
     "border-radius-50%": {
         "border-radius": "50%"
     },
@@ -25,6 +28,21 @@ const STYLES = {
     },
     "font-size-24": {
         "font-size": "24px"
+    },
+    "padding-top-10": {
+        "padding-top": "10px"
+    },
+    "padding-right-20": {
+        "padding-right": "20px"
+    },
+    "padding-bottom-10": {
+        "padding-bottom": "10px"
+    },
+    "padding-left-20": {
+        "padding-left": "20px"
+    },
+    "border-none": {
+        "border": "none"
     }
 }
 

@@ -4,18 +4,21 @@
     --font-family: 'Roboto', sans-serif;
     --transparent-bg-color: rgba(255, 255, 255, 0);
     --border-radius: 10px;
+    --main-bg-lilear: inset 0 0 10px rgba(0, 0, 0, 0.25);
 }
 body.light {
     --main-bg-color: #FFFFFF;
     --main-color: #FFFFFF;
     --secondary-color: #3978F1;
     --main-placeholder-color: rgba(0, 0, 0, .4);
+    --main-textbox-color: #000000;
 }
 body.dark {
     --main-bg-color: #2E2E2E;
     --main-color: #FFFFFF;
     --secondary-color: #F1A739;
     --main-placeholder-color: rgba(255, 255, 255, .6);
+    --main-textbox-color: #FFFFFF;
 }
 
 * {
@@ -25,6 +28,9 @@ body.dark {
 }
 *, input {
     font-family: var(--font-family);
+}
+input, textarea {
+    color: var(--main-textbox-color);
 }
 ::placeholder {
     color: var(--main-placeholder-color);
