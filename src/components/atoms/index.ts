@@ -1,5 +1,3 @@
-import Img from './Img'
-
-export {
-    Img
-}
+export * from './Img'
+export * from './P'
+export * from './Icon'
