@@ -11,6 +11,9 @@ const STYLES = {
     "color--secondary-color": {
         "color": "var(--secondary-color)"
     },
+    "background-color--secondary-color": {
+        "background-color": "var(--secondary-color)"
+    },
     "border-radius--border-radius": {
         "border-radius": "var(--border-radius)"
     },
