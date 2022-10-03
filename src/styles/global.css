@@ -30,5 +30,8 @@ body.dark {
     color: var(--main-placeholder-color);
 }
 svg {
-    fill: var(--secondary-color);
+    fill: none;
+}
+svg path {
+    stroke: var(--secondary-color);
 }

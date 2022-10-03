@@ -1,9 +1,10 @@
 import { NextPage } from 'next'
 import React from 'react'
+import { MoreVertical } from '../src/components/atoms'
 
 const Home: NextPage = () => {
     return (
-        <div>index</div>
+        <MoreVertical />
     )
 }
 

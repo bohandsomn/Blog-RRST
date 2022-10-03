@@ -1,13 +1,13 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Posts } from '../Icon'
+import { Post } from '../Icon'
 
 export default {
-    title: 'Atom/Icon/Posts',
-    component: Posts,
-} as ComponentMeta<typeof Posts>
+    title: 'Atom/Icon/Post',
+    component: Post,
+} as ComponentMeta<typeof Post>
 
-const Template: ComponentStory<typeof Posts> = (args) => <Posts {...args} />
+const Template: ComponentStory<typeof Post> = (args) => <Post {...args} />
 
 export const Icon = Template.bind({})
 Icon.args = {
