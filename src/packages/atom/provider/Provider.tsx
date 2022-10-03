@@ -1,5 +1,5 @@
 import React from 'react'
-import AtomContext from './Context'
+import AtomContext from '../context/Context'
 
 const AtomProvider: React.FC<Props> = ({ styles, children }) => {
     return (
