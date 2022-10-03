@@ -1,6 +1,6 @@
-import useStyles from '../packages/atom/useStyles'
+import useStyles from '../packages/atom/hooks/useStyles'
 import STYLES from '../styles'
 
-const useAppStyles: typeof useStyles<typeof STYLES> = (...classNames) => useStyles(...classNames)
+const useAppStyles: typeof useStyles<typeof STYLES> = useStyles
 
 export default useAppStyles
