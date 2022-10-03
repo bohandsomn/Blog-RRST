@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atom Img MessageImg should not differ from the previous snapshot 1`] = `
+<img
+  class="sc-bcXHqe"
+  height="20"
+  width="20"
+/>
+`;
+
+exports[`Atom Img OriginalImg should not differ from the previous snapshot 1`] = `
+<img
+  class="sc-bcXHqe"
+  height="200"
+  width="200"
+/>
+`;
+
+exports[`Atom Img PostImg should not differ from the previous snapshot 1`] = `
+<img
+  class="sc-bcXHqe"
+  height="75"
+  width="75"
+/>
+`;
+
+exports[`Atom Img PreviewImg should not differ from the previous snapshot 1`] = `
+<img
+  class="sc-bcXHqe"
+  height="60"
+  width="60"
+/>
+`;
