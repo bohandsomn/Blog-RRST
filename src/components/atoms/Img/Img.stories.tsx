@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import Img from './Img'
-import AtomProvider from '../../../packages/atom/Provider'
+import { Img } from './Img'
+import AtomProvider from '../../../packages/atom/provider'
 import STYLES from '../../../styles'
 
 export default {

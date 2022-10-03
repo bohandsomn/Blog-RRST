@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Img, { OriginalImg, PostImg, PreviewImg, MessageImg } from './Img'
+import { Img, OriginalImg, PostImg, PreviewImg, MessageImg } from './Img'
 
 describe('Atom Img', () => {
     test('should renders the element', () => {
