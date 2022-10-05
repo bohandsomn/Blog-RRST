@@ -20,6 +20,15 @@ const STYLES = {
     "box-shadow--main-bg-lilear": {
         "box-shadow": "var(--main-bg-lilear)"
     },
+    "display-flex": {
+        "display": "flex"
+    },
+    "align-items-center": {
+        "align-items": "center"
+    },
+    "flex-direction-column": {
+        "flex-direction": "column"
+    },
     "border-radius-50%": {
         "border-radius": "50%"
     },
@@ -35,6 +44,9 @@ const STYLES = {
     "padding-top-10": {
         "padding-top": "10px"
     },
+    "padding-right-10": {
+        "padding-right": "10px"
+    },
     "padding-right-20": {
         "padding-right": "20px"
     },
@@ -44,8 +56,26 @@ const STYLES = {
     "padding-left-20": {
         "padding-left": "20px"
     },
+    "padding-left-10": {
+        "padding-left": "10px"
+    },
+    "margin-top-10": {
+        "margin-top": "10px"
+    },
+    "margin-right-10": {
+        "margin-right": "10px"
+    },
+    "margin-bottom-10": {
+        "margin-bottom": "10px"
+    },
+    "margin-left-10": {
+        "margin-left": "10px"
+    },
     "border-none": {
         "border": "none"
+    },
+    "cursor-pointer": {
+        "cursor": "pointer"
     }
 }
 

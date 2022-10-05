@@ -1,4 +1,4 @@
-import MockData from '../../../../service/mock-data'
+import MockData from '../../../../service/test/mock-data'
 import AuthorizationRequest from '../request'
 import AuthorizationResponse from '../response'
 

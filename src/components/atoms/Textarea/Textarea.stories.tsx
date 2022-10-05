@@ -1,45 +1,51 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Textarea } from './Textarea'
-import AtomProvider from '../../../packages/atom/provider'
-import STYLES from '../../../styles'
 import useInput from '../../../hooks/useInput'
 import useAppStyles from '../../../hooks/useAppStyles'
+import BodyStorybook from '../../../service/component-explorer/BodyStorybook'
+import AtomProviderStorybook from '../../../service/component-explorer/AtomProviderStorybook'
+import { ComponentPropsStorybook } from '../../../utility/type'
 
 export default {
   title: 'Atom/Textarea',
   component: Textarea,
 } as ComponentMeta<typeof Textarea>
 
-const Template: ComponentStory<typeof Textarea> = (args) => {
+const Template: ComponentStory<ComponentPropsStorybook<typeof Textarea.defaultProps>> = ({theme, ...args}) => {
     const className = useAppStyles(
         'padding-top-10', 
         'padding-right-20', 
         'padding-bottom-10', 
         'padding-left-20',
-        'border-none'
+        'border-none',
+        'border-radius--border-radius', 
+        'box-shadow--main-bg-lilear',
+        'background-color--main-bg-color',
     )
     const [value, handleChange] = useInput('')
 
     return (
-        <AtomProvider styles={STYLES}>
-            <Textarea 
-                value={value}
-                onChange={handleChange}
-                placeholder="Enter smth..."
-                className={className} 
-                {...args} 
-            />
-        </AtomProvider>
+        <BodyStorybook theme={theme}>
+            <AtomProviderStorybook>
+                <Textarea 
+                    value={value}
+                    onChange={handleChange}
+                    placeholder="Enter smth..."
+                    className={className} 
+                    {...args} 
+                />
+            </AtomProviderStorybook>
+        </BodyStorybook>
     )
 }
 
-export const MainTextarea = Template.bind({})
-MainTextarea.args = {
-    style: {
-        borderRadius: 10,
-        boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.25)',
-        backgroundColor: '#2E2E2E',
-        color: 'white'
-    }
+export const Light = Template.bind({})
+Light.args = {
+    theme: 'light'
+}
+
+export const Dark = Template.bind({})
+Dark.args = {
+    theme: 'dark'
 }

@@ -1,5 +1,5 @@
 import axios, { Axios, AxiosRequestConfig } from 'axios'
-import { ErrorResponse } from '../utility/type'
+import { ErrorResponse } from '../../utility/type'
 import Initialize from './initialize'
 
 class HandleAPI {

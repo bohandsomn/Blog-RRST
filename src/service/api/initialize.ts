@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import AuthorizationResponse from '../store/authorization/api/response'
-import { ErrorResponse } from '../utility/type'
+import AuthorizationResponse from '../../store/authorization/api/response'
+import { ErrorResponse } from '../../utility/type'
 import tokenRepository from './tokenRepository'
 
 class Initialize {
