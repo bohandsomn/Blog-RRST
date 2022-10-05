@@ -1,4 +1,4 @@
-import HandleAPI from '../../../service/handle-api'
+import HandleAPI from '../../../service/api/handle-api'
 import ChatRequest from './request'
 import ChatResponse from './response'
 

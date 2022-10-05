@@ -1,4 +1,4 @@
-import HandleAPI from '../../../service/handle-api'
+import HandleAPI from '../../../service/api/handle-api'
 import PostRequest from './request'
 import PostResponse from './response'
 

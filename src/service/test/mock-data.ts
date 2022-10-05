@@ -1,4 +1,4 @@
-import { ErrorResponse, JsonResponse, MockTest } from '../utility/type'
+import { ErrorResponse, JsonResponse, MockTest } from '../../utility/type'
 
 class MockData<SuccessfullRequest, SuccessfullResponseData> {
     private successfull: MockTest<SuccessfullRequest | null, JsonResponse<SuccessfullResponseData | null>> = {

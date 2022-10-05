@@ -1,4 +1,4 @@
-import HandleAPI from '../../../service/handle-api'
+import HandleAPI from '../../../service/api/handle-api'
 import PrivateChatRequest from './request'
 import PrivateChatResponse from './response'
 
