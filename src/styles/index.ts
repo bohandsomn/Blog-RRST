@@ -77,6 +77,9 @@ const STYLES = {
     "border-none": {
         "border": "none"
     },
+    "width-fit-content": {
+        "width": "fit-content"
+    },
     "cursor-pointer": {
         "cursor": "pointer"
     }
