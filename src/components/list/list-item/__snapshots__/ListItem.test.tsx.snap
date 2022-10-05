@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem should changes classList 1`] = `
+<p
+  class="sc-gswNZR"
+>
+  ListItem
+</p>
+`;
+
+exports[`ListItem should changes classList 2`] = `
+<p
+  class="sc-gswNZR"
+>
+  ListItem
+</p>
+`;
+
+exports[`ListItem should changes classList 3`] = `
+<p
+  class="sc-gswNZR"
+>
+  ListItem
+</p>
+`;
