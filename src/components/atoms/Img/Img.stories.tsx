@@ -1,8 +1,9 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Img } from './Img'
-import AtomProvider from '../../../packages/atom/provider'
-import STYLES from '../../../styles'
+import BodyStorybook from '../../../service/component-explorer/BodyStorybook'
+import AtomProviderStorybook from '../../../service/component-explorer/AtomProviderStorybook'
+import useAppStyles from '../../../hooks/useAppStyles'
 
 export default {
   title: 'Atom/Img',
@@ -10,11 +11,13 @@ export default {
 } as ComponentMeta<typeof Img>
 
 const Template: ComponentStory<typeof Img> = (args) => {
-    const classNameList: (keyof typeof STYLES)[] = ['border-radius-50%', 'background-color-button-shadow']
+    const className = useAppStyles('border-radius-50%', 'background-color-button-shadow')
     return (
-        <AtomProvider styles={STYLES}>
-            <Img className={classNameList.join(' ')} {...args} />
-        </AtomProvider>
+        <BodyStorybook theme="light">
+            <AtomProviderStorybook>
+                <Img className={className} {...args} />
+            </AtomProviderStorybook>
+        </BodyStorybook>
     )
 }
 

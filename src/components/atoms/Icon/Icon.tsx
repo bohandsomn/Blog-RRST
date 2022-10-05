@@ -1,5 +1,5 @@
 import Icon from '../../../packages/icon'
-import createIconHOC from '../../../service/createIconHOC'
+import createIconHOC from '../../../service/icon/createIconHOC'
 import DEFAULT_VALUES from './defaultValues'
 
 export const Account = createIconHOC(Icon.create(DEFAULT_VALUES.ACCOUNT))
