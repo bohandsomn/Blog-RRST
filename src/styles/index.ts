@@ -29,6 +29,9 @@ const STYLES = {
     "flex-direction-column": {
         "flex-direction": "column"
     },
+    "justify-content-space-between": {
+        "justify-content": "space-between"
+    },
     "border-radius-50%": {
         "border-radius": "50%"
     },
