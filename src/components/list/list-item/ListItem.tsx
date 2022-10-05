@@ -9,7 +9,8 @@ export const ListItem: React.FC<Props> = ({ children, right, left }) => {
         'border-radius--border-radius', 
         'color--main-color', 
         'display-flex', 
-        'align-items-center',  
+        'align-items-center', 
+        'justify-content-space-between', 
         'padding-top-10', 
         'padding-right-10', 
         'padding-bottom-10', 
@@ -32,8 +33,7 @@ export const ListItem: React.FC<Props> = ({ children, right, left }) => {
     )
 }
 
-type Props = {
+type Props = NonNullable<typeof Li.defaultProps> & {
     right?: JSX.Element
     left?: JSX.Element
-    children?: any
 }

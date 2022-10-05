@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import ListItem from './ListItem'
+import { ListItem } from './ListItem'
 import ToggleProvider from '../../../provider/toggle'
 import { Account } from '../../atoms'
 import BodyStorybook from '../../../service/component-explorer/BodyStorybook'
