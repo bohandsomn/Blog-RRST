@@ -1,5 +1,5 @@
 import React from 'react'
-import { TenIndent } from '../../layouts/Wrapper'
+import { TenIndent } from '../../layouts/wrapper'
 import { MainBoldParagraph, MainParagraph } from '../atoms'
 
 const MainDescription: React.FC<Props> = ({ header, text, time }) => {

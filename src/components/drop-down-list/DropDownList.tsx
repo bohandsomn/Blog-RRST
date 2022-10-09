@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Toggle from '../../context/toggle'
-import { TenIndent } from '../../layouts/Wrapper'
+import { TenIndent } from '../../layouts/wrapper'
 import { Div } from '../atoms'
 import Chevron from '../chevron'
 import { List } from '../list'

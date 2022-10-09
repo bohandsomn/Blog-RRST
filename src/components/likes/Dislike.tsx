@@ -1,5 +1,5 @@
 import React from 'react'
-import { TenIndent } from '../../layouts/Wrapper'
+import { TenIndent } from '../../layouts/wrapper'
 import ToggleProvider from '../../provider/toggle'
 import { Div, Dislike as DislikeIcon, MainParagraph } from '../atoms'
 

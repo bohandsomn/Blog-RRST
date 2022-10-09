@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Toggle from '../../context/toggle'
 import useAppQuery from '../../hooks/useAppQuery'
-import { TenIndent } from '../../layouts/Wrapper'
+import { TenIndent } from '../../layouts/wrapper'
 import ToggleProvider from '../../provider/toggle'
 import { MoreVertical } from '../atoms'
 import { List } from '../list'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { TenIndent } from '../../layouts/Wrapper'
+import { TenIndent } from '../../layouts/wrapper'
 import { MainInput, MainParagraph } from '../atoms'
 
 const InputWithLabel: React.FC<Props> = ({label, ...props}) => {
