@@ -1,13 +1,17 @@
 import type { AppProps } from 'next/app'
 import AtomProvider from '../src/packages/atom/provider'
+import { StyleCombinatorProvider } from '../src/packages/style-combinator'
 import STYLES from '../src/styles'
+import createdStyles from '../src/styles/created-styles'
 
 import '../src/styles/global.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     return (
         <AtomProvider styles={STYLES}>
-            <Component {...pageProps} />
+            <StyleCombinatorProvider styles={createdStyles}>
+                <Component {...pageProps} />
+            </StyleCombinatorProvider>
         </AtomProvider>
     )
 }
