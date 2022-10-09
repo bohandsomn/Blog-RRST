@@ -15,6 +15,13 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['border-radius--border-radius', 'background-color--secondary-color', 'display-flex', 'flex-direction-column', 'padding-top-10', 'padding-right-10', 'padding-bottom-10', 'padding-left-10']
+        },
+        'chevron': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['cursor-pointer']
         }
     }
 })
