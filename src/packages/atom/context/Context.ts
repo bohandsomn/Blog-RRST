@@ -1,5 +1,5 @@
 import React from 'react'
 
-const AtomContext = React.createContext<Record<string, object> | void>(undefined)
+const AtomContext = React.createContext<Record<string, object> | undefined>(undefined)
 
 export default AtomContext
