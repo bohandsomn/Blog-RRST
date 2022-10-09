@@ -1,4 +1,4 @@
-import useStyles from '../packages/atom/hooks/useStyles'
+import { useStyles } from '../packages/atom'
 import STYLES from '../styles'
 
 const useAppStyles: typeof useStyles<typeof STYLES> = useStyles
