@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import React from 'react'
-import { AppHead } from '../src/layouts/Head'
+import { AppHead } from '../src/layouts/head'
 
 const Home: NextPage = () => {
     return (

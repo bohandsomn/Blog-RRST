@@ -5,7 +5,7 @@ const useStyles = <
 >(...classNames: (keyof Styles | '' | undefined)[]) => {
     const className = useMemo(() => {
         return classNames
-            .filter((className) => typeof className === 'string')
+            .filter((className) => !!className)
             .join(' ')
     }, [classNames])
     return className

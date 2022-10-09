@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
-import { Body } from '../src/layouts/Body'
+import { Body } from '../src/layouts/body'
 
 const Document: React.FC = () => {
     return (

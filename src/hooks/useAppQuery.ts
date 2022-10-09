@@ -27,7 +27,7 @@ const useAppQuery = <ClassName extends AppClassName>(
                 [mediaQuery]: styles
             }
         }, {} as Query)
-    }, [combinedStyles, atomContext, styleClasses])
+    }, [combinedStyles, atomContext, styleClasses, context])
 }
 
 export default useAppQuery

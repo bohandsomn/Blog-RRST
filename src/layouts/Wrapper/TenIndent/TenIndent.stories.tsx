@@ -1,27 +1,55 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ListItem } from './ListItem'
-import ToggleProvider from '../../../provider/toggle'
-import { Account } from '../../atoms'
+import { TenIndent } from './TenIndent'
 import BodyStorybook from '../../../service/component-explorer/BodyStorybook'
 import { ComponentPropsStorybook } from '../../../utility/type'
 import AtomProviderStorybook from '../../../service/component-explorer/AtomProviderStorybook'
+import { Account } from '../../../components/atoms'
+import ToggleProvider from '../../../provider/toggle'
 
 export default {
-  title: 'Molecule/List/ListItem',
-  component: ListItem,
-} as ComponentMeta<typeof ListItem>
+  title: 'Layouts/TenIndent',
+  component: TenIndent,
+} as ComponentMeta<typeof TenIndent>
 
-const Template: ComponentStory<ComponentPropsStorybook<typeof ListItem.defaultProps>> = ({theme, ...args}) => {
+const Template: ComponentStory<ComponentPropsStorybook<typeof TenIndent.defaultProps>> = ({theme, ...args}) => {
     return (
         <BodyStorybook theme={theme}>
             <AtomProviderStorybook>
                 <ToggleProvider>
-                    <ListItem {...args} />
+                    <TenIndent {...args} />
                 </ToggleProvider>
             </AtomProviderStorybook>
         </BodyStorybook>
     )
+}
+
+export const TopDark = Template.bind({})
+TopDark.args = {
+    children: 'TopDark',
+    theme: 'dark',
+    top: <Account />
+}
+
+export const BottomDark = Template.bind({})
+BottomDark.args = {
+    children: 'BottomDark',
+    theme: 'dark',
+    bottom: <Account />
+}
+
+export const TopLight = Template.bind({})
+TopLight.args = {
+    children: 'TopLight',
+    theme: 'light',
+    top: <Account />
+}
+
+export const BottomLight = Template.bind({})
+BottomLight.args = {
+    children: 'BottomLight',
+    theme: 'light',
+    bottom: <Account />
 }
 
 export const RightDark = Template.bind({})
