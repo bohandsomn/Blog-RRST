@@ -1,4 +1,4 @@
-import createDefaultValues from '../../../packages/icon/service/createDefaultValues'
+import { createDefaultValues } from '../../../packages/icon'
 
 const DEFAULT_VALUES = createDefaultValues({
     ACCOUNT: {
