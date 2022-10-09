@@ -22,6 +22,13 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['cursor-pointer']
+        },
+        'settings-list': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['cursor-pointer']
         }
     }
 })
