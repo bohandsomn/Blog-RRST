@@ -47,6 +47,9 @@ const STYLES = {
     "padding-top-10": {
         "padding-top": "10px"
     },
+    "padding-top-20": {
+        "padding-top": "20px"
+    },
     "padding-right-10": {
         "padding-right": "10px"
     },
@@ -55,6 +58,9 @@ const STYLES = {
     },
     "padding-bottom-10": {
         "padding-bottom": "10px"
+    },
+    "padding-bottom-20": {
+        "padding-bottom": "20px"
     },
     "padding-left-20": {
         "padding-left": "20px"

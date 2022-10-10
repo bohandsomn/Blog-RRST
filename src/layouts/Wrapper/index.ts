@@ -1,1 +1,1 @@
-export * from './TenIndent'
+export * from './ten-indent'

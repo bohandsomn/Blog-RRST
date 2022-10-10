@@ -6,7 +6,7 @@ import { Li, MainParagraph, SecondaryParagraph } from '../../atoms'
 
 export const ListItem: React.FC<Props> = ({ children, right, left }) => {
     const {value, handleSetTrue, handleSetFalse} = useContext(Toggle)
-    const query = useAppQuery('list_list-item', {
+    const query = useAppQuery('list__list-item', {
         add: value ? ['background-color--main-bg-color'] : undefined,
         remove: value ? undefined : ['background-color--main-bg-color'],
     })

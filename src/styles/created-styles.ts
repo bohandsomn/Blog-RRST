@@ -2,7 +2,7 @@ import appCreate from './app-create'
 
 const createdStyles = appCreate({
     styles: {
-        'list_list-item': {
+        'list__list-item': {
             extraSmall: [],
             small: [],
             medium: [],
@@ -14,7 +14,7 @@ const createdStyles = appCreate({
             small: [],
             medium: [],
             large: [],
-            extraLarge: ['border-radius--border-radius', 'background-color--secondary-color', 'display-flex', 'flex-direction-column', 'padding-top-10', 'padding-right-10', 'padding-bottom-10', 'padding-left-10']
+            extraLarge: ['display-flex', 'flex-direction-column']
         },
         'chevron': {
             extraSmall: [],
@@ -29,7 +29,21 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['cursor-pointer']
-        }
+        },
+        'background_secondary': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['padding-top-20', 'padding-right-20', 'padding-bottom-20', 'padding-left-20', 'border-radius--border-radius', 'box-shadow--main-bg-lilear', 'background-color--secondary-color']
+        },
+        'background_main': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['padding-top-20', 'padding-right-20', 'padding-bottom-20', 'padding-left-20', 'border-radius--border-radius', 'box-shadow--main-bg-lilear', 'background-color--main-bg-color']
+        },
     }
 })
 
