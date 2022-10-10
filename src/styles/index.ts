@@ -86,6 +86,15 @@ const STYLES = {
     "width-fit-content": {
         "width": "fit-content"
     },
+    "width-1200": {
+        "width": "1200px"
+    },
+    "width-702": {
+        "width": "702px"
+    },
+    "width-473": {
+        "width": "473px"
+    },
     "cursor-pointer": {
         "cursor": "pointer"
     }

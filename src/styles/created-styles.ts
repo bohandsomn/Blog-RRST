@@ -44,6 +44,27 @@ const createdStyles = appCreate({
             large: [],
             extraLarge: ['padding-top-20', 'padding-right-20', 'padding-bottom-20', 'padding-left-20', 'border-radius--border-radius', 'box-shadow--main-bg-lilear', 'background-color--main-bg-color']
         },
+        'container-main': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['width-1200']
+        },
+        'container-secondary': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['width-702']
+        },
+        'container-sidebar': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['width-473']
+        }
     }
 })
 
