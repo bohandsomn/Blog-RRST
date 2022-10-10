@@ -80,6 +80,18 @@ const STYLES = {
     "margin-left-10": {
         "margin-left": "10px"
     },
+    "margin-top-20": {
+        "margin-top": "20px"
+    },
+    "margin-right-20": {
+        "margin-right": "20px"
+    },
+    "margin-bottom-20": {
+        "margin-bottom": "20px"
+    },
+    "margin-left-20": {
+        "margin-left": "20px"
+    },
     "border-none": {
         "border": "none"
     },

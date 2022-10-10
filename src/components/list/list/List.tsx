@@ -1,6 +1,6 @@
 import React from 'react'
 import useAppQuery from '../../../hooks/useAppQuery'
-import { SecondaryBackground } from '../../../layouts/wrapper/background'
+import { SecondaryBackground } from '../../../layouts/wrapper'
 import { Ul } from '../../atoms'
 
 export const List: React.FC<Props> = ({ children }) => {
