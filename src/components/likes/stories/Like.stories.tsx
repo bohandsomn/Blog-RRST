@@ -4,6 +4,7 @@ import Like from '../Like'
 import BodyStorybook from '../../../service/component-explorer/BodyStorybook'
 import { ComponentPropsStorybook } from '../../../utility/type'
 import AtomProviderStorybook from '../../../service/component-explorer/AtomProviderStorybook'
+import ToggleProvider from '../../../provider/toggle'
 
 export default {
   title: 'Molecule/Likes/Like',
@@ -14,7 +15,9 @@ const Template: ComponentStory<ComponentPropsStorybook<Required<typeof Like.defa
     return (
         <BodyStorybook theme={theme}>
             <AtomProviderStorybook>
-                <Like {...args} />
+                <ToggleProvider>
+                    <Like {...args} />
+                </ToggleProvider>
             </AtomProviderStorybook>
         </BodyStorybook>
     )

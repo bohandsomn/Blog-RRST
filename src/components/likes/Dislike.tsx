@@ -1,15 +1,17 @@
 import React from 'react'
+import useAppQuery from '../../hooks/useAppQuery'
 import { TenIndent } from '../../layouts/wrapper'
 import ToggleProvider from '../../provider/toggle'
 import { Div, Dislike as DislikeIcon, MainParagraph } from '../atoms'
 
-const Dislike: React.FC<Props> = (props) => {
+const Dislike: React.FC<Props> = ({fill, ...props}) => {
+    const query = useAppQuery('dislike')
     return (
-        <Div {...props}>
+        <Div query={query} {...props}>
             <TenIndent 
                 right={
                     <ToggleProvider>
-                        <DislikeIcon />
+                        <DislikeIcon fill={fill} />
                     </ToggleProvider>
                 }
             >
@@ -21,6 +23,8 @@ const Dislike: React.FC<Props> = (props) => {
     )
 }
 
-type Props = Omit<NonNullable<typeof Div.defaultProps>, 'children'>
+type Props = Omit<NonNullable<typeof Div.defaultProps>, 'children' | 'query'> & {
+    fill?: string
+}
 
 export default Dislike
