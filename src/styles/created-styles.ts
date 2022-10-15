@@ -64,7 +64,77 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['width-473']
-        }
+        },
+        'post': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'align-items-flex-start', 'flex-1', 'justify-content-space-between']
+        },
+        'post__likes': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex']
+        },
+        'post__content': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['children/margin-bottom-10']
+        },
+        'like': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['cursor-pointer', 'margin-right-20']
+        },
+        'dislike': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['cursor-pointer']
+        },
+        'comment': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['children/margin-top-10']
+        },
+        'comment__likes': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex']
+        },
+        'comment-list': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['children/margin-top-10']
+        },
+        'comment-item': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'align-items-flex-start', 'flex-1', 'justify-content-space-between']
+        },
+        'comment__content': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['children/margin-bottom-10']
+        },
     }
 })
 

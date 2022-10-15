@@ -26,8 +26,14 @@ const STYLES = {
     "align-items-center": {
         "align-items": "center"
     },
+    "align-items-flex-start": {
+        "align-items": "flex-start"
+    },
     "flex-direction-column": {
         "flex-direction": "column"
+    },
+    "flex-1": {
+        "flex": "1"
     },
     "justify-content-space-between": {
         "justify-content": "space-between"
@@ -107,8 +113,34 @@ const STYLES = {
     "width-473": {
         "width": "473px"
     },
+    "width-100%": {
+        "width": "100%"
+    },
+    "white-space-normal": {
+        "white-space": "normal"
+    },
+    "word-break-break-word": {
+        "word-break": "break-word"
+    },
+    "position-absolute": {
+        "position": "absolute"
+    },
     "cursor-pointer": {
         "cursor": "pointer"
+    },
+    "children/margin-bottom-10": {
+        "> *": {
+            "&:not(:last-child)": {
+                "margin-bottom": "10px"
+            }
+        }
+    },
+    "children/margin-top-10": {
+        "> *": {
+            "&:not(:first-child)": {
+                "margin-top": "10px"
+            }
+        }
     }
 }
 
