@@ -1,16 +1,16 @@
 import { JsonResponse } from '../../../utility/type'
 
 namespace LikesPostResponse {
-    type LikesPost = {
+    export type LikesPostDTO = {
         id: number
         userId: number
         postId: number
         value: boolean
     }
     
-    export type Like = JsonResponse<LikesPost>
-    export type Dislike = JsonResponse<LikesPost>
-    export type Unlike = JsonResponse<LikesPost>
+    export type Like = JsonResponse<LikesPostDTO>
+    export type Dislike = JsonResponse<LikesPostDTO>
+    export type Unlike = JsonResponse<LikesPostDTO>
 }
 
 export default LikesPostResponse
