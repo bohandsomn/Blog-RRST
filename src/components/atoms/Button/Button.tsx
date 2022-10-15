@@ -16,6 +16,7 @@ export const MainButton = React.forwardRef(({className, ...props}: NonNullable<t
         'background-color--secondary-color',
         'color--main-color',
         'font-weight-bold',
+        'cursor-pointer',
         className as undefined
     )
     return (
