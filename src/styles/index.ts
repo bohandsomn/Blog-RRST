@@ -137,7 +137,7 @@ const STYLES = {
     },
     "children/margin-top-10": {
         "> *": {
-            "&:not(:first-child)": {
+            "&:not(:first-of-type)": {
                 "margin-top": "10px"
             }
         }
