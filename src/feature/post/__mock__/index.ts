@@ -1,3 +1,4 @@
+import { IOptions } from '../../../components/input-list/context/Options'
 import type { PostDTO, CommentDTO, LikesPostDTO, LikesCommentDTO, UserDTO } from '../utility/interface'
 
 enum POST_ID {
@@ -74,3 +75,22 @@ export const commentatorMock: UserDTO = {
     isActivation: true,
     birthday: null,
 }
+
+export const privacyMock: IOptions = [
+    {
+        id: 1,
+        value: 'PUBLIC'
+    },
+    {
+        id: 2,
+        value: 'PRIVATE'
+    },
+    {
+        id: 3,
+        value: 'THIRD'
+    },
+    {
+        id: 4,
+        value: 'PROTECTED'
+    },
+]
