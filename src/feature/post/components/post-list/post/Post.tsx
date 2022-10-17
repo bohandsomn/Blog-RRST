@@ -1,6 +1,6 @@
 import React from 'react'
 import { SecondaryBackground, SecondaryContainer } from '../../../../../layouts/wrapper'
-import ToggleProvider from '../../../../../provider/toggle'
+import UpdateToggleProvider from '../../../provider/UpdateToggle'
 import Comment from './comment'
 import PostData from './post-data'
 
@@ -8,9 +8,9 @@ const Post: React.FC = () => {
     return (
         <SecondaryContainer>
             <SecondaryBackground>
-                <ToggleProvider>
+                <UpdateToggleProvider>
                     <PostData />
-                </ToggleProvider>
+                </UpdateToggleProvider>
                 <Comment />
             </SecondaryBackground>
         </SecondaryContainer>

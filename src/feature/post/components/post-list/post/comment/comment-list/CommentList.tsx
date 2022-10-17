@@ -4,6 +4,7 @@ import { Ul } from '../../../../../../../components/atoms'
 import useAppQuery from '../../../../../../../hooks/useAppQuery'
 import CommentListContext from '../../../../../context/comment-list'
 import CommentProvider from '../../../../../provider/Comment'
+import UpdateToggleProvider from '../../../../../provider/UpdateToggle'
 import UserProvider from '../../../../../provider/User'
 import CommentItem from './comment-item'
 
@@ -14,9 +15,11 @@ const CommentList: React.FC = () => {
         <Ul query={query}>
             {
                 data.map((comment) => (
-                    <UserProvider userId={comment.userId}>
+                    <UserProvider key={comment.id} userId={comment.userId}>
                         <CommentProvider comment={comment}>
-                            <CommentItem />
+                            <UpdateToggleProvider>
+                                <CommentItem />
+                            </UpdateToggleProvider>
                         </CommentProvider>
                     </UserProvider>
                 ))

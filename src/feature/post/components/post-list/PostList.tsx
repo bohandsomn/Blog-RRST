@@ -10,7 +10,7 @@ const PostList: React.FC = () => {
         <Ul>
             {
                 postListContext.data.map((post) => (
-                    <Li>
+                    <Li key={post.id}>
                         <PostProvider post={post}>
                             <Post />
                         </PostProvider>
