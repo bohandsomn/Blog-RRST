@@ -24,7 +24,7 @@ const useCommentList = (comments: CommentDTO[]): ICommentListContext => {
     }, [setData])
 
     const deleteComment: ICommentListContext['delete'] = useCallback(async (deleteData) => {
-        setData((previous) => previous.filter((comment) => comment.id.toString() === deleteData.commentId))
+        setData((previous) => previous.filter((comment) => comment.id.toString() !== deleteData.commentId))
     }, [setData])
 
     return {
