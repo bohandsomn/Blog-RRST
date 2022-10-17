@@ -1,0 +1,1 @@
+export const options: string[] = ['THESE', 'ARE', 'MOCK', 'OPTIONS']
