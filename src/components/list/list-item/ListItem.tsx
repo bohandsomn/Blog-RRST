@@ -4,7 +4,7 @@ import useAppQuery from '../../../hooks/useAppQuery'
 import { TenIndent } from '../../../layouts/wrapper'
 import { Li, MainParagraph, SecondaryParagraph } from '../../atoms'
 
-export const ListItem: React.FC<Props> = ({ children, right, left }) => {
+export const ListItem: React.FC<Props> = ({ children, right, left, ...props }) => {
     const {value, handleSetTrue, handleSetFalse} = useContext(Toggle)
     const query = useAppQuery('list__list-item', {
         add: value ? ['background-color--main-bg-color'] : undefined,
@@ -12,7 +12,7 @@ export const ListItem: React.FC<Props> = ({ children, right, left }) => {
     })
 
     return (
-        <Li query={query} onMouseEnter={handleSetTrue} onMouseLeave={handleSetFalse}>
+        <Li query={query} onMouseEnter={handleSetTrue} onMouseLeave={handleSetFalse} {...props}>
             <TenIndent left={left} right={right}>
                 {value 
                     ? <SecondaryParagraph>{children}</SecondaryParagraph>
