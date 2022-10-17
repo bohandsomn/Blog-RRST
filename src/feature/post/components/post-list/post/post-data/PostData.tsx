@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { Div, PostImg } from '../../../../components/atoms'
-import WithPhoto from '../../../../components/with-photo'
-import useAppQuery from '../../../../hooks/useAppQuery'
-import PostContext from '../../context/post'
-import PostContent from '../post-content'
-import PostSettings from '../post-settings'
+import { Div, PostImg } from '../../../../../../components/atoms'
+import WithPhoto from '../../../../../../components/with-photo'
+import useAppQuery from '../../../../../../hooks/useAppQuery'
+import PostContext from '../../../../context/post'
+import PostContent from './post-content'
+import PostSettings from './post-settings'
 
 const PostData: React.FC = () => {
     const query = useAppQuery('post')

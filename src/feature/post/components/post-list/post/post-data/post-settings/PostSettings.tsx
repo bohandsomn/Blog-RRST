@@ -1,8 +1,8 @@
 import React from 'react'
-import { Account, Delete, Post, Update } from '../../../../components/atoms'
-import { ListItem } from '../../../../components/list'
-import SettingsList from '../../../../components/settings-list'
-import ToggleProvider from '../../../../provider/toggle'
+import { Account, Delete, Post, Update } from '../../../../../../../components/atoms'
+import { ListItem } from '../../../../../../../components/list'
+import SettingsList from '../../../../../../../components/settings-list'
+import ToggleProvider from '../../../../../../../provider/toggle'
 
 const PostSettings: React.FC = () => {
     return (

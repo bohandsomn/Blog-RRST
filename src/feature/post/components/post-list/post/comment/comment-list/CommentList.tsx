@@ -1,11 +1,11 @@
 import React from 'react'
 import { useContext } from 'react'
-import { Ul } from '../../../../components/atoms'
-import useAppQuery from '../../../../hooks/useAppQuery'
-import CommentListContext from '../../context/comment-list'
-import CommentProvider from '../../provider/Comment'
-import UserProvider from '../../provider/User'
-import CommentItem from '../comment-item'
+import { Ul } from '../../../../../../../components/atoms'
+import useAppQuery from '../../../../../../../hooks/useAppQuery'
+import CommentListContext from '../../../../../context/comment-list'
+import CommentProvider from '../../../../../provider/Comment'
+import UserProvider from '../../../../../provider/User'
+import CommentItem from './comment-item'
 
 const CommentList: React.FC = () => {
     const query = useAppQuery('comment-list')

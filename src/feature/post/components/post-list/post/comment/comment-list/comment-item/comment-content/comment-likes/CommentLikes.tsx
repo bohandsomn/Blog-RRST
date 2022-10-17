@@ -1,10 +1,8 @@
 import React, { useCallback, useContext } from 'react'
-import { Div } from '../../../../components/atoms'
-import { Dislike, Like } from '../../../../components/likes'
-import useAppQuery from '../../../../hooks/useAppQuery'
-import CommentContext from '../../context/comment'
-import CommentLikesContext from '../../context/comment-likes'
-import UserContext from '../../context/user'
+import { Div } from '../../../../../../../../../../components/atoms'
+import { Dislike, Like } from '../../../../../../../../../../components/likes'
+import useAppQuery from '../../../../../../../../../../hooks/useAppQuery'
+import CommentLikesContext from '../../../../../../../../context/comment-likes'
 
 const CommentLikes: React.FC = () => {
     const query = useAppQuery('comment__likes')

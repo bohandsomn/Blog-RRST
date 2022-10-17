@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { Div } from '../../../../components/atoms'
-import { VerticalDescription } from '../../../../components/description'
-import useAppQuery from '../../../../hooks/useAppQuery'
-import CommentContext from '../../context/comment'
-import CommentLikesProvider from '../../provider/CommentLikes'
-import CommentLikes from '../comment-likes'
+import { Div } from '../../../../../../../../../components/atoms'
+import { VerticalDescription } from '../../../../../../../../../components/description'
+import useAppQuery from '../../../../../../../../../hooks/useAppQuery'
+import CommentContext from '../../../../../../../context/comment'
+import CommentLikesProvider from '../../../../../../../provider/CommentLikes'
+import CommentLikes from './comment-likes'
 
 const PostContent: React.FC = () => {
     const query = useAppQuery('comment__content')
