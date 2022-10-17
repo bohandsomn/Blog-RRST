@@ -26,8 +26,14 @@ const STYLES = {
     "align-items-center": {
         "align-items": "center"
     },
+    "align-items-flex-start": {
+        "align-items": "flex-start"
+    },
     "flex-direction-column": {
         "flex-direction": "column"
+    },
+    "flex-1": {
+        "flex": "1"
     },
     "justify-content-space-between": {
         "justify-content": "space-between"
@@ -47,6 +53,9 @@ const STYLES = {
     "padding-top-10": {
         "padding-top": "10px"
     },
+    "padding-top-20": {
+        "padding-top": "20px"
+    },
     "padding-right-10": {
         "padding-right": "10px"
     },
@@ -55,6 +64,9 @@ const STYLES = {
     },
     "padding-bottom-10": {
         "padding-bottom": "10px"
+    },
+    "padding-bottom-20": {
+        "padding-bottom": "20px"
     },
     "padding-left-20": {
         "padding-left": "20px"
@@ -74,14 +86,61 @@ const STYLES = {
     "margin-left-10": {
         "margin-left": "10px"
     },
+    "margin-top-20": {
+        "margin-top": "20px"
+    },
+    "margin-right-20": {
+        "margin-right": "20px"
+    },
+    "margin-bottom-20": {
+        "margin-bottom": "20px"
+    },
+    "margin-left-20": {
+        "margin-left": "20px"
+    },
     "border-none": {
         "border": "none"
     },
     "width-fit-content": {
         "width": "fit-content"
     },
+    "width-1200": {
+        "width": "1200px"
+    },
+    "width-702": {
+        "width": "702px"
+    },
+    "width-473": {
+        "width": "473px"
+    },
+    "width-100%": {
+        "width": "100%"
+    },
+    "white-space-normal": {
+        "white-space": "normal"
+    },
+    "word-break-break-word": {
+        "word-break": "break-word"
+    },
+    "position-absolute": {
+        "position": "absolute"
+    },
     "cursor-pointer": {
         "cursor": "pointer"
+    },
+    "children/margin-bottom-10": {
+        "> *": {
+            "&:not(:last-child)": {
+                "margin-bottom": "10px"
+            }
+        }
+    },
+    "children/margin-top-10": {
+        "> *": {
+            "&:not(:first-of-type)": {
+                "margin-top": "10px"
+            }
+        }
     }
 }
 

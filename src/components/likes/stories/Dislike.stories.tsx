@@ -4,6 +4,7 @@ import Dislike from '../Dislike'
 import BodyStorybook from '../../../service/component-explorer/BodyStorybook'
 import { ComponentPropsStorybook } from '../../../utility/type'
 import AtomProviderStorybook from '../../../service/component-explorer/AtomProviderStorybook'
+import ToggleProvider from '../../../provider/toggle'
 
 export default {
   title: 'Molecule/Likes/Dislike',
@@ -14,7 +15,9 @@ const Template: ComponentStory<ComponentPropsStorybook<Required<typeof Dislike.d
     return (
         <BodyStorybook theme={theme}>
             <AtomProviderStorybook>
-                <Dislike {...args} />
+                <ToggleProvider>
+                    <Dislike {...args} />
+                </ToggleProvider>
             </AtomProviderStorybook>
         </BodyStorybook>
     )

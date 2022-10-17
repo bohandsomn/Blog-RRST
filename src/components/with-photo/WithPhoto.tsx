@@ -1,11 +1,11 @@
 import React from 'react'
-import { TenIndent } from '../../layouts/wrapper'
+import { TwentyIndent } from '../../layouts/wrapper'
 
 const WithPhoto: React.FC<Props> = ({ children, img }) => {
     return (
-        <TenIndent left={img}>
+        <TwentyIndent left={img}>
             {children}
-        </TenIndent>
+        </TwentyIndent>
     )
 }
 

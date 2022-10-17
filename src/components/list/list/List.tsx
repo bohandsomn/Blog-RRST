@@ -1,13 +1,16 @@
 import React from 'react'
 import useAppQuery from '../../../hooks/useAppQuery'
+import { SecondaryBackground } from '../../../layouts/wrapper'
 import { Ul } from '../../atoms'
 
 export const List: React.FC<Props> = ({ children }) => {
     const query = useAppQuery('list')
     return (
-        <Ul query={query}>
-            {children}
-        </Ul>
+        <SecondaryBackground>
+            <Ul query={query}>
+                {children}
+            </Ul>
+        </SecondaryBackground>
     )
 }
 

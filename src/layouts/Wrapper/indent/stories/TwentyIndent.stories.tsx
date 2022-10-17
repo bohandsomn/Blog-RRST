@@ -1,23 +1,23 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { TenIndent } from './TenIndent'
-import BodyStorybook from '../../../service/component-explorer/BodyStorybook'
-import { ComponentPropsStorybook } from '../../../utility/type'
-import AtomProviderStorybook from '../../../service/component-explorer/AtomProviderStorybook'
-import { Account } from '../../../components/atoms'
-import ToggleProvider from '../../../provider/toggle'
+import { TwentyIndent } from '../TwentyIndent'
+import BodyStorybook from '../../../../service/component-explorer/BodyStorybook'
+import { ComponentPropsStorybook } from '../../../../utility/type'
+import AtomProviderStorybook from '../../../../service/component-explorer/AtomProviderStorybook'
+import { Account } from '../../../../components/atoms'
+import ToggleProvider from '../../../../provider/toggle'
 
 export default {
-  title: 'Layouts/TenIndent',
-  component: TenIndent,
-} as ComponentMeta<typeof TenIndent>
+  title: 'Layouts/Indent/Twenty',
+  component: TwentyIndent,
+} as ComponentMeta<typeof TwentyIndent>
 
-const Template: ComponentStory<ComponentPropsStorybook<typeof TenIndent.defaultProps>> = ({theme, ...args}) => {
+const Template: ComponentStory<ComponentPropsStorybook<typeof TwentyIndent.defaultProps>> = ({theme, ...args}) => {
     return (
         <BodyStorybook theme={theme}>
             <AtomProviderStorybook>
                 <ToggleProvider>
-                    <TenIndent {...args} />
+                    <TwentyIndent {...args} />
                 </ToggleProvider>
             </AtomProviderStorybook>
         </BodyStorybook>

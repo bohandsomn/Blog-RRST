@@ -1,15 +1,17 @@
 import React from 'react'
+import useAppQuery from '../../hooks/useAppQuery'
 import { TenIndent } from '../../layouts/wrapper'
 import ToggleProvider from '../../provider/toggle'
 import { Div, Like as LikeIcon, MainParagraph } from '../atoms'
 
-const Like: React.FC<Props> = (props) => {
+const Like: React.FC<Props> = ({fill, ...props}) => {
+    const query = useAppQuery('like')
     return (
-        <Div {...props}>
+        <Div query={query} {...props}>
             <TenIndent 
                 right={
                     <ToggleProvider>
-                        <LikeIcon />
+                        <LikeIcon fill={fill} />
                     </ToggleProvider>
                 }
             >
@@ -21,6 +23,8 @@ const Like: React.FC<Props> = (props) => {
     )
 }
 
-type Props = Omit<NonNullable<typeof Div.defaultProps>, 'children'>
+type Props = Omit<NonNullable<typeof Div.defaultProps>, 'children' | 'query'> & {
+    fill?: string
+}
 
 export default Like

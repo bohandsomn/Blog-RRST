@@ -1,6 +1,6 @@
 import React from 'react'
 
-type IToggle = {
+export type IToggle = {
     value: boolean
     handleToggle: () => void
     handleSetTrue: () => void
