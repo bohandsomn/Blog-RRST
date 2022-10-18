@@ -1,4 +1,4 @@
-import Icon from '../../../packages/icon'
+import Icon from '@/packages/icon'
 import createIconHOC from '../../../service/icon/createIconHOC'
 import DEFAULT_VALUES from './defaultValues'
 

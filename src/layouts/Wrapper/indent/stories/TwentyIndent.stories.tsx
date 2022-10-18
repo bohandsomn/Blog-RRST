@@ -4,7 +4,7 @@ import { TwentyIndent } from '../TwentyIndent'
 import BodyStorybook from '../../../../service/component-explorer/BodyStorybook'
 import { ComponentPropsStorybook } from '../../../../utility/type'
 import AtomProviderStorybook from '../../../../service/component-explorer/AtomProviderStorybook'
-import { Account } from '../../../../components/atoms'
+import { Account } from '@/components/atoms'
 import ToggleProvider from '../../../../provider/toggle'
 
 export default {

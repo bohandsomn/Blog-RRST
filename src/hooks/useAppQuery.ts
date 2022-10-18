@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react'
-import { classNameAdapter, AtomContext, Query } from '../packages/atom'
-import { useCombinedStyles, Context, ICreatedStyles, getMediaQuery } from '../packages/style-combinator'
+import { classNameAdapter, AtomContext, Query } from '@/packages/atom'
+import { useCombinedStyles, Context, ICreatedStyles, getMediaQuery } from '@/packages/style-combinator'
 
 import STYLES from '../styles'
 import type { ScreenClass } from '../styles/app-create'

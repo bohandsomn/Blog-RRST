@@ -1,6 +1,6 @@
 import React from 'react'
 import useAppStyles from '../../../hooks/useAppStyles'
-import Atom from '../../../packages/atom'
+import Atom from '@/packages/atom'
 
 export const Button = Atom.create('button')
 

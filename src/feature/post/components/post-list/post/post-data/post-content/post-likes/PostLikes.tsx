@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from 'react'
-import { Div } from '../../../../../../../../components/atoms'
-import { Dislike, Like } from '../../../../../../../../components/likes'
+import { Div } from '@/components/atoms'
+import { Dislike, Like } from '@/components/likes'
 import useAppQuery from '../../../../../../../../hooks/useAppQuery'
 import PostContext from '../../../../../../context/post'
 import PostLikesContext from '../../../../../../context/post-likes'

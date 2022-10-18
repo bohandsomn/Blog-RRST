@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { Div, MainParagraph } from '../../../../../../../components/atoms'
-import { MainDescription } from '../../../../../../../components/description'
+import { Div, MainParagraph } from '@/components/atoms'
+import { MainDescription } from '@/components/description'
 import useAppQuery from '../../../../../../../hooks/useAppQuery'
 import PostContext from '../../../../../context/post'
 import PostLikesProvider from '../../../../../provider/PostLikes'

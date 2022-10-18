@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { Div, Li, PreviewImg } from '../../../../../../../../components/atoms'
-import WithPhoto from '../../../../../../../../components/with-photo'
+import { Div, Li, PreviewImg } from '@/components/atoms'
+import WithPhoto from '@/components/with-photo'
 import useAppQuery from '../../../../../../../../hooks/useAppQuery'
 import { SecondaryBackground } from '../../../../../../../../layouts/wrapper'
 import CommentContext from '../../../../../../context/comment'

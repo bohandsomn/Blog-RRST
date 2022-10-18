@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { Div } from '../../../../../../../../../components/atoms'
-import { VerticalDescription } from '../../../../../../../../../components/description'
+import { Div } from '@/components/atoms'
+import { VerticalDescription } from '@/components/description'
 import useAppQuery from '../../../../../../../../../hooks/useAppQuery'
 import CommentContext from '../../../../../../../context/comment'
 import UpdateToggle from '../../../../../../../context/update-toggle'
