@@ -1,6 +1,6 @@
 import React from 'react'
+import Atom from '@/packages/atom'
 import useAppStyles from '../../../hooks/useAppStyles'
-import Atom from '../../../packages/atom'
 
 export const P = Atom.create('p')
 

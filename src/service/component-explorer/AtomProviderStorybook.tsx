@@ -1,7 +1,7 @@
 import React from 'react'
+import AtomProvider from '@/packages/atom/provider'
+import { StyleCombinatorProvider } from '@/packages/style-combinator'
 import STYLES from '../../styles'
-import AtomProvider from '../../packages/atom/provider'
-import { StyleCombinatorProvider } from '../../packages/style-combinator'
 import createdStyles from '../../styles/created-styles'
 
 const AtomProviderStorybook: React.FC<Props> = ({ children }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Form, MainButton } from '../../../../../../../../../components/atoms'
-import InputWithLabel from '../../../../../../../../../components/input-with-label'
+import { Form, MainButton } from '@/components/atoms'
+import InputWithLabel from '@/components/input-with-label'
 import useAppQuery from '../../../../../../../../../hooks/useAppQuery'
 import useCommentUpdate from '../../../../../../../hooks/useCommentUpdate'
 

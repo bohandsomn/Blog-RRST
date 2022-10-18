@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
+import Icon from '@/packages/icon'
 import Toggle from '../../context/toggle'
-import Icon from '../../packages/icon'
 
 const createIconHOC = (MyIcon: ReturnType<typeof Icon.create>) => {
     return React.forwardRef(({fill='none', ...props}: NonNullable<typeof MyIcon.defaultProps>, ref) => {

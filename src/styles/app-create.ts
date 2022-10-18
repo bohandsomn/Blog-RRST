@@ -1,5 +1,5 @@
 import STYLES from '.'
-import { combinator } from '../packages/style-combinator'
+import { combinator } from '@/packages/style-combinator'
 
 const create = combinator([
     {screenClass: 'extraSmall', maxWidth: 575},

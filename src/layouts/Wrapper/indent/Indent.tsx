@@ -1,5 +1,5 @@
 import React from 'react'
-import { Div } from '../../../components/atoms'
+import { Div } from '@/components/atoms'
 import useAppStyles from '../../../hooks/useAppStyles'
 
 const Indent: React.FC<Props> = ({ children, indent, top, bottom, right, left }) => {

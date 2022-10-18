@@ -1,5 +1,5 @@
 import React from 'react'
-import { Div } from '../../../../../../components/atoms'
+import { Div } from '@/components/atoms'
 import useAppQuery from '../../../../../../hooks/useAppQuery'
 import CommentListProvider from '../../../../provider/CommentList'
 import { commentsMock } from '../../../../__mock__'

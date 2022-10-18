@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
-import AtomProvider from '../src/packages/atom/provider'
-import { StyleCombinatorProvider } from '../src/packages/style-combinator'
+import { AtomProvider } from '@/packages/atom'
+import { StyleCombinatorProvider } from '@/packages/style-combinator'
 import STYLES from '../src/styles'
 import createdStyles from '../src/styles/created-styles'
 
