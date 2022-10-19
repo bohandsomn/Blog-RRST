@@ -23,3 +23,23 @@ export const MainButton = React.forwardRef(({className, ...props}: NonNullable<t
         <Button className={localClassName} {...props} ref={ref} />
     )
 })
+
+export const SecondaryButton = React.forwardRef(({className, ...props}: NonNullable<typeof Button.defaultProps>, ref) => {
+    const localClassName = useAppStyles(
+        'padding-top-10', 
+        'padding-right-20', 
+        'padding-bottom-10', 
+        'padding-left-20',
+        'border-none',
+        'border-radius--border-radius', 
+        'box-shadow--main-bg-lilear',
+        'background-color--main-bg-color',
+        'color--secondary-color',
+        'font-weight-bold',
+        'cursor-pointer',
+        className as undefined
+    )
+    return (
+        <Button className={localClassName} {...props} ref={ref} />
+    )
+})
