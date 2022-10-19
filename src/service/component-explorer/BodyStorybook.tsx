@@ -3,7 +3,7 @@ import '../../styles/global.css'
 
 const BodyStorybook: React.FC<Props> = ({ children, theme }) => {
     return (
-        <body className={theme} style={{backgroundColor: '#657178'}}>
+        <body className={theme}>
             {children}
         </body>
     )
