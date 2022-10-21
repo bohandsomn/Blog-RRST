@@ -2,7 +2,7 @@ import { JsonResponse } from "../../../utility/type"
 import UserResponse from "../../user/api/response"
 
 namespace AuthorizationResponse {
-    type UserData = {
+    export type UserData = {
         accessToken: string
         user: UserResponse.UserDTO
     }
