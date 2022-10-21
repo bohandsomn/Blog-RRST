@@ -1,8 +1,7 @@
 import type { RequestParams } from '../interface'
 
 class RequestNotifier<
-    ApiMethod extends (...args: any[]) => Promise<Response>, 
-    Response
+    ApiMethod extends (...args: any[]) => any
 > {
     private apiMethod
     private before
@@ -16,15 +15,15 @@ class RequestNotifier<
         success = null,
         reject = null,
         narrowing = null,
-    }: RequestParams<ApiMethod, Response>) {
-        this.apiMethod = apiMethod
+    }: RequestParams<ApiMethod, Awaited<ReturnType<ApiMethod>>>) {
+        this.apiMethod = (...args: Parameters<typeof apiMethod>) => apiMethod(...args)
         this.before = before
         this.success = success
         this.reject = reject
         this.narrowing = narrowing
     }
 
-    async call(...params: Parameters<ApiMethod>): Promise<Response> {
+    async call(...params: Parameters<ApiMethod>): Promise<Awaited<ReturnType<ApiMethod>>> {
         const id = this.before?.()
         const response = await this.apiMethod(...params)
 
