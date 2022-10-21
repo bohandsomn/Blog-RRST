@@ -28,15 +28,15 @@ class HandleAPI {
 
     private _setRequestInterceptor() {
         this.network.interceptors.request.use(
-            Initialize.requestOnFulfilled.bind(Initialize), 
-            Initialize.requestOnRejected.bind(Initialize),
+            (config) => Initialize.requestOnFulfilled(config), 
+            (error) => Initialize.requestOnRejected(error),
         )
     }
 
     private _setResponseInterceptor() {
         this.network.interceptors.response.use(
-            Initialize.responseOnFulfilled.bind(Initialize), 
-            Initialize.responseOnRejected.bind(Initialize, this.network),
+            (config) => Initialize.responseOnFulfilled(config), 
+            (error) => Initialize.responseOnRejected(this.network, error),
         )
     }
 }
