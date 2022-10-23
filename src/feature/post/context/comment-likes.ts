@@ -2,7 +2,7 @@ import React from 'react'
 import type { LikesCommentDTO, LikesCommentRequest } from '../utility/interface'
 
 export type ICommentLikesContext = {
-    data: LikesCommentDTO
+    data: LikesCommentDTO | null
     like: (data: LikesCommentRequest.Like) => void
     dislike: (data: LikesCommentRequest.Dislike) => void
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { UseFetchReturned } from 'src/hooks/useFetch/interface'
+import { UseFetchReturned } from '../../../hooks/useFetch/interface'
 import type { CommentDTO, CommentRequest } from '../utility/interface'
 
 export type ICommentListContext = UseFetchReturned<CommentDTO[]> & {
