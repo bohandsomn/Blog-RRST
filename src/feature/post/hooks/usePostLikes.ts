@@ -1,27 +1,65 @@
-import { useCallback } from 'react'
+import { useCallback, useContext, useEffect } from 'react'
+import useAppSelector from '../../../hooks/useAppSelector'
+import useFetch from '../../../hooks/useFetch'
+import { authorizationSelector } from '../../../store'
+import { likesPostApi } from '../api'
+import PostContext from '../context/post'
 import { IPostLikesContext } from '../context/post-likes'
 import { LikesPostDTO } from '../utility/interface'
-import useLukasiewicz from './useLukasiewicz'
 
-const usePostLikes = (postLikes: LikesPostDTO): IPostLikesContext => {
-    const {value, handleSetTrue, handleSetFalse, handleSetNull} = useLukasiewicz(postLikes.value)
-    const like: IPostLikesContext['like'] = useCallback(() => {
-        if (value) {
-            handleSetNull()
-        } else {
-            handleSetTrue()
+const usePostLikes = (): IPostLikesContext => {
+    const { data, onSuccess, onReject, onPending } = useFetch<LikesPostDTO>()
+    const postContext = useContext(PostContext)
+    const user = useAppSelector(authorizationSelector)
+
+    useEffect(() => {
+        const handleFetch = async () => {
+            if (user.data === null) {
+                return
+            }
+
+            onPending()
+            const postLikes = await likesPostApi.getLike({
+                postId: postContext.id.toString(),
+                userId: user.data?.id.toString()
+            })
+            if (postLikes.data) {
+                onSuccess(postLikes.data)
+            } else {
+                onReject(postLikes.message)
+            }
         }
-    }, [value, handleSetTrue, handleSetNull])
-    const dislike: IPostLikesContext['dislike'] = useCallback(() => {
-        if (value === false) {
-            handleSetNull()
+        handleFetch()
+    }, [user.data?.id])
+
+    const like: IPostLikesContext['like'] = useCallback(async () => {
+        const callback = data?.value === true
+            ? likesPostApi.unlike.bind(likesPostApi)
+            : likesPostApi.like.bind(likesPostApi)
+        onPending()
+        const postLikes = await callback({ postId: postContext.id.toString() })
+        if (postLikes.data) {
+            onSuccess(postLikes.data)
         } else {
-            handleSetFalse()
+            onReject(postLikes.message)
         }
-    }, [value, handleSetFalse, handleSetNull])
+    }, [data?.value, onPending, postContext.id, onSuccess, onReject])
+
+    const dislike: IPostLikesContext['dislike'] = useCallback(async () => {
+        const callback = data?.value === false
+            ? likesPostApi.unlike.bind(likesPostApi)
+            : likesPostApi.dislike.bind(likesPostApi)
+        onPending()
+        const postLikes = await callback({ postId: postContext.id.toString() })
+        if (postLikes.data) {
+            onSuccess(postLikes.data)
+        } else {
+            onReject(postLikes.message)
+        }
+    }, [data?.value, onPending, postContext.id, onSuccess, onReject])
 
     return {
-        data: {...postLikes, value},
+        data,
         like,
         dislike
     }
