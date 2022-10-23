@@ -1,14 +1,13 @@
 import { JsonResponse } from '../../../utility/type'
 
 namespace PrivacyResponse {
-    export type Create = JsonResponse<{
+    export type PrivacyDTO = {
         id: number
         value: string
-    }>
-    export type GetMany = JsonResponse<{
-        id: number
-        value: string
-    }[]>
+    }
+
+    export type Create = JsonResponse<PrivacyDTO>
+    export type GetMany = JsonResponse<PrivacyDTO[]>
 }
 
 export default PrivacyResponse

@@ -31,7 +31,7 @@ const getOne = new RequestNotifier<typeof postAPI.getOne>({
 const deletePost = new RequestNotifier<typeof postAPI.delete>({
     apiMethod: (...data) => postAPI.delete(...data),
     before: () => notification.loading('Post deletion start'),
-    narrowing: (response) => response !== undefined,
+    narrowing: (response) => typeof response.data === 'number',
     success: ({ id }) => notification.success(id, 'Post successfully deleted'),
     reject: ({ id, response }) => notification.error(id, response ? response.message : 'Something went wrong')
 })
