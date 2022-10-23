@@ -8,6 +8,7 @@ namespace LikesPostResponse {
         value: boolean
     }
     
+    export type GetLike = JsonResponse<LikesPostDTO>
     export type Like = JsonResponse<LikesPostDTO>
     export type Dislike = JsonResponse<LikesPostDTO>
     export type Unlike = JsonResponse<LikesPostDTO>
