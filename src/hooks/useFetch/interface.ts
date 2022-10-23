@@ -7,3 +7,9 @@ export type UseFetchReturned<Data> = {
     onReject: (error: string) => void
     onPending: () => void
 }
+
+export type State<Data> = {
+    data: Data | null
+    isLoading: boolean
+    error: string | null
+}
