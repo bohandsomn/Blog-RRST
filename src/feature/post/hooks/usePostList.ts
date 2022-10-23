@@ -1,35 +1,64 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo } from 'react'
+import useFetch from 'src/hooks/useFetch'
+import { State } from 'src/hooks/useFetch/interface'
+import { ErrorResponse } from 'src/utility/type'
+import { postNotifier } from '../api'
 import type { IPostListContext } from '../context/post-list'
 import type { PostDTO } from '../utility/interface'
-import { privacyMock } from '../__mock__'
+import type PostResponse from '../../../store/post/api/response'
 
-const usePostList = (posts: PostDTO[]): IPostListContext => {
-    const [data, setData] = useState(posts)
+const usePostList = (posts: ErrorResponse | PostResponse.GetMany): IPostListContext => {
+    const initialPosts: State<PostDTO[]> = useMemo(() => ({
+        data: posts.data || null,
+        isLoading: false,
+        error: posts.data === undefined ? posts.message : null
+    }), [posts])
+    const { data, previous, isLoading, error, onSuccess, onReject, onPending } = useFetch(initialPosts)
 
     const deletePost: IPostListContext['delete'] = useCallback(async (dataDelete) => {
-        setData((previous) => previous.filter((post) => post.id.toString() !== dataDelete.postId))
-    }, [setData])
+        onPending()
+        const deleteResponse = await postNotifier.delete.call(dataDelete)
+        if (typeof deleteResponse.data === 'number') {
+            onSuccess(data?.filter((post) => post.id.toString() !== dataDelete.postId) || [])
+        } else {
+            onReject(deleteResponse.message)
+        }
+    }, [onPending, onSuccess, data, onReject])
 
     const update: IPostListContext['update'] = useCallback(async (dataUpdate) => {
-        setData((previous) => previous.map((post) => {
-            if (post.id.toString() === dataUpdate.postId) {
-                const privacyId = privacyMock.findIndex((privacy) => privacy.value === dataUpdate.privacy) + 1
-                
-                return {
-                    ...post,
-                    title: post.title,
-                    content: post.content,
-                    privacyId: privacyId === -1 ? post.privacyId : privacyId
-                }
-            }
-            return post
-        }))
-    }, [setData])
+        onPending()
+        const updateResponse = await postNotifier.update.call(dataUpdate)
+        if (updateResponse.data) {
+            onSuccess(data?.map((post) => post.id === updateResponse.data.id ? updateResponse.data : post) || [])
+        } else {
+            onReject(updateResponse.message)
+        }
+    }, [onPending, onSuccess, data, onReject])
+
+    const addMany: IPostListContext['addMany'] = useCallback(async (dataAddMany) => {
+        onPending()
+        const addManyResponse = await postNotifier.getMany.call(dataAddMany)
+        if (addManyResponse.data) {
+            onSuccess([
+                ...(data || []),
+                ...addManyResponse.data
+            ])
+        } else {
+            onReject(addManyResponse.message)
+        }
+    }, [onPending, onSuccess, data, onReject])
 
     return {
-        data,
         update,
-        delete: deletePost
+        delete: deletePost,
+        addMany,
+        data, 
+        previous, 
+        isLoading, 
+        error, 
+        onSuccess, 
+        onReject, 
+        onPending
     }
 }
 

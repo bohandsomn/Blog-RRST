@@ -10,11 +10,26 @@ import CommentItem from './comment-item'
 
 const CommentList: React.FC = () => {
     const query = useAppQuery('comment-list')
-    const {data} = useContext(CommentListContext)
+    const commentListContext = useContext(CommentListContext)
+
+    if (commentListContext.isLoading) {
+        return (
+            <Ul query={query}>
+                {
+                    Array.from({ length: 5 }).map((_, index) => (
+                        <UpdateToggleProvider key={index}>
+                            <CommentItem />
+                        </UpdateToggleProvider>
+                    ))
+                }
+            </Ul>
+        )
+    }
+
     return (
         <Ul query={query}>
             {
-                data.map((comment) => (
+                commentListContext.data?.map((comment) => (
                     <UserProvider key={comment.id} userId={comment.userId}>
                         <CommentProvider comment={comment}>
                             <UpdateToggleProvider>

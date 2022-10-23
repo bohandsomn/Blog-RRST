@@ -6,6 +6,6 @@ export type ICommentLikesContext = {
     like: (data: LikesCommentRequest.Like) => void
     dislike: (data: LikesCommentRequest.Dislike) => void
 }
-const CommentLikesContext = React.createContext<ICommentLikesContext>(undefined!)
+const CommentLikesContext = React.createContext<ICommentLikesContext | undefined>(undefined)
 
 export default CommentLikesContext

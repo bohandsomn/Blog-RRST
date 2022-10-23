@@ -3,7 +3,7 @@ import { Div, Li, PreviewImg } from '@/components/atoms'
 import WithPhoto from '@/components/with-photo'
 import useAppQuery from '../../../../../../../../hooks/useAppQuery'
 import { SecondaryBackground } from '../../../../../../../../layouts/wrapper'
-import CommentContext from '../../../../../../context/comment'
+import CommentContext from 'src/feature/post/context/comment'
 import CommentContent from './comment-content'
 import CommentSettings from './comment-settings'
 
@@ -16,7 +16,11 @@ const CommentItem: React.FC = () => {
                 <Div query={query}>
                     <WithPhoto img={
                         <PreviewImg
-                            src={`${process.env.NEXT_PUBLIC_BASE_URL}photo/user/post/${commentContext.data.userId}`}
+                            src={
+                                typeof commentContext?.user?.id === 'number'
+                                    ? `${process.env.NEXT_PUBLIC_BASE_URL}photo/user/post/${commentContext.user.id}`
+                                    : undefined
+                            }
                         />
                     }>
                         <CommentContent />

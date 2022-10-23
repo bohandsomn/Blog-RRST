@@ -14,7 +14,7 @@ const useCreateComment = () => {
             content: comment
         })
         handleReset()
-    }, [comment, handleReset])
+    }, [create, postContext, comment, handleReset])
 
     return [comment, handleChangeComment, handleSubmit] as const
 }

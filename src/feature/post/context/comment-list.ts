@@ -1,11 +1,12 @@
 import React from 'react'
+import { UseFetchReturned } from 'src/hooks/useFetch/interface'
 import type { CommentDTO, CommentRequest } from '../utility/interface'
 
-export type ICommentListContext = {
+export type ICommentListContext = UseFetchReturned<CommentDTO[]> & {
     create: (data: CommentRequest.Create) => Promise<void>
     update: (data: CommentRequest.Update) => Promise<void>
     delete: (data: CommentRequest.Delete) => Promise<void>
-    data: CommentDTO[]
+    addMany: (data: CommentRequest.GetMany) => Promise<void>
 }
 const CommentListContext = React.createContext<ICommentListContext>(undefined!)
 

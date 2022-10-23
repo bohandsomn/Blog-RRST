@@ -1,10 +1,9 @@
 import React from 'react'
 import CommentListContext from '../context/comment-list'
 import useCommentList from '../hooks/useCommentList'
-import type { CommentDTO } from '../utility/interface'
 
-const CommentListProvider: React.FC<Props> = ({ children, comments }) => {
-    const value = useCommentList(comments)
+const CommentListProvider: React.FC<Props> = ({ children }) => {
+    const value = useCommentList()
 
     return (
         <CommentListContext.Provider value={value}>
@@ -14,7 +13,6 @@ const CommentListProvider: React.FC<Props> = ({ children, comments }) => {
 }
 
 type Props = {
-    comments: CommentDTO[]
     children?: any
 }
 

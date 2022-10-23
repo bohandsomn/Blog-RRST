@@ -3,16 +3,18 @@ import { Div, Form, MainButton, PostImg } from '@/components/atoms'
 import InputWithLabel from '@/components/input-with-label'
 import InputList from '@/components/input-list'
 import WithPhoto from '@/components/with-photo'
+import OptionsProvider from '@/components/input-list/provider/Options'
 import useAppQuery from '../../../../../../hooks/useAppQuery'
 import PostSettings from '../post-data/post-settings'
 import usePostUpdate from '../../../../hooks/usePostUpdate'
 import PostContext from '../../../../context/post'
-import OptionsProvider from '@/components/input-list/provider/Options'
-import { privacyMock } from '../../../../__mock__'
+import useAppSelector from '../../../../../../hooks/useAppSelector'
+import { privacySelector } from '../../../../../../store'
 
 const PostUpdate: React.FC = () => {
     const query = useAppQuery('post')
     const postContext = useContext(PostContext)
+    const privacyList = useAppSelector(privacySelector)
     const {
         title,
         handleChangeTitle,
@@ -41,7 +43,7 @@ const PostUpdate: React.FC = () => {
                         value={content}
                         onChange={handleChangeContent}
                     />
-                    <OptionsProvider options={privacyMock}>
+                    <OptionsProvider options={privacyList.data || []}>
                         <InputList 
                             label={'Enter privacy'}
                             value={privacy}

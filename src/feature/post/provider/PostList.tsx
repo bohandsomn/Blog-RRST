@@ -1,7 +1,8 @@
 import React from 'react'
+import { ErrorResponse } from 'src/utility/type'
 import PostListContext from '../context/post-list'
 import usePostList from '../hooks/usePostList'
-import type { PostDTO } from '../utility/interface'
+import type PostResponse from '../../../store/post/api/response'
 
 const PostListProvider: React.FC<Props> = ({ children, posts }) => {
     const value = usePostList(posts)
@@ -14,7 +15,7 @@ const PostListProvider: React.FC<Props> = ({ children, posts }) => {
 }
 
 type Props = {
-    posts: PostDTO[]
+    posts: ErrorResponse | PostResponse.GetMany
     children?: any
 }
 
