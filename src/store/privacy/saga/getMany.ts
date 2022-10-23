@@ -2,7 +2,7 @@ import { call, fork, put, take } from 'redux-saga/effects'
 import { getMany, getManyReject, getManySuccess } from '../slice'
 import privacyNotifier from '../notifier'
 import type PrivacyResponse from '../api/response'
-import type { ErrorResponse } from 'src/utility/type'
+import type { ErrorResponse } from '../../../utility/type'
 
 function* getManyWorker() {
     try {

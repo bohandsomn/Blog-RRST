@@ -3,7 +3,7 @@ import { Div, Li, PreviewImg } from '@/components/atoms'
 import WithPhoto from '@/components/with-photo'
 import useAppQuery from '../../../../../../../../hooks/useAppQuery'
 import { SecondaryBackground } from '../../../../../../../../layouts/wrapper'
-import CommentContext from 'src/feature/post/context/comment'
+import CommentContext from '../../../../../../context/comment'
 import CommentContent from './comment-content'
 import CommentSettings from './comment-settings'
 

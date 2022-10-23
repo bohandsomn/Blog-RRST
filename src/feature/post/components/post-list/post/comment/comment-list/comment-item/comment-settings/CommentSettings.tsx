@@ -6,8 +6,8 @@ import ToggleProvider from '../../../../../../../../../provider/toggle'
 import CommentContext from '../../../../../../../context/comment'
 import CommentListContext from '../../../../../../../context/comment-list'
 import UpdateToggle from '../../../../../../../context/update-toggle'
-import useAppSelector from 'src/hooks/useAppSelector'
-import { authorizationSelector } from 'src/store'
+import useAppSelector from '../../../../../../../../../hooks/useAppSelector'
+import { authorizationSelector } from '../../../../../../../../../store'
 
 const CommentSettings: React.FC = () => {
     const user = useAppSelector(authorizationSelector)

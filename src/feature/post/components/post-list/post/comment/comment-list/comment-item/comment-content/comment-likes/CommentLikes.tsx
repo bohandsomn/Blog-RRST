@@ -9,21 +9,27 @@ const CommentLikes: React.FC = () => {
     const commentLikesContext = useContext(CommentLikesContext)
 
     const handleLike = useCallback(() => {
-        return commentLikesContext?.like({commentId: commentLikesContext?.data.commentId.toString()})
-    }, [commentLikesContext?.like, commentLikesContext?.data.commentId])
+        if (!commentLikesContext?.data?.commentId) {
+            return
+        }
+        return commentLikesContext?.like({commentId: commentLikesContext?.data?.commentId.toString()})
+    }, [commentLikesContext?.like, commentLikesContext?.data?.commentId])
     const handleDisike = useCallback(() => {
-        return commentLikesContext?.dislike({commentId: commentLikesContext?.data.commentId.toString()})
-    }, [commentLikesContext?.dislike, commentLikesContext?.data.commentId])
+        if (!commentLikesContext?.data?.commentId) {
+            return
+        }
+        return commentLikesContext?.dislike({commentId: commentLikesContext?.data?.commentId.toString()})
+    }, [commentLikesContext?.dislike, commentLikesContext?.data?.commentId])
 
     return (
         <Div query={query}>
             <Like 
                 onClick={handleLike} 
-                fill={commentLikesContext?.data.value ? 'var(--main-color)' : undefined} 
+                fill={commentLikesContext?.data?.value ? 'var(--main-color)' : undefined} 
             />
             <Dislike 
                 onClick={handleDisike} 
-                fill={commentLikesContext?.data.value === false ? 'var(--main-color)' : undefined} 
+                fill={commentLikesContext?.data?.value === false ? 'var(--main-color)' : undefined} 
             />
         </Div>
     )

@@ -6,8 +6,8 @@ import ToggleProvider from '../../../../../../../provider/toggle'
 import PostContext from '../../../../../context/post'
 import PostListContext from '../../../../../context/post-list'
 import UpdateToggle from '../../../../../context/update-toggle'
-import useAppSelector from 'src/hooks/useAppSelector'
-import { authorizationSelector } from 'src/store'
+import useAppSelector from '../../../../../../../hooks/useAppSelector'
+import { authorizationSelector } from '../../../../../../../store'
 
 const PostSettings: React.FC = () => {
     const user = useAppSelector(authorizationSelector)

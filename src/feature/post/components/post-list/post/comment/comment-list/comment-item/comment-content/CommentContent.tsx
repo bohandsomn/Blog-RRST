@@ -36,7 +36,7 @@ const PostContent: React.FC = () => {
                 header={`${commentContext.user.name} ${commentContext.user.surname || ''}`} 
                 text={commentContext.data.content}
             />
-            <CommentLikesProvider commentId={commentContext.data.id}>
+            <CommentLikesProvider>
                 <CommentLikes />
             </CommentLikesProvider>
         </Div>

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import PostList from '..'
 import BodyStorybook from '../../../../service/component-explorer/BodyStorybook'
-import { ComponentPropsStorybook } from '../../../../utility/type'
+import { ComponentPropsStorybook, ErrorResponse } from '../../../../utility/type'
 import AtomProviderStorybook from '../../../../service/component-explorer/AtomProviderStorybook'
 import { postsMock } from '../../__mock__'
-import PostListProvider from '../../provider/PostList'
+import { PostListProvider, PostListBoundary, postNotifier } from '../..'
+import PostResponse from '../../../../store/post/api/response'
 
 export default {
   title: 'Feature/PostList',
@@ -16,8 +17,10 @@ const Template: ComponentStory<ComponentPropsStorybook<Required<typeof PostList.
     return (
         <BodyStorybook theme={theme}>
             <AtomProviderStorybook>
-                <PostListProvider posts={postsMock}>
-                    <PostList {...args} />
+                <PostListProvider posts={{message: 'ERROR MESSAGE'}}>
+                    <PostListBoundary>
+                        <PostList {...args} />
+                    </PostListBoundary>
                 </PostListProvider>
             </AtomProviderStorybook>
         </BodyStorybook>

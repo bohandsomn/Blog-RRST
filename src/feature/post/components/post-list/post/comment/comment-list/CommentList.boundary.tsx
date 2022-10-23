@@ -1,7 +1,7 @@
 import React, { useContext, useCallback } from 'react'
 import ErrorBoundary from '@/components/error-boundary'
 import CommentListContext from '../../../../../context/comment-list'
-import PostContext from 'src/feature/post/context/post'
+import PostContext from '../../../../../context/post'
 
 const CommentListBoundary: React.FC<Props> = ({ children }) => {
     const postContext = useContext(PostContext)

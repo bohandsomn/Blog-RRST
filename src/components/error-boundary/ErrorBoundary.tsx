@@ -1,5 +1,5 @@
 import React from 'react'
-import useAppStyles from 'src/hooks/useAppStyles'
+import useAppStyles from '../../hooks/useAppStyles'
 import { SecondaryBackground, TenIndent, TwentyIndent } from '../../../src/layouts/wrapper'
 import { Div, MainBigParagraph, MainButton, SecondaryButton } from '../atoms'
 

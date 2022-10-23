@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import useFetch from 'src/hooks/useFetch'
+import useFetch from '../../../hooks/useFetch'
 import { userNotifier } from '../api'
 import type { IUserContext } from '../context/user'
 import type { UserDTO } from '../utility/interface'

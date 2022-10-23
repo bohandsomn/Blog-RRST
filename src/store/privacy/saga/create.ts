@@ -4,7 +4,7 @@ import { create, createReject, createSuccess } from '../slice'
 import privacyNotifier from '../notifier'
 import type PrivacyRequest from '../api/request'
 import type PrivacyResponse from '../api/response'
-import type { ErrorResponse } from 'src/utility/type'
+import type { ErrorResponse } from '../../../utility/type'
 
 function* createWorker(payload: PrivacyRequest.Create) {
     try {

@@ -2,7 +2,7 @@ import React, { useContext, useCallback } from 'react'
 import ErrorBoundary from '@/components/error-boundary'
 import InputWithLabel from '@/components/input-with-label'
 import PostListContext from '../../context/post-list'
-import useInput from 'src/hooks/useInput'
+import useInput from '../../../../hooks/useInput'
 
 const PostListBoundary: React.FC<Props> = ({ children }) => {
     const [title, handleChangeTitle] = useInput('')

@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect, useMemo } from 'react'
-import useFetch from 'src/hooks/useFetch'
+import useFetch from '../../../hooks/useFetch'
 import { commentNotifier } from '../api'
 import PostContext from '../context/post'
 import type { ICommentListContext } from '../context/comment-list'

@@ -4,7 +4,6 @@ import { MainDescription } from '@/components/description'
 import useAppQuery from '../../../../../../../hooks/useAppQuery'
 import PostContext from '../../../../../context/post'
 import PostLikesProvider from '../../../../../provider/PostLikes'
-import { postLikesMock } from '../../../../../__mock__'
 import PostLikes from './post-likes'
 
 const PostContent: React.FC = () => {
@@ -25,7 +24,7 @@ const PostContent: React.FC = () => {
             <MainParagraph>
                 {postContext.content}
             </MainParagraph>
-            <PostLikesProvider postLikes={postLikesMock}>
+            <PostLikesProvider>
                 <PostLikes />
             </PostLikesProvider>
         </Div>

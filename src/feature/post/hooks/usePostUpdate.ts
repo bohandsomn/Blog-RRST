@@ -1,6 +1,6 @@
 import { useCallback, useContext, useMemo } from 'react'
-import useAppSelector from 'src/hooks/useAppSelector'
-import { privacySelector } from 'src/store'
+import useAppSelector from '../../../hooks/useAppSelector'
+import { privacySelector } from '../../../store'
 import useInput from '../../../hooks/useInput'
 import PostContext from '../context/post'
 import PostListContext from '../context/post-list'
