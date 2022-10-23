@@ -4,7 +4,8 @@ import useAppStyles from '../../../hooks/useAppStyles'
 
 export const Input = Atom.create('input')
 
-export const MainInput = React.forwardRef(({className, ...props}: NonNullable<typeof Input.defaultProps>, ref) => {
+export const MainInput = React.forwardRef(({className, isValid = true, ...props}: Props, ref) => {
+    const unValidClassName = useAppStyles('border-style-solid', 'border-width-2', 'border-color-red', 'color-red')
     const localClassName = useAppStyles(
         'padding-top-10', 
         'padding-right-20', 
@@ -14,9 +15,16 @@ export const MainInput = React.forwardRef(({className, ...props}: NonNullable<ty
         'border-radius--border-radius', 
         'box-shadow--main-bg-lilear',
         'background-color--main-bg-color',
-        className as undefined
+        className as undefined,
+        isValid 
+            ? undefined
+            : unValidClassName as any
     )
     return (
         <Input className={localClassName} {...props} ref={ref} />
     )
 })
+
+type Props = NonNullable<typeof Input.defaultProps> & {
+    isValid?: boolean
+}

@@ -4,7 +4,7 @@ import { TenIndent } from '../../../../../../../layouts/wrapper'
 import useCreateComment from '../../../../../hooks/useCreateComments'
 
 const CommentForm: React.FC = () => {
-    const [comment, handleChangeComment, handleSubmit] = useCreateComment()
+    const { comment, handleChangeComment, handleSubmit, handleSetIsFocusedTrue, isValid } = useCreateComment()
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -15,7 +15,12 @@ const CommentForm: React.FC = () => {
                     </MainButton>
                 }
             >
-                <MainInput value={comment} onChange={handleChangeComment} />
+                <MainInput 
+                    isValid={isValid} 
+                    value={comment} 
+                    onChange={handleChangeComment} 
+                    onFocus={handleSetIsFocusedTrue}
+                />
             </TenIndent>
         </Form>
     )

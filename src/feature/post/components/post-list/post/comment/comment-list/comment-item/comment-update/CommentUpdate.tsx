@@ -15,6 +15,7 @@ const CommentUpdate: React.FC = () => {
     return (
         <Form onSubmit={handleSubmit} query={query}>
             <InputWithLabel 
+                isValid={content !== ''}
                 label={'Enter comment'} 
                 value={content}
                 onChange={handleChangeContent}

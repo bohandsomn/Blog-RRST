@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { Div, Form, MainButton, PostImg } from '@/components/atoms'
 import InputWithLabel from '@/components/input-with-label'
 import InputList from '@/components/input-list'
@@ -24,6 +24,7 @@ const PostUpdate: React.FC = () => {
         handleChangePrivacy,
         handleSubmit,
     } = usePostUpdate()
+    const isValidPrivacy = useMemo(() => privacyList.data?.find(({ value }) => value === privacy) !== undefined, [privacyList, privacy])
 
     return (
         <Div query={query}>
@@ -34,17 +35,20 @@ const PostUpdate: React.FC = () => {
             }>
                 <Form onSubmit={handleSubmit}>
                     <InputWithLabel 
+                        isValid={title !== ''}
                         label={'Enter title'} 
                         value={title}
                         onChange={handleChangeTitle}
                     />
                     <InputWithLabel 
+                        isValid={content !== ''}
                         label={'Enter content'} 
                         value={content}
                         onChange={handleChangeContent}
                     />
                     <OptionsProvider options={privacyList.data || []}>
                         <InputList 
+                            isValid={isValidPrivacy}
                             label={'Enter privacy'}
                             value={privacy}
                             onChange={handleChangePrivacy}
