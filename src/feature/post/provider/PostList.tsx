@@ -1,5 +1,5 @@
 import React from 'react'
-import { ErrorResponse } from 'src/utility/type'
+import { ErrorResponse } from '../../../utility/type'
 import PostListContext from '../context/post-list'
 import usePostList from '../hooks/usePostList'
 import type PostResponse from '../../../store/post/api/response'
