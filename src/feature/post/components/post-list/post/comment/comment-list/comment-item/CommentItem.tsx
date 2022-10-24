@@ -19,8 +19,10 @@ const CommentItem: React.FC = () => {
                             src={
                                 typeof commentContext?.user?.id === 'number'
                                     ? `${process.env.NEXT_PUBLIC_BASE_URL}photo/user/post/${commentContext.user.id}`
-                                    : undefined
-                            }
+                                    : ''
+                            } 
+                            alt={`${commentContext?.user?.name} ${commentContext?.user?.surname || ''}`}
+                            title={'User photo'}
                         />
                     }>
                         <CommentContent />

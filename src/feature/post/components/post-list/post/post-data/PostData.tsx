@@ -20,9 +20,11 @@ const PostData: React.FC = () => {
     return (
         <Div query={query}>
             <WithPhoto img={
-                <PostImg src={
-                    `${process.env.NEXT_PUBLIC_BASE_URL}photo/user/post/${postContext.userId}`
-                } />
+                <PostImg 
+                    src={`${process.env.NEXT_PUBLIC_BASE_URL}photo/user/post/${postContext.userId}`}  
+                    alt={`User-${postContext.userId}`}
+                    title={'User photo'}
+                />
             }>
                 <PostContent />
             </WithPhoto>
