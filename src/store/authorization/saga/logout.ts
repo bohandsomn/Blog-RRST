@@ -2,7 +2,7 @@ import { call, fork, put, take } from 'redux-saga/effects'
 import { logout, logoutReject, logoutSuccess } from '../slice'
 import authorizationNotifier from '../notifier'
 import type AuthorizationResponse from '../api/response'
-import type { ErrorResponse } from 'src/utility/type'
+import type { ErrorResponse } from '../../../utility/type'
 
 function* logoutWorker() {
     try {

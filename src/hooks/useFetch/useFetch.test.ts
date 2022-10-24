@@ -20,7 +20,7 @@ describe('useFetch', () => {
       
         expect(result.current.data).toBeNull()
         expect(result.current.previous).toBeNull()
-        expect(result.current.isLoading).toBeFalsy()
+        expect(result.current.isLoading).toBeTruthy()
         expect(result.current.error).toBeNull()
     })
 

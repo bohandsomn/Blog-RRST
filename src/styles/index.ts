@@ -101,6 +101,18 @@ const STYLES = {
     "border-none": {
         "border": "none"
     },
+    "border-style-solid": {
+        "border-style": "solid"
+    },
+    "border-width-2": {
+        "order-width": "2px"
+    },
+    "border-color-red": {
+        "border-color": "red"
+    },
+    "color-red": {
+        "color": "red"
+    },
     "width-fit-content": {
         "width": "fit-content"
     },

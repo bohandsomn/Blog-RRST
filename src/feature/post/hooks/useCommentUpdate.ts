@@ -7,11 +7,14 @@ import UpdateToggle from '../context/update-toggle'
 const useCommentUpdate = () => {
     const commentContext = useContext(CommentContext)
     const commentListContext = useContext(CommentListContext)
-    const [content, handleChangeContent] = useInput(commentContext.data.content)
+    const [content, handleChangeContent] = useInput(commentContext?.data.content || '')
     const {handleSetFalse} = useContext(UpdateToggle)
 
     const handleSubmit = useCallback(async (event: {preventDefault: () => void}) => {
         event.preventDefault()
+        if (!commentContext) {
+            return
+        }
 
         await commentListContext.update({
             content,
@@ -19,7 +22,7 @@ const useCommentUpdate = () => {
         })
 
         handleSetFalse()
-    }, [content, commentContext.data.id, handleSetFalse])
+    }, [content, commentContext?.data.id, handleSetFalse])
 
     return {
         handleSubmit,

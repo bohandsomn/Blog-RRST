@@ -3,8 +3,8 @@ import CommentLikesContext from '../context/comment-likes'
 import useCommentLikes from '../hooks/useCommentLikes'
 import type { LikesCommentDTO } from '../utility/interface'
 
-const CommentLikesProvider: React.FC<Props> = ({ children, commentId }) => {
-    const value = useCommentLikes(commentId)
+const CommentLikesProvider: React.FC<Props> = ({ children }) => {
+    const value = useCommentLikes()
     return (
         <CommentLikesContext.Provider value={value}>
             {children}
@@ -13,7 +13,6 @@ const CommentLikesProvider: React.FC<Props> = ({ children, commentId }) => {
 }
 
 type Props = {
-    commentId: LikesCommentDTO['commentId']
     children?: any
 }
 

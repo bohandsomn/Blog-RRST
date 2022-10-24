@@ -17,11 +17,11 @@ const PostLikes: React.FC = () => {
         <Div query={query}>
             <Like 
                 onClick={handleLike} 
-                fill={data.value ? 'var(--main-color)' : undefined} 
+                fill={data?.value ? 'var(--main-color)' : undefined} 
             />
             <Dislike 
                 onClick={handleDisike} 
-                fill={data.value === false ? 'var(--main-color)' : undefined} 
+                fill={data?.value === false ? 'var(--main-color)' : undefined} 
             />
         </Div>
     )

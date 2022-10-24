@@ -1,10 +1,9 @@
 import React from 'react'
 import PostLikesContext from '../context/post-likes'
 import usePostLikes from '../hooks/usePostLikes'
-import type { LikesPostDTO } from '../utility/interface'
 
-const PostLikesProvider: React.FC<Props> = ({ children, postLikes }) => {
-    const value = usePostLikes(postLikes)
+const PostLikesProvider: React.FC<Props> = ({ children }) => {
+    const value = usePostLikes()
     return (
         <PostLikesContext.Provider value={value}>
             {children}
@@ -13,7 +12,6 @@ const PostLikesProvider: React.FC<Props> = ({ children, postLikes }) => {
 }
 
 type Props = {
-    postLikes: LikesPostDTO
     children?: any
 }
 

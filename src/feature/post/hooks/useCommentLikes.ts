@@ -1,28 +1,73 @@
-import { useCallback } from 'react'
-import useLukasiewicz from './useLukasiewicz'
+import { useCallback, useContext, useEffect } from 'react'
 import type { ICommentLikesContext } from '../context/comment-likes'
 import type { LikesCommentDTO } from '../utility/interface'
-import { commentLikesMock } from '../__mock__'
+import useFetch from '../../../hooks/useFetch'
+import CommentContext from '../context/comment'
+import useAppSelector from '../../../hooks/useAppSelector'
+import { authorizationSelector } from '../../../store'
+import { likesCommentApi } from '../api'
 
-const useCommentLikes = (commentId: LikesCommentDTO['commentId']): ICommentLikesContext => {
-    const {value, handleSetTrue, handleSetFalse, handleSetNull} = useLukasiewicz(commentLikesMock.value)
-    const like: ICommentLikesContext['like'] = useCallback(() => {
-        if (value) {
-            handleSetNull()
-        } else {
-            handleSetTrue()
+const useCommentLikes = (): ICommentLikesContext => {
+    const { data, onSuccess, onReject, onPending } = useFetch<LikesCommentDTO>()
+    const commentContext = useContext(CommentContext)
+    const user = useAppSelector(authorizationSelector)
+
+    useEffect(() => {
+        const handleFetch = async () => {
+            if (user.data === null || !commentContext) {
+                return
+            }
+
+            onPending()
+            const commentLikes = await likesCommentApi.getLike({
+                commentId: commentContext.data.id.toString(),
+                userId: user.data.id.toString()
+            })
+            if (commentLikes.data) {
+                onSuccess(commentLikes.data)
+            } else {
+                onReject(commentLikes.message)
+            }
         }
-    }, [value, handleSetTrue, handleSetNull])
-    const dislike: ICommentLikesContext['dislike'] = useCallback(() => {
-        if (value === false) {
-            handleSetNull()
-        } else {
-            handleSetFalse()
+        handleFetch()
+    }, [user.data?.id])
+
+    const like: ICommentLikesContext['like'] = useCallback(async () => {
+        if (!commentContext) {
+            return
         }
-    }, [value, handleSetFalse, handleSetNull])
+
+        const callback = data?.value === true
+            ? likesCommentApi.unlike.bind(likesCommentApi)
+            : likesCommentApi.like.bind(likesCommentApi)
+        onPending()
+        const commentLikes = await callback({ commentId: commentContext?.data.id.toString() })
+        if (commentLikes.data) {
+            onSuccess(commentLikes.data)
+        } else {
+            onReject(commentLikes.message)
+        }
+    }, [data?.value, onPending, commentContext?.data.id, onSuccess, onReject])
+
+    const dislike: ICommentLikesContext['dislike'] = useCallback(async () => {
+        if (!commentContext) {
+            return
+        }
+
+        const callback = data?.value === false
+            ? likesCommentApi.unlike.bind(likesCommentApi)
+            : likesCommentApi.dislike.bind(likesCommentApi)
+        onPending()
+        const commentLikes = await callback({ commentId: commentContext?.data.id.toString() })
+        if (commentLikes.data) {
+            onSuccess(commentLikes.data)
+        } else {
+            onReject(commentLikes.message)
+        }
+    }, [data?.value, onPending, commentContext?.data.id, onSuccess, onReject])
 
     return {
-        data: {...commentLikesMock, value},
+        data,
         like,
         dislike
     }

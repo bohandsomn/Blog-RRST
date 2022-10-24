@@ -1,11 +1,12 @@
 import { useCallback, useMemo, useState } from 'react'
 import useToggle from '../useToggle'
+import type { State, UseFetchReturned } from './interface'
 
-const useFetch = <Data>() => {
-    const [data, setData] = useState<Data | null>(null)
+const useFetch = <Data>(initialState?: Partial<State<Data>>): UseFetchReturned<Data> => {
+    const [data, setData] = useState<Data | null>(initialState?.data || null)
     const [previous, setPrevious] = useState<Data | null>(null)
-    const [isLoading, , handleSetTrue, handleSetFalse] = useToggle(false)
-    const [error, setError] = useState<string | null>(null)
+    const [isLoading, , handleSetTrue, handleSetFalse] = useToggle(initialState?.isLoading || true)
+    const [error, setError] = useState<string | null>(initialState?.error || null)
 
     const onSuccess = useCallback((data: Data) => {
         setData((previous) => {

@@ -11,7 +11,7 @@ namespace CommentResponse {
     export type Create = JsonResponse<CommentDTO>
     export type GetMany = JsonResponse<CommentDTO[]>
     export type Update = JsonResponse<CommentDTO>
-    export type Delete = void
+    export type Delete = JsonResponse<number>
 }
 
 export default CommentResponse

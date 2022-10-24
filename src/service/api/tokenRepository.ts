@@ -2,15 +2,23 @@ class TokenRepository {
     private readonly key = 'token'
 
     save(token: string): void {
-        return localStorage.setItem(this.key, token)
+        try {
+            return localStorage.setItem(this.key, token)
+        } catch (error) { }
     }
 
     read(): string | null {
-        return localStorage.getItem(this.key) || null
+        try {
+            return localStorage.getItem(this.key) || null
+        } catch (error) {
+            return null
+        }
     }
     
     delete(): void {
-        return localStorage.removeItem(this.key)
+        try {
+            return localStorage.removeItem(this.key)
+        } catch (error) { }
     }
 }
 

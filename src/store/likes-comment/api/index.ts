@@ -3,6 +3,10 @@ import LikesCommentRequest from './request'
 import LikesCommentResponse from './response'
 
 class LikesCommentAPI extends HandleAPI {
+    async getLike(data: LikesCommentRequest.GetLike) {
+        return this.json<LikesCommentResponse.GetLike>({method: 'get', url: `/${data.commentId}/${data.userId}`})
+    }
+
     async like(data: LikesCommentRequest.Like) {
         return this.json<LikesCommentResponse.Like>({method: 'post', url: `/${data.commentId}/like`})
     }

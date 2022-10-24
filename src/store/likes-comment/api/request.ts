@@ -1,4 +1,8 @@
 namespace LikesCommentRequest {
+    export type GetLike = {
+        commentId: string
+        userId: string
+    }
     export type Like = {
         commentId: string
     }

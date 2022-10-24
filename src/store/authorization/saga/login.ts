@@ -4,7 +4,7 @@ import { login, loginReject, loginSuccess } from '../slice'
 import authorizationNotifier from '../notifier'
 import type AuthorizationRequest from '../api/request'
 import type AuthorizationResponse from '../api/response'
-import type { ErrorResponse } from 'src/utility/type'
+import type { ErrorResponse } from '../../../utility/type'
 
 function* loginWorker(payload: AuthorizationRequest.Login) {
     try {

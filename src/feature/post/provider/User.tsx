@@ -4,10 +4,10 @@ import useUser from '../hooks/useUser'
 import type { UserDTO } from '../utility/interface'
 
 const UserProvider: React.FC<Props> = ({ children, userId }) => {
-    const user = useUser(userId)
+    const value = useUser(userId)
 
     return (
-        <UserContext.Provider value={user}>
+        <UserContext.Provider value={value}>
             {children}
         </UserContext.Provider>
     )

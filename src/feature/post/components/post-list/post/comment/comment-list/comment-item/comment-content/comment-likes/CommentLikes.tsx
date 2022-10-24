@@ -6,20 +6,30 @@ import CommentLikesContext from '../../../../../../../../context/comment-likes'
 
 const CommentLikes: React.FC = () => {
     const query = useAppQuery('comment__likes')
-    const {data, like, dislike} = useContext(CommentLikesContext)
+    const commentLikesContext = useContext(CommentLikesContext)
 
-    const handleLike = useCallback(() => like({commentId: data.commentId.toString()}), [like, data.commentId])
-    const handleDisike = useCallback(() => dislike({commentId: data.commentId.toString()}), [dislike, data.commentId])
+    const handleLike = useCallback(() => {
+        if (!commentLikesContext?.data?.commentId) {
+            return
+        }
+        return commentLikesContext?.like({commentId: commentLikesContext?.data?.commentId.toString()})
+    }, [commentLikesContext?.like, commentLikesContext?.data?.commentId])
+    const handleDisike = useCallback(() => {
+        if (!commentLikesContext?.data?.commentId) {
+            return
+        }
+        return commentLikesContext?.dislike({commentId: commentLikesContext?.data?.commentId.toString()})
+    }, [commentLikesContext?.dislike, commentLikesContext?.data?.commentId])
 
     return (
         <Div query={query}>
             <Like 
                 onClick={handleLike} 
-                fill={data.value ? 'var(--main-color)' : undefined} 
+                fill={commentLikesContext?.data?.value ? 'var(--main-color)' : undefined} 
             />
             <Dislike 
                 onClick={handleDisike} 
-                fill={data.value === false ? 'var(--main-color)' : undefined} 
+                fill={commentLikesContext?.data?.value === false ? 'var(--main-color)' : undefined} 
             />
         </Div>
     )

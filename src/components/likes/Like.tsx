@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from '../../feature/internationalization'
 import useAppQuery from '../../hooks/useAppQuery'
 import { TenIndent } from '../../layouts/wrapper'
 import ToggleProvider from '../../provider/toggle'
@@ -6,6 +7,7 @@ import { Div, Like as LikeIcon, MainParagraph } from '../atoms'
 
 const Like: React.FC<Props> = ({fill, ...props}) => {
     const query = useAppQuery('like')
+    const {translation} = useTranslation()
     return (
         <Div query={query} {...props}>
             <TenIndent 
@@ -16,7 +18,7 @@ const Like: React.FC<Props> = ({fill, ...props}) => {
                 }
             >
                 <MainParagraph>
-                    Like
+                    {translation.components.likes.like}
                 </MainParagraph>
             </TenIndent>
         </Div>

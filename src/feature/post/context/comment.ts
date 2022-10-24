@@ -3,8 +3,8 @@ import type { CommentDTO, UserDTO } from '../utility/interface'
 
 export type ICommentContext = {
     data: CommentDTO
-    user: UserDTO
+    user: UserDTO | null
 }
-const CommentContext = React.createContext<ICommentContext>(undefined!)
+const CommentContext = React.createContext<ICommentContext | undefined>(undefined)
 
 export default CommentContext

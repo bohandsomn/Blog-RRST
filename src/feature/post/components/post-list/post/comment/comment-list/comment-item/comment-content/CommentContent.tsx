@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Skeleton from 'react-loading-skeleton'
 import { Div } from '@/components/atoms'
 import { VerticalDescription } from '@/components/description'
 import useAppQuery from '../../../../../../../../../hooks/useAppQuery'
@@ -16,6 +17,18 @@ const PostContent: React.FC = () => {
     if (value) {
         return <CommentUpdate />
     }
+
+    if (!commentContext || !commentContext.user) {
+        return (
+            <Div query={query}>
+                <VerticalDescription 
+                    header={<Skeleton width={200} />} 
+                    text={<Skeleton width={200} />}
+                />
+                <CommentLikes />
+            </Div>
+        )
+    }
     
     return (
         <Div query={query}>
@@ -23,7 +36,7 @@ const PostContent: React.FC = () => {
                 header={`${commentContext.user.name} ${commentContext.user.surname || ''}`} 
                 text={commentContext.data.content}
             />
-            <CommentLikesProvider commentId={commentContext.data.id}>
+            <CommentLikesProvider>
                 <CommentLikes />
             </CommentLikesProvider>
         </Div>
