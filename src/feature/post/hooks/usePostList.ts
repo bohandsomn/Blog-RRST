@@ -48,7 +48,21 @@ const usePostList = (posts: ErrorResponse | PostResponse.GetMany): IPostListCont
         }
     }, [onPending, onSuccess, data, onReject])
 
+    const create: IPostListContext['create'] = useCallback(async (dataCreate) => {
+        onPending()
+        const createResponse = await postNotifier.create.call(dataCreate)
+        if (createResponse.data) {
+            onSuccess([
+                ...(data || []),
+                createResponse.data
+            ])
+        } else {
+            onReject(createResponse.message)
+        }
+    }, [onPending, onSuccess, data, onReject])
+
     return {
+        create,
         update,
         delete: deletePost,
         addMany,
