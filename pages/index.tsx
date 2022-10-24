@@ -1,13 +1,15 @@
 import { GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import { AppHead } from '../src/layouts/head'
-import { PostListProvider, postNotifier } from '../src/feature/post'
+import PostList, { PostListBoundary, PostListProvider, postNotifier } from '../src/feature/post'
 
 const Home: NextPage<Props> = ({ posts }) => {
     return (
         <AppHead title="Home">
             <PostListProvider posts={posts}>
-                <div>Home page</div>
+                <PostListBoundary>
+                    <PostList />
+                </PostListBoundary>
             </PostListProvider>
         </AppHead>
     )
