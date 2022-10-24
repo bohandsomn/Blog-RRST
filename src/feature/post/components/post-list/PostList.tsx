@@ -3,6 +3,7 @@ import { Li, Ul } from '@/components/atoms'
 import PostListContext from '../../context/post-list'
 import PostProvider from '../../provider/Post'
 import Post from './post'
+import UserProvider from '../../provider/User'
 
 const PostList: React.FC = () => {
     const postListContext = useContext(PostListContext)
@@ -11,9 +12,11 @@ const PostList: React.FC = () => {
             {
                 postListContext.data?.map((post) => (
                     <Li key={post.id}>
-                        <PostProvider post={post}>
-                            <Post />
-                        </PostProvider>
+                        <UserProvider userId={post.userId}>
+                            <PostProvider post={post}>
+                                <Post />
+                            </PostProvider>
+                        </UserProvider>
                     </Li>
                 ))
             }

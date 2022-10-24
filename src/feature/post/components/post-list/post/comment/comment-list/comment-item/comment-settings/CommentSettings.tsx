@@ -8,12 +8,14 @@ import CommentListContext from '../../../../../../../context/comment-list'
 import UpdateToggle from '../../../../../../../context/update-toggle'
 import useAppSelector from '../../../../../../../../../hooks/useAppSelector'
 import { authorizationSelector } from '../../../../../../../../../store'
+import { useTranslation } from '../../../../../../../../internationalization'
 
 const CommentSettings: React.FC = () => {
     const user = useAppSelector(authorizationSelector)
     const { handleToggle } = useContext(UpdateToggle)
     const { delete: deleteComment } = useContext(CommentListContext)
     const commentContext = useContext(CommentContext)
+    const {translation} = useTranslation()
 
     const handleDeleteComment = useCallback(async () => {
         if (!commentContext) {
@@ -29,7 +31,7 @@ const CommentSettings: React.FC = () => {
             <SettingsList>
                 <ToggleProvider>
                     <ListItem right={<Account />}>
-                        User
+                        {translation.feature.post.comment['comment-settings']['list-item'].user}
                     </ListItem>
                 </ToggleProvider>
                 
@@ -41,12 +43,12 @@ const CommentSettings: React.FC = () => {
                         <>
                             <ToggleProvider>
                                 <ListItem onClick={handleToggle} right={<Update />}>
-                                    Update
+                                    {translation.feature.post.comment['comment-settings']['list-item'].update}
                                 </ListItem>
                             </ToggleProvider>
                             <ToggleProvider>
                                 <ListItem onClick={handleDeleteComment} right={<Delete />}>
-                                    Delete
+                                    {translation.feature.post.comment['comment-settings']['list-item'].delete}
                                 </ListItem>
                             </ToggleProvider>
                         </>
