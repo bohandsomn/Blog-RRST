@@ -20,6 +20,7 @@ class HandleAPI {
         const network = axios.create({
             baseURL: (process.env.NEXT_PUBLIC_BASE_URL || '') + (config?.url || ''),
             withCredentials: true,
+            validateStatus: () => true,
             responseType: 'json',
             ...config
         })
