@@ -1,19 +1,12 @@
-import { useCallback, useContext, useMemo } from "react"
-import useToggle from "../../../hooks/useToggle"
-import useInput from "../../../hooks/useInput"
-import CommentListContext from "../context/comment-list"
-import PostContext from "../context/post"
+import { useCallback, useContext } from 'react'
+import useInput from '../../../hooks/useInput'
+import CommentListContext from '../context/comment-list'
+import PostContext from '../context/post'
+import useValidField from '../../../hooks/useValidField'
 
 const useCreateComment = () => {
     const [comment, handleChangeComment, handleReset] = useInput('')
-    const [isFocused, , handleSetIsFocusedTrue, handleSetIsFocusedFalse] = useToggle(false)
-    const isValid: boolean = useMemo(() => {
-        if (!isFocused || comment !== '') {
-            return true
-        }
-
-        return comment !== ''
-    }, [comment, isFocused])
+    const [isValid, handleSetIsFocusedTrue, handleSetIsFocusedFalse] = useValidField(comment)
     const {create} = useContext(CommentListContext)
     const postContext = useContext(PostContext)
     const handleSubmit: React.FormEventHandler<HTMLFormElement> = useCallback(async (event) => {

@@ -49,21 +49,21 @@ const createdStyles = appCreate({
             small: [],
             medium: [],
             large: [],
-            extraLarge: ['width-1200']
+            extraLarge: ['width-1200', 'margin-0-auto']
         },
         'container-secondary': {
             extraSmall: [],
             small: [],
             medium: [],
             large: [],
-            extraLarge: ['width-702']
+            extraLarge: ['width-702', 'margin-0-auto']
         },
         'container-sidebar': {
             extraSmall: [],
             small: [],
             medium: [],
             large: [],
-            extraLarge: ['width-473']
+            extraLarge: ['width-473', 'margin-0-auto']
         },
         'post': {
             extraSmall: [],
@@ -135,6 +135,20 @@ const createdStyles = appCreate({
             large: [],
             extraLarge: ['children/margin-bottom-10']
         },
+        'authentication_form': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'flex-direction-column', 'align-items-center']
+        },
+        'authentication_container': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['height-100vh', 'display-flex', 'align-items-center', 'justify-content-center']
+        }
     }
 })
 
