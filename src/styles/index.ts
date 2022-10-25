@@ -38,6 +38,9 @@ const STYLES = {
     "justify-content-space-between": {
         "justify-content": "space-between"
     },
+    "justify-content-center": {
+        "justify-content": "center"
+    },
     "border-radius-50%": {
         "border-radius": "50%"
     },
@@ -98,6 +101,9 @@ const STYLES = {
     "margin-left-20": {
         "margin-left": "20px"
     },
+    "margin-0-auto": {
+        "margin": "0 auto"
+    },
     "border-none": {
         "border": "none"
     },
@@ -127,6 +133,9 @@ const STYLES = {
     },
     "width-100%": {
         "width": "100%"
+    },
+    "height-100vh": {
+        "height": "100vh"
     },
     "white-space-normal": {
         "white-space": "normal"
