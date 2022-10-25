@@ -10,6 +10,7 @@ import PATH from '../../../../path'
 import useAppSelector from '../../../../hooks/useAppSelector'
 import { authorizationSelector } from '../../../../store'
 import AuthenticationContainer from '../container/AuthenticationContainer'
+import { useTranslation } from '../../../internationalization'
 
 const Registration: React.FC = () => {
     const {
@@ -34,6 +35,7 @@ const Registration: React.FC = () => {
     const className = useAppStyles('children/margin-bottom-10')
     const router = useRouter()
     const locale = router?.locale === undefined ? '' : '/' + router.locale
+    const {translation} = useTranslation()
     const user = useAppSelector(authorizationSelector)
     if (user.data !== null) {
         router.push(locale + PATH.HOME)
@@ -44,14 +46,14 @@ const Registration: React.FC = () => {
             <RegistrationGreeting />
             <Form onSubmit={handleSubmit} className={className}>
                 <InputWithLabel 
-                    label="Enter name"
+                    label={translation.feature.authentication.registration.field.name}
                     isValid={isValidName}
                     onFocus={handleSetIsFocusedNameTrue}
                     value={name}
                     onChange={handleChangeName}
                 />
                 <InputWithLabel 
-                    label="Enter email"
+                    label={translation.feature.authentication.registration.field.email}
                     type="email"
                     isValid={isValidEmail}
                     onFocus={handleSetIsFocusedEmailTrue}
@@ -59,7 +61,7 @@ const Registration: React.FC = () => {
                     onChange={handleChangeEmail}
                 />
                 <InputWithLabel 
-                    label="Enter login"
+                    label={translation.feature.authentication.registration.field.login}
                     autoCapitalize="none"
                     isValid={isValidLogin}
                     onFocus={handleSetIsFocusedLoginTrue}
@@ -67,7 +69,7 @@ const Registration: React.FC = () => {
                     onChange={handleChangeLogin}
                 />
                 <InputWithLabel 
-                    label="Enter password"
+                    label={translation.feature.authentication.registration.field.password}
                     type="password"
                     autoComplete="none"
                     isValid={isValidPassword}
@@ -78,13 +80,16 @@ const Registration: React.FC = () => {
                     max={10}
                 />
                 <MainButton onClick={handleSubmit}>
-                    Registration
+                    {translation.feature.authentication.registration.button.submit}
                 </MainButton>
             </Form>
             <MainParagraph>
-                Are you already registered? <Link href={
+                {translation.feature.authentication.registration.message.question}&nbsp; 
+                <Link href={
                     `${locale}${PATH.LOG_IN}`
-                }>Login</Link>
+                }>
+                    {translation.feature.authentication.registration.message.link}
+                </Link>
             </MainParagraph>
         </AuthenticationContainer>
     )

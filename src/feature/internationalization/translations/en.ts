@@ -60,6 +60,38 @@ const en = {
                     }
                 }
             }
+        },
+        "authentication": {
+            "log-in": {
+                "field": {
+                    "login": "Enter login",
+                    "password": "Enter password",
+                },
+                "button": {
+                    "submit": "Log in"
+                },
+                "message": {
+                    "question": "You are not registred?",
+                    "link": "Registration"
+                },
+                "greeting": "Log in"
+            },
+            "registration": {
+                "field": {
+                    "name": "Enter name",
+                    "email": "Enter email",
+                    "login": "Enter login",
+                    "password": "Enter password",
+                },
+                "button": {
+                    "submit": "Registration"
+                },
+                "message": {
+                    "question": "Are you already registered?",
+                    "link": "Login"
+                },
+                "greeting": "Registration"
+            }
         }
     },
     "components": {

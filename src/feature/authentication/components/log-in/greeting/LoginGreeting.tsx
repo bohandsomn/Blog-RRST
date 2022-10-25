@@ -2,8 +2,10 @@ import React from 'react'
 import { LogIn, MainBigParagraph } from '@/components/atoms'
 import { TwentyIndent } from '../../../../../layouts/wrapper'
 import ToggleProvider from '../../../../../provider/toggle'
+import { useTranslation } from '../../../../internationalization'
 
 const LoginGreeting: React.FC = () => {
+    const {translation} = useTranslation()
     return (
         <TwentyIndent
             left={
@@ -13,7 +15,7 @@ const LoginGreeting: React.FC = () => {
             }
         >
             <MainBigParagraph>
-                Log in
+                {translation.feature.authentication['log-in'].greeting}
             </MainBigParagraph>
         </TwentyIndent>
     )

@@ -62,6 +62,38 @@ const ru: typeof en = {
                     }
                 }
             }
+        },
+        "authentication": {
+            "log-in": {
+                "field": {
+                    "login": "Введите логин",
+                    "password": "Введите пароль",
+                },
+                "button": {
+                    "submit": "Авторизоваться"
+                },
+                "message": {
+                    "question": "Вы не зарегистрированы?",
+                    "link": "Регистрация"
+                },
+                "greeting": "Авторизоваться"
+            },
+            "registration": {
+                "field": {
+                    "name": "Введите имя",
+                    "email": "Введите почту",
+                    "login": "Введите логин",
+                    "password": "Введите пароль",
+                },
+                "button": {
+                    "submit": "Регистрация"
+                },
+                "message": {
+                    "question": "Вы уже зарегистрированы?",
+                    "link": "Авторизоваться"
+                },
+                "greeting": "Регистрация"
+            }
         }
     },
     "components": {

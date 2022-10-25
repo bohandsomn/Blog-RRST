@@ -10,6 +10,7 @@ import PATH from '../../../../path'
 import useAppSelector from '../../../../hooks/useAppSelector'
 import { authorizationSelector } from '../../../../store'
 import AuthenticationContainer from '../container/AuthenticationContainer'
+import { useTranslation } from '../../../internationalization'
 
 const LogIn: React.FC = () => {
     const {
@@ -26,6 +27,7 @@ const LogIn: React.FC = () => {
     const className = useAppStyles('children/margin-bottom-10')
     const router = useRouter()
     const locale = router?.locale === undefined ? '' : '/' + router.locale
+    const {translation} = useTranslation()
     const user = useAppSelector(authorizationSelector)
     if (user.data !== null) {
         router.push(locale + PATH.HOME)
@@ -36,7 +38,7 @@ const LogIn: React.FC = () => {
             <LoginGreeting />
             <Form onSubmit={handleSubmit} className={className}>
                 <InputWithLabel 
-                    label="Enter login"
+                    label={translation.feature.authentication['log-in'].field.login}
                     autoComplete="none"
                     isValid={isValidLogin}
                     onFocus={handleSetIsFocusedLoginTrue}
@@ -44,7 +46,7 @@ const LogIn: React.FC = () => {
                     onChange={handleChangeLogin}
                 />
                 <InputWithLabel 
-                    label="Enter password"
+                    label={translation.feature.authentication['log-in'].field.password}
                     type="password"
                     autoComplete="none"
                     isValid={isValidPassword}
@@ -55,13 +57,16 @@ const LogIn: React.FC = () => {
                     max={10}
                 />
                 <MainButton onClick={handleSubmit}>
-                    Log in
+                    {translation.feature.authentication['log-in'].button.submit}
                 </MainButton>
             </Form>
             <MainParagraph>
-                You are not registred? <Link href={
+                {translation.feature.authentication['log-in'].message.question}&nbsp; 
+                <Link href={
                     `${locale}${PATH.REGISTRATION}`
-                }>Registration</Link>
+                }>
+                    {translation.feature.authentication['log-in'].message.link}
+                </Link>
             </MainParagraph>
         </AuthenticationContainer>
     )

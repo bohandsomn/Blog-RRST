@@ -62,6 +62,38 @@ const uk: typeof en = {
                     }
                 }
             }
+        },
+        "authentication": {
+            "log-in": {
+                "field": {
+                    "login": "Введіть логін",
+                    "password": "Введіть пароль",
+                },
+                "button": {
+                    "submit": "Авторизуватися"
+                },
+                "message": {
+                    "question": "Ви не зареєстровані?",
+                    "link": "Реєстрація"
+                },
+                "greeting": "Авторизуватися"
+            },
+            "registration": {
+                "field": {
+                    "name": "Введіть ім'я",
+                    "email": "Введіть пошту",
+                    "login": "Введіть логін",
+                    "password": "Введіть пароль",
+                },
+                "button": {
+                    "submit": "Реєстрація"
+                },
+                "message": {
+                    "question": "Ви вже зареєстровані?",
+                    "link": "Логін"
+                },
+                "greeting": "Реєстрація"
+            }
         }
     },
     "components": {
