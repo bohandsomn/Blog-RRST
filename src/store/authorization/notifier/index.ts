@@ -21,11 +21,7 @@ const login = new RequestNotifier<typeof authorizationAPI.login>({
 })
 
 const autoLogin = new RequestNotifier<typeof authorizationAPI.autoLogin>({
-    apiMethod: (...data) => authorizationAPI.autoLogin(...data),
-    before: () => notification.loading('autoLogin request has been sent'),
-    narrowing: (response) => response.data !== undefined,
-    success: ({ id, response }) => notification.success(id, response.message),
-    reject: ({ id, response }) => notification.error(id, response.message)
+    apiMethod: (...data) => authorizationAPI.autoLogin(...data)
 })
 
 const logout = new RequestNotifier<typeof authorizationAPI.logout>({
