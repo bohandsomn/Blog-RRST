@@ -29,6 +29,9 @@ const STYLES = {
     "align-items-flex-start": {
         "align-items": "flex-start"
     },
+    "align-items-flex-end": {
+        "align-items": "flex-end"
+    },
     "flex-direction-column": {
         "flex-direction": "column"
     },
@@ -160,6 +163,13 @@ const STYLES = {
         "> *": {
             "&:not(:first-of-type)": {
                 "margin-top": "10px"
+            }
+        }
+    },
+    "children/margin-right-10": {
+        "> *": {
+            "&:not(:last-child)": {
+                "margin-right": "10px"
             }
         }
     }

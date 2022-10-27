@@ -72,6 +72,13 @@ const createdStyles = appCreate({
             large: [],
             extraLarge: ['display-flex', 'align-items-flex-start', 'flex-1', 'justify-content-space-between']
         },
+        'post-list': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['children/margin-top-10']
+        },
         'post__likes': {
             extraSmall: [],
             small: [],
@@ -148,6 +155,20 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['height-100vh', 'display-flex', 'align-items-center', 'justify-content-center']
+        },
+        'search-post__search': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'align-items-flex-end', 'children/margin-right-10']
+        },
+        'search-post__pagination': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'align-items-center', 'flex-1', 'justify-content-space-between']
         }
     }
 })
