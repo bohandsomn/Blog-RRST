@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import useToggle from './useToggle'
+import useToggle from '../useToggle'
 
 const useValidField = (value: string) => {
     const [isFocused, , handleSetIsFocusedTrue, handleSetIsFocusedFalse] = useToggle(false)
