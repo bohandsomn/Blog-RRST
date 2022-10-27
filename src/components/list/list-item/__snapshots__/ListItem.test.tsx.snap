@@ -2,7 +2,7 @@
 
 exports[`ListItem should changes classList 1`] = `
 <p
-  class="sc-gswNZR"
+  class="sc-gswNZR gyGtCJ"
 >
   ListItem
 </p>
@@ -10,7 +10,7 @@ exports[`ListItem should changes classList 1`] = `
 
 exports[`ListItem should changes classList 2`] = `
 <p
-  class="sc-gswNZR"
+  class="sc-gswNZR cSeRYA"
 >
   ListItem
 </p>
@@ -18,7 +18,7 @@ exports[`ListItem should changes classList 2`] = `
 
 exports[`ListItem should changes classList 3`] = `
 <p
-  class="sc-gswNZR"
+  class="sc-gswNZR gyGtCJ"
 >
   ListItem
 </p>
