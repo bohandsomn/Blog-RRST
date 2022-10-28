@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Form, MainButton, MainParagraph } from '@/components/atoms'
 import InputWithLabel from '@/components/input-with-label'
-import LoginGreeting from './greeting'
+import LogInGreeting from './greeting'
 import useLogin from '../../hooks/useLogin'
 import useAppStyles from '../../../../hooks/useAppStyles'
 import PATH from '../../../../path'
@@ -35,7 +35,7 @@ const LogIn: React.FC = () => {
     
     return (
         <AuthenticationContainer>
-            <LoginGreeting />
+            <LogInGreeting />
             <Form onSubmit={handleSubmit} className={className}>
                 <InputWithLabel 
                     label={translation.feature.authentication['log-in'].field.login}

@@ -4,7 +4,7 @@ import { TwentyIndent } from '../../../../../layouts/wrapper'
 import ToggleProvider from '../../../../../provider/toggle'
 import { useTranslation } from '../../../../internationalization'
 
-const LoginGreeting: React.FC = () => {
+const LogInGreeting: React.FC = () => {
     const {translation} = useTranslation()
     return (
         <TwentyIndent
@@ -21,4 +21,4 @@ const LoginGreeting: React.FC = () => {
     )
 }
 
-export default LoginGreeting
+export default LogInGreeting
