@@ -1,14 +1,14 @@
 import { useMemo } from 'react'
-import useToggle from '../../../hooks/useToggle'
+import useToggle from '../../../../hooks/useToggle'
 
-const useValidEmail = (email: string) => {
+const useValidPassword = (password: string) => {
     const [isFocused, , handleSetIsFocusedTrue, handleSetIsFocusedFalse] = useToggle(false)
     const isValid: boolean = useMemo(() => {
-        if (!isFocused && email === '') {
+        if (!isFocused && password === '') {
             return true
         }
-        return email !== '' && email === email.toLowerCase() && email.match(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/) !== null
-    }, [email, isFocused])
+        return password !== '' && (password.length >= 4 && password.length < 10)
+    }, [password, isFocused])
     
     return [
         isValid,
@@ -17,4 +17,4 @@ const useValidEmail = (email: string) => {
     ] as const
 }
 
-export default useValidEmail
+export default useValidPassword
