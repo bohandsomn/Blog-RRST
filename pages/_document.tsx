@@ -1,17 +1,45 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
+import Document, { DocumentContext, DocumentInitialProps } from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 import { Body } from '../src/layouts/body'
 
-const Document: React.FC = () => {
-    return (
-        <Html>
-            <Head />
-            <Body>
-                <Main />
-                <NextScript />
-            </Body>
-        </Html>
-    )
-}
+export default class MyDocument extends Document {
+    static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+        const sheet = new ServerStyleSheet()
+        const originalRenderPage = ctx.renderPage
 
-export default Document
+        try {
+            ctx.renderPage = () =>
+                originalRenderPage({
+                enhanceApp: (App) => (props) =>
+                    sheet.collectStyles(<App {...props} />),
+                })
+
+            const initialProps = await Document.getInitialProps(ctx)
+            return {
+                ...initialProps,
+                styles: (
+                    <>
+                        {initialProps.styles}
+                        {sheet.getStyleElement()}
+                    </>
+                ),
+            }
+        } finally {
+            sheet.seal()
+        }
+    }
+
+    render() {
+        return (
+            <Html>
+                <Head />
+                <Body>
+                    <Main />
+                    <NextScript />
+                </Body>
+            </Html>
+        )
+    }
+}
