@@ -7,6 +7,7 @@ import CommentProvider from '../../../../../provider/Comment'
 import UpdateToggleProvider from '../../../../../provider/UpdateToggle'
 import UserProvider from '../../../../../provider/User'
 import CommentItem from './comment-item'
+import CurrentSettingListProvider from '../../../../../provider/CurrentSettingList'
 
 const CommentList: React.FC = () => {
     const query = useAppQuery('comment-list')
@@ -27,19 +28,21 @@ const CommentList: React.FC = () => {
     }
 
     return (
-        <Ul query={query}>
-            {
-                commentListContext.data?.map((comment) => (
-                    <UserProvider key={comment.id} userId={comment.userId}>
-                        <CommentProvider comment={comment}>
-                            <UpdateToggleProvider>
-                                <CommentItem />
-                            </UpdateToggleProvider>
-                        </CommentProvider>
-                    </UserProvider>
-                ))
-            }
-        </Ul>
+        <CurrentSettingListProvider>
+            <Ul query={query}>
+                {
+                    commentListContext.data?.map((comment) => (
+                        <UserProvider key={comment.id} userId={comment.userId}>
+                            <CommentProvider comment={comment}>
+                                <UpdateToggleProvider>
+                                    <CommentItem />
+                                </UpdateToggleProvider>
+                            </CommentProvider>
+                        </UserProvider>
+                    ))
+                }
+            </Ul>
+        </CurrentSettingListProvider>
     )
 }
 
