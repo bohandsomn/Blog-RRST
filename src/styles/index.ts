@@ -149,6 +149,12 @@ const STYLES = {
     "position-absolute": {
         "position": "absolute"
     },
+    "position-sticky": {
+        "position": "sticky"
+    },
+    "top-0": {
+        "top": "0"
+    },
     "cursor-pointer": {
         "cursor": "pointer"
     },
