@@ -34,8 +34,12 @@ const Authentication: React.FC = () => {
 
     return (
         <Div className={className}>
-            <MainButton onClick={handleGoToRegistrationPage}>Registration</MainButton>
-            <SecondaryButton onClick={handleGoToLogInPage}>Log in</SecondaryButton>
+            <MainButton onClick={handleGoToRegistrationPage}>
+                {translation.feature.heaser.authentication.button.registration}
+            </MainButton>
+            <SecondaryButton onClick={handleGoToLogInPage}>
+                {translation.feature.heaser.authentication.button['log-in']}
+            </SecondaryButton>
         </Div>
     )
 }

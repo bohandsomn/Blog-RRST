@@ -99,6 +99,10 @@ const uk: typeof en = {
             "authentication": {
                 "photo": {
                     "title": "Користувач"
+                },
+                "button": {
+                    "registration": "Реєстрація",
+                    "log-in": "Авторизуватися"
                 }
             }
         }

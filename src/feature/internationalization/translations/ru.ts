@@ -99,6 +99,10 @@ const ru: typeof en = {
             "authentication": {
                 "photo": {
                     "title": "Пользователь"
+                },
+                "button": {
+                    "registration": "Регистрация",
+                    "log-in": "Авторизоваться"
                 }
             }
         }

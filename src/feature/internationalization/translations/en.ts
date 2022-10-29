@@ -97,6 +97,10 @@ const en = {
             "authentication": {
                 "photo": {
                     "title": "User"
+                },
+                "button": {
+                    "registration": "Registration",
+                    "log-in": "Log in"
                 }
             }
         }
