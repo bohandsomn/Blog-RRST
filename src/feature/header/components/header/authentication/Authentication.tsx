@@ -5,11 +5,13 @@ import useAppStyles from '../../../../../hooks/useAppStyles'
 import useAppSelector from '../../../../../hooks/useAppSelector'
 import { authorizationSelector } from '../../../../../store'
 import useAuthentication from '../../../hooks/useAuthentication'
+import { useTranslation } from '../../../../internationalization'
 
 const Authentication: React.FC = () => {
     const user = useAppSelector(authorizationSelector)
     const className = useAppStyles('children/margin-right-10')
     const { handleGoToRegistrationPage, handleGoToLogInPage } = useAuthentication()
+    const { translation } = useTranslation()
 
     if (user.data) {
         return (
@@ -18,7 +20,7 @@ const Authentication: React.FC = () => {
                     <PreviewImg 
                         src={`${process.env.NEXT_PUBLIC_BASE_URL}photo/user/preview/${user.data.id}`}
                         alt={`${user.data.name} ${user.data.surname || ''}`}
-                        title={'User'}
+                        title={translation.feature.heaser.authentication.photo.title}
                     />
                 }
             >
