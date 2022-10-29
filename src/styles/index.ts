@@ -178,6 +178,11 @@ const STYLES = {
                 "margin-right": "10px"
             }
         }
+    },
+    "children/display-flex": {
+        "> *": {
+            "display": "flex"
+        }
     }
 }
 
