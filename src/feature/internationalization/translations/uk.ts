@@ -13,7 +13,7 @@ const uk: typeof en = {
                     "submit": "Надіслати"
                 },
                 "photo": {
-                    "title": "Фото користувача"
+                    "title": "Користувача"
                 }
             },
             "post-data": {
@@ -43,7 +43,7 @@ const uk: typeof en = {
                 },
                 "comment-item": {
                     "photo": {
-                        "title": "Фото користувача"
+                        "title": "Користувача"
                     }
                 },
                 "comment-update": {
@@ -93,6 +93,13 @@ const uk: typeof en = {
                     "link": "Логін"
                 },
                 "greeting": "Реєстрація"
+            }
+        },
+        "heaser": {
+            "authentication": {
+                "photo": {
+                    "title": "Користувач"
+                }
             }
         }
     },

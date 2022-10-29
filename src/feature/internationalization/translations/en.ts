@@ -11,7 +11,7 @@ const en = {
                     "submit": "Submit"
                 },
                 "photo": {
-                    "title": "User photo"
+                    "title": "User"
                 }
             },
             "post-data": {
@@ -41,7 +41,7 @@ const en = {
                 },
                 "comment-item": {
                     "photo": {
-                        "title": "User photo"
+                        "title": "User"
                     }
                 },
                 "comment-update": {
@@ -91,6 +91,13 @@ const en = {
                     "link": "Login"
                 },
                 "greeting": "Registration"
+            }
+        },
+        "heaser": {
+            "authentication": {
+                "photo": {
+                    "title": "User"
+                }
             }
         }
     },

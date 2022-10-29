@@ -13,7 +13,7 @@ const ru: typeof en = {
                     "submit": "Отправить"
                 },
                 "photo": {
-                    "title": "Фото пользователя"
+                    "title": "Пользователь"
                 }
             },
             "post-data": {
@@ -43,7 +43,7 @@ const ru: typeof en = {
                 },
                 "comment-item": {
                     "photo": {
-                        "title": "Фото пользователя"
+                        "title": "Пользователь"
                     }
                 },
                 "comment-update": {
@@ -93,6 +93,13 @@ const ru: typeof en = {
                     "link": "Авторизоваться"
                 },
                 "greeting": "Регистрация"
+            }
+        },
+        "heaser": {
+            "authentication": {
+                "photo": {
+                    "title": "Пользователь"
+                }
             }
         }
     },
