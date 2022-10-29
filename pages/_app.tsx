@@ -8,6 +8,7 @@ import PrivacyProvider from '../src/provider/privacy'
 import STYLES from '../src/styles'
 import createdStyles from '../src/styles/created-styles'
 import store from '../src/store'
+import Header from '../src/feature/header'
 
 import '../src/styles/global.css'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -20,6 +21,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                     <AtomProvider styles={STYLES}>
                         <StyleCombinatorProvider styles={createdStyles}>
                             <NotificationProvider>
+                                <Header />
                                 <Component {...pageProps} />
                             </NotificationProvider>
                         </StyleCombinatorProvider>
