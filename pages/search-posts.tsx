@@ -1,18 +1,29 @@
 import { GetServerSideProps, NextPage } from 'next'
 import React from 'react'
 import { AppHead } from '../src/layouts/head'
-import { SearchPosts, PostResponse, postNotifier, SearchPostsProvider } from '../src/feature/search-post'
+import { SearchPosts, PostResponse, postNotifier, SearchPostsProvider, Pagination } from '../src/feature/search-post'
 import { ErrorResponse } from '../src/utility/type'
-import { SecondaryContainer } from '../src/layouts/wrapper'
+import { MainContainer, SecondaryContainer } from '../src/layouts/wrapper'
+import Sidebar from '../src/feature/sidebar'
+import { Div } from '@/components/atoms'
+import useAppStyles from '../src/hooks/useAppStyles'
 
 const SearchPostsPage: NextPage<Props> = ({ posts }) => {
+    const className = useAppStyles('children/margin-bottom-10')
     return (
         <AppHead title="Search Posts">
-            <SecondaryContainer>
-                <SearchPostsProvider posts={posts}>
-                    <SearchPosts />
-                </SearchPostsProvider>
-            </SecondaryContainer>
+            <SearchPostsProvider posts={posts}>
+                <Div className={className}>
+                    <Sidebar>
+                        <SecondaryContainer>
+                            <SearchPosts />
+                        </SecondaryContainer>
+                    </Sidebar>
+                    <MainContainer>
+                        <Pagination />
+                    </MainContainer>
+                </Div>
+            </SearchPostsProvider>
         </AppHead>
     )
 }
