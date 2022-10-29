@@ -15,7 +15,7 @@ const SettingsList: React.FC<Props> = ({ children }) => {
     return (
         <TenIndent 
             bottom={
-                value 
+                value && children
                     ? (
                         <Div className={className}>
                             <List>
