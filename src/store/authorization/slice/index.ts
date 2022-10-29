@@ -4,6 +4,8 @@ import type { UserDTO } from '../interface'
 import type { State } from '../../interface'
 import type AuthorizationRequest from '../api/request'
 import type AuthorizationResponse from '../api/response'
+import type UserRequest from '../../user/api/request'
+import type UserResponse from '../../user/api/response'
 
 const initialState: State<UserDTO> = {
     data: null,
@@ -87,6 +89,24 @@ const authorizationSlice = createSlice({
             state.error = null
             state.isLoading = true
         },
+
+        updateSuccess: (state, action: PayloadAction<UserResponse.Update['data']>) => {
+            tokenRepository.save(action.payload.accessToken)
+            state.previous = state.data
+            state.data = action.payload.user
+            state.error = null
+            state.isLoading = false
+        },
+        updateReject: (state, action: PayloadAction<string>) => {
+            tokenRepository.delete()
+            state.error = action.payload
+            state.isLoading = false
+        },
+        update: (state, action: PayloadAction<UserRequest.Update>) => {
+            state.data = null
+            state.error = null
+            state.isLoading = true
+        },
     }
 })
 
@@ -103,5 +123,8 @@ export const {
     logoutSuccess,
     logoutReject,
     logout,
+    updateSuccess,
+    updateReject,
+    update,
 } = authorizationSlice.actions
 export default authorizationSlice.reducer

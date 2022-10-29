@@ -3,4 +3,5 @@ export {
     login,
     autoLogin,
     logout,
+    update
 } from './slice'
