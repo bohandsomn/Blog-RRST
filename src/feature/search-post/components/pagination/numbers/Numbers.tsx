@@ -6,7 +6,7 @@ import useAppStyles from '../../../../../hooks/useAppStyles'
 
 const Numbers: React.FC = () => {
     const { range } = useRange()
-    const className = useAppStyles('display-flex')
+    const className = useAppStyles('display-flex', 'width-100%')
 
     return (
         <Ul className={className}>

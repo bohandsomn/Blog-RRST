@@ -3,7 +3,7 @@ import { AUTO_CLOSE, THEME } from '../constants'
 
 class Notification {
     loading(content: string) {
-        return toast.loading(content)
+        return toast.loading(content, {closeOnClick: true})
     }
 
     success(toastId: Id, content: string) {

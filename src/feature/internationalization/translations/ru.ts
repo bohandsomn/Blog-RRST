@@ -99,7 +99,19 @@ const ru: typeof en = {
             "authentication": {
                 "photo": {
                     "title": "Пользователь"
+                },
+                "button": {
+                    "registration": "Регистрация",
+                    "log-in": "Авторизоваться"
                 }
+            }
+        },
+        "sidebar": {
+            "list": {
+                "home": "Домой",
+                "user": "Пользователь",
+                "search-posts": "Поиск постов",
+                "log-out": "Выйти"
             }
         }
     },

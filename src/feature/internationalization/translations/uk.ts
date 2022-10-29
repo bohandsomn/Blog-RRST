@@ -99,7 +99,19 @@ const uk: typeof en = {
             "authentication": {
                 "photo": {
                     "title": "Користувач"
+                },
+                "button": {
+                    "registration": "Реєстрація",
+                    "log-in": "Авторизуватися"
                 }
+            }
+        },
+        "sidebar": {
+            "list": {
+                "home": "Додому",
+                "user": "Користувач",
+                "search-posts": "Пошук постів",
+                "log-out": "Вийти"
             }
         }
     },

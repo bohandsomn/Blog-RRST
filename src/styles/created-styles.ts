@@ -176,6 +176,13 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['background-color--secondary-color', 'width-100%', 'padding-top-20', 'padding-right-20', 'padding-bottom-20', 'padding-left-20', 'margin-bottom-10']
+        },
+        'sidebar': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['position-sticky', 'top-0']
         }
     }
 })

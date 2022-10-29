@@ -133,7 +133,19 @@ const DEFAULT_VALUES = createDefaultValues({
         viewBox: "0 0 48 48",
         width: 32, 
         height: 32
-    }
+    },
+    HOME: {
+        d: ["m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", "M9 22V12h6v10"], 
+        viewBox: "0 0 24 24",
+        width: 32, 
+        height: 32
+    },
+    SEARCH: {
+        d: ["M11 3a8 8 0 1 0 0 16 8 8 0 1 0 0-16z", "m21 21-4.35-4.35"], 
+        viewBox: "0 0 24 24",
+        width: 32, 
+        height: 32
+    },
 })
 
 export default DEFAULT_VALUES 

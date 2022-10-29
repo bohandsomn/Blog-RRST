@@ -10,7 +10,7 @@ namespace AuthorizationResponse {
     export type Login = JsonResponse<UserData>
     export type AutoLogin = JsonResponse<UserData>
     export type Refresh = JsonResponse<UserData>
-    export type Logout = void
+    export type Logout = JsonResponse<null>
 }
 
 export default AuthorizationResponse

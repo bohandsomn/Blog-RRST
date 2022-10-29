@@ -27,9 +27,9 @@ const autoLogin = new RequestNotifier<typeof authorizationAPI.autoLogin>({
 const logout = new RequestNotifier<typeof authorizationAPI.logout>({
     apiMethod: (...data) => authorizationAPI.logout(...data),
     before: () => notification.loading('logout request has been sent'),
-    narrowing: (response) => response === undefined,
-    success: ({ id }) => notification.success(id, 'Successful logout'),
-    reject: ({ id }) => notification.error(id, 'Failed logout')
+    narrowing: (response) => response.data === null,
+    success: ({ id, response }) => notification.success(id, response.message),
+    reject: ({ id, response }) => notification.error(id, response.message)
 })
 
 const authorizationNotifier = {

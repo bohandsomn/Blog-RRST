@@ -97,7 +97,19 @@ const en = {
             "authentication": {
                 "photo": {
                     "title": "User"
+                },
+                "button": {
+                    "registration": "Registration",
+                    "log-in": "Log in"
                 }
+            }
+        },
+        "sidebar": {
+            "list": {
+                "home": "Home",
+                "user": "User",
+                "search-posts": "Search posts",
+                "log-out": "Log out"
             }
         }
     },
