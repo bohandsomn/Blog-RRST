@@ -2,7 +2,7 @@ import DataConverter from './DataConverter'
 
 describe('DataConverter', () => {
     test('should get a ISO string', () => {
-        expect(DataConverter.getISO(new Date(2022, 9, 29))).toBe('2022-10-28T21:00:00.000Z')
+        expect(DataConverter.getISO(new Date(2022, 9, 29))).toBe('2022-10-28 21:00:00.000Z')
     })
 
     test('should get a DateMonthNameDataYear string', () => {

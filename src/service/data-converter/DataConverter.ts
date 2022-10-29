@@ -8,7 +8,7 @@ class DataConverter {
     }
 
     static getISO(date: Date) {
-        return date.toISOString()
+        return date.toISOString().replace(/T/, ' ')
     }
 
     static getDateMonthNameDataYear(date: Date) {
