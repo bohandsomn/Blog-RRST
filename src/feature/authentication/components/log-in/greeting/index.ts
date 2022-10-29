@@ -1,1 +1,1 @@
-export {default} from './LoginGreeting'
+export {default} from './LogInGreeting'
