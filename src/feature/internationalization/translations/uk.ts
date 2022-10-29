@@ -105,6 +105,14 @@ const uk: typeof en = {
                     "log-in": "Авторизуватися"
                 }
             }
+        },
+        "sidebar": {
+            "list": {
+                "home": "Додому",
+                "user": "Користувач",
+                "search-posts": "Пошук постів",
+                "log-out": "Вийти"
+            }
         }
     },
     "components": {

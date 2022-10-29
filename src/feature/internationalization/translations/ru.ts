@@ -105,6 +105,14 @@ const ru: typeof en = {
                     "log-in": "Авторизоваться"
                 }
             }
+        },
+        "sidebar": {
+            "list": {
+                "home": "Домой",
+                "user": "Пользователь",
+                "search-posts": "Поиск постов",
+                "log-out": "Выйти"
+            }
         }
     },
     "components": {

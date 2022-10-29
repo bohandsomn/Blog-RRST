@@ -103,6 +103,14 @@ const en = {
                     "log-in": "Log in"
                 }
             }
+        },
+        "sidebar": {
+            "list": {
+                "home": "Home",
+                "user": "User",
+                "search-posts": "Search posts",
+                "log-out": "Log out"
+            }
         }
     },
     "components": {
