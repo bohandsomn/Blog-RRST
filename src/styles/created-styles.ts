@@ -169,6 +169,13 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['display-flex', 'align-items-center', 'flex-1', 'justify-content-space-between']
+        },
+        'header': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['background-color--secondary-color', 'width-100%', 'padding-top-20', 'padding-right-20', 'padding-bottom-20', 'padding-left-20', 'margin-bottom-10']
         }
     }
 })
