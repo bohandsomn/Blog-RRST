@@ -7,18 +7,20 @@ import UserSubscriptionsProvider from '../../../provider/UserSubscriptions'
 import FriendshipsProvider from '../../../provider/Friendships'
 import ToggleProvider from '../../../../../provider/toggle'
 import useAppQuery from '../../../../../hooks/useAppQuery'
-import useAppStyles from 'src/hooks/useAppStyles'
+import useAppStyles from '../../../../../hooks/useAppStyles'
+import { useTranslation } from '../../../../internationalization'
 
 const Friendships: React.FC = () => {
     const query = useAppQuery('user-friendships')
     const className = useAppStyles('position-static')
+    const {translation} = useTranslation()
     return (
         <Div query={query}>
             <UserSubscribersProvider>
                 <FriendshipsProvider>
                     <ToggleProvider>
                         <Div className={className}>
-                            <DropDownList chevron={'Subscribers'}>
+                            <DropDownList chevron={translation.feature['user-data'].friendships.chevron.subscribers}>
                                 <FriendshipsList />
                             </DropDownList>
                         </Div>
@@ -29,7 +31,7 @@ const Friendships: React.FC = () => {
                 <FriendshipsProvider>
                     <ToggleProvider>
                         <Div className={className}>
-                            <DropDownList chevron={'Subscriptions'}>
+                            <DropDownList chevron={translation.feature['user-data'].friendships.chevron.subscriptions}>
                                 <FriendshipsList />
                             </DropDownList>
                         </Div>

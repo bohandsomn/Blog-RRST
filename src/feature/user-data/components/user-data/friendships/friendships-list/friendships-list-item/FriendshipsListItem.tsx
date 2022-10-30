@@ -3,9 +3,11 @@ import React, { useContext } from 'react'
 import { Li, MainBoldParagraph, PreviewImg } from '@/components/atoms'
 import WithPhoto from '@/components/with-photo'
 import { UserContext } from '../../../../../../post'
+import { useTranslation } from '../../../../../../internationalization'
 
 const FriendshipsListItem: React.FC = () => {
     const user = useContext(UserContext)
+    const {translation} = useTranslation()
     return (
         <Li>
             <WithPhoto
@@ -17,7 +19,7 @@ const FriendshipsListItem: React.FC = () => {
                                 : ''
                         }
                         alt={`${user.data?.name || ''} ${user.data?.surname || ''}`}
-                        title="" //////////////
+                        title={translation.feature['user-data'].friendships['friendships-list']['friendships-list-item'].photo.title}
                     />
                 }
             >

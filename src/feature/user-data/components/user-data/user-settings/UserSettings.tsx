@@ -5,10 +5,12 @@ import ToggleProvider from '../../../../../provider/toggle'
 import { Chat, Update } from '@/components/atoms'
 import UpdateToggle from '../../../context/update-toggle'
 import useChat from '../../../hooks/useChat'
+import { useTranslation } from '../../../../internationalization'
 
 const UserSettings: React.FC = () => {
     const { isMatchUser, handleGoToChat } = useChat()
     const updateToggleContext = useContext(UpdateToggle)
+    const {translation} = useTranslation()
 
     return (
         <ToggleProvider>
@@ -17,7 +19,7 @@ const UserSettings: React.FC = () => {
                     !isMatchUser && (
                         <ToggleProvider>
                             <ListItem onClick={handleGoToChat} right={<Chat />}>
-                                Chat
+                                {translation.feature['user-data']['user-settings'].chat}
                             </ListItem>
                         </ToggleProvider>
                     )
@@ -26,7 +28,7 @@ const UserSettings: React.FC = () => {
                     isMatchUser && (
                         <ToggleProvider>
                             <ListItem onClick={updateToggleContext.handleSetTrue} right={<Update />}>
-                                Update
+                                {translation.feature['user-data']['user-settings'].update}
                             </ListItem>
                         </ToggleProvider>
                     )
