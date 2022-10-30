@@ -7,6 +7,7 @@ import UserContent from './user-content'
 import UserSettings from './user-settings'
 import useAppQuery from '../../../../hooks/useAppQuery'
 import UpdateToggleProvider from '../../provider/UpdateToggle'
+import SubscribeProvider from '../../provider/Subscribe'
 
 const UserData: React.FC = () => {
     const user = useContext(UserDataContext)
@@ -24,7 +25,9 @@ const UserData: React.FC = () => {
                             />
                         }
                     >
-                        <UserContent />
+                        <SubscribeProvider>
+                            <UserContent />
+                        </SubscribeProvider>
                     </WithPhoto>
                     <UserSettings />
                 </Div>

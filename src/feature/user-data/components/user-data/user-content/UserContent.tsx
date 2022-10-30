@@ -5,6 +5,7 @@ import useAppQuery from '../../../../../hooks/useAppQuery'
 import UpdateToggle from '../../../context/update-toggle'
 import UserUpdate from '../user-update'
 import DataConverter from 'src/service/data-converter'
+import Subscribe from './subscribe'
 
 const UserContent: React.FC = () => {
     const user = useContext(UserDataContext)
@@ -59,9 +60,7 @@ const UserContent: React.FC = () => {
                 <MainButton>
                     Chat
                 </MainButton>&nbsp;
-                <MainButton>
-                    Subcribe
-                </MainButton>
+                <Subscribe />
             </Li>
         </Ul>
     )

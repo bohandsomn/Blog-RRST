@@ -11,7 +11,7 @@ const useSubscribe = (): ISubscribe => {
     useEffect(() => {
         const handleGetSubscribe = async () => {
             onPending()
-            const subscribeResponse = await subscribeNotifier.subscribe.call({
+            const subscribeResponse = await subscribeNotifier.getSubscribe.call({
                 subscriberId: user.id.toString()
             })
             if (subscribeResponse.data !== undefined) {
@@ -23,9 +23,9 @@ const useSubscribe = (): ISubscribe => {
         handleGetSubscribe()
     }, [])
     
-    const subscribe: ISubscribe['subscribe'] = useCallback(async (dataSubscribe) => {
+    const subscribe: ISubscribe['subscribe'] = useCallback(async () => {
         onPending()
-        const subscribeResponse = await subscribeNotifier.subscribe.call(dataSubscribe)
+        const subscribeResponse = await subscribeNotifier.subscribe.call({ subscriberId: user.id.toString() })
         if (subscribeResponse.data !== undefined) {
             onSuccess(subscribeResponse.data)
         } else {
@@ -33,9 +33,9 @@ const useSubscribe = (): ISubscribe => {
         }
     }, [onPending, onSuccess, onReject])
 
-    const unsubscribe: ISubscribe['unsubscribe'] = useCallback(async (dataUnsubscribe) => {
+    const unsubscribe: ISubscribe['unsubscribe'] = useCallback(async () => {
         onPending()
-        const subscribeResponse = await subscribeNotifier.unsubscribe.call(dataUnsubscribe)
+        const subscribeResponse = await subscribeNotifier.unsubscribe.call({ subscriberId: user.id.toString() })
         if (subscribeResponse.data !== undefined) {
             onSuccess(null)
         } else {
