@@ -4,11 +4,13 @@ import { TenIndent } from '../../layouts/wrapper'
 import { Div } from '../atoms'
 import Chevron from '../chevron'
 import { List } from '../list'
+import useAppStyles from '../../hooks/useAppStyles'
 
 const DropDownList: React.FC<Props> = ({ chevron, children }) => {
     const {value, handleSetTrue, handleSetFalse} = useContext(Toggle)
+    const className = useAppStyles('position-absolute')
     return (
-        <Div onMouseEnter={handleSetTrue} onMouseLeave={handleSetFalse}>
+        <Div className={className} onMouseEnter={handleSetTrue} onMouseLeave={handleSetFalse}>
             <TenIndent bottom={value ? <List>{children}</List> : undefined}>
                 <Chevron>{chevron}</Chevron>
             </TenIndent>
