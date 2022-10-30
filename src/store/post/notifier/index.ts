@@ -16,6 +16,10 @@ const getMany = new RequestNotifier<typeof postAPI.getMany>({
     apiMethod: (...data) => postAPI.getMany(...data)
 })
 
+const getManyByUserId = new RequestNotifier<typeof postAPI.getManyByUserId>({
+    apiMethod: (...data) => postAPI.getManyByUserId(...data)
+})
+
 const update = new RequestNotifier<typeof postAPI.update>({
     apiMethod: (...data) => postAPI.update(...data),
     before: () => notification.loading('Post update start'),
@@ -38,6 +42,7 @@ const deletePost = new RequestNotifier<typeof postAPI.delete>({
 
 const postNotifier = {
     create,
+    getManyByUserId,
     getMany,
     update,
     getOne,

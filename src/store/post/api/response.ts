@@ -13,6 +13,7 @@ namespace PostResponse {
     
     export type Create = JsonResponse<PostDTO>
     export type GetMany = JsonResponse<PostDTO[]>
+    export type GetManyByUserId = JsonResponse<PostDTO[]>
     export type Update = JsonResponse<PostDTO>
     export type GetOne = JsonResponse<PostDTO>
     export type Delete = JsonResponse<number>

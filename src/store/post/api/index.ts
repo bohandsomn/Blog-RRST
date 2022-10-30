@@ -11,6 +11,10 @@ class PostAPI extends HandleAPI {
         return this.json<PostResponse.GetMany>({method: 'get', url: `/?title=${data.title}&content=${data.content}&privacy=${data.privacy}&page=${data.page}`})
     }
 
+    async getManyByUserId(data: PostRequest.GetManyByUserId) {
+        return this.json<PostResponse.GetManyByUserId>({method: 'get', url: `/user/${data.userId}`})
+    }
+
     async update(data: PostRequest.Update) {
         return this.json<PostResponse.Update>({method: 'put', data})
     }

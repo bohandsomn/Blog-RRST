@@ -10,6 +10,9 @@ namespace PostRequest {
         privacy: string
         page: string
     }
+    export type GetManyByUserId = {
+        userId: string
+    }
     export type Update = {
         postId: string
         title: string
