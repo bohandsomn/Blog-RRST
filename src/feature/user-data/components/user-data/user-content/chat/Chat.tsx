@@ -1,13 +1,10 @@
-import React, { useCallback, useContext } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import { MainButton } from '@/components/atoms'
-import useAppSelector from '../../../../../../hooks/useAppSelector'
-import { authorizationSelector } from '../../../../../../store'
-import UserDataContext from 'src/feature/user-data/context/user-data'
-import PATH from 'src/path'
 import useChat from '../../../../hooks/useChat'
+import { useTranslation } from '../../../../../internationalization'
 
 const Chat: React.FC = () => {
+    const {translation} = useTranslation()
     const { isMatchUser, handleGoToChat } = useChat()
     if (isMatchUser) {
         return <></>
@@ -15,7 +12,7 @@ const Chat: React.FC = () => {
 
     return (
         <MainButton onClick={handleGoToChat}>
-            Chat
+            {translation.feature['user-data']['user-content'].chat}
         </MainButton>
     )
 }

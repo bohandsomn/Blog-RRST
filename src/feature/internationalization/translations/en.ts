@@ -111,6 +111,50 @@ const en = {
                 "search-posts": "Search posts",
                 "log-out": "Log out"
             }
+        },
+        "user-data": {
+            "photo": {
+                "title": "User"
+            },
+            "user-update": {
+                "field": {
+                    "name": "Enter your name",
+                    "surname": "Enter your surname",
+                    "email": "Enter your email",
+                    "login": "Enter your login",
+                    "birthday": "Enter your birthday",
+                    "privacy": "Enter your privacy",
+                },
+                "button": {
+                    "update": "Update",
+                    "cancel": "Cancel",
+                }
+            },
+            "user-content": {
+                "birthday": "Birthday:",
+                "email": "Email:",
+                "login": "Login:",
+                "chat": "Chat",
+                "subcribe": "Subcribe",
+                "unsubcribe": "Unsubcribe",
+            },
+            "user-settings": {
+                "chat": "Chat",
+                "update": "Update"
+            },
+            "friendships": {
+                "friendships-list": {
+                    "friendships-list-item": {
+                        "photo": {
+                            "title": "User"
+                        }
+                    }
+                },
+                "chevron": {
+                    "subscribers": "Subscribers",
+                    "subscriptions": "Subscriptions",
+                }
+            }
         }
     },
     "components": {

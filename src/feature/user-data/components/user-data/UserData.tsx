@@ -9,10 +9,12 @@ import useAppQuery from '../../../../hooks/useAppQuery'
 import UpdateToggleProvider from '../../provider/UpdateToggle'
 import SubscribeProvider from '../../provider/Subscribe'
 import Friendships from './friendships'
+import { useTranslation } from '../../../internationalization'
 
 const UserData: React.FC = () => {
     const user = useContext(UserDataContext)
     const query = useAppQuery('user')
+    const {translation} = useTranslation()
     return (
         <UpdateToggleProvider>
             <SecondaryBackground>
@@ -22,7 +24,7 @@ const UserData: React.FC = () => {
                             <OriginalImg 
                                 src={`${process.env.NEXT_PUBLIC_BASE_URL}photo/user/original/${user.id}`}
                                 alt={`${user.name} ${user.surname || ''}`}
-                                title="" ////////////////
+                                title={translation.feature['user-data'].photo.title}
                             />
                         }
                     >

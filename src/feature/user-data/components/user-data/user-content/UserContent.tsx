@@ -7,6 +7,7 @@ import UserUpdate from '../user-update'
 import DataConverter from 'src/service/data-converter'
 import Subscribe from './subscribe'
 import Chat from './chat'
+import { useTranslation } from '../../../../internationalization'
 
 const UserContent: React.FC = () => {
     const user = useContext(UserDataContext)
@@ -18,6 +19,7 @@ const UserContent: React.FC = () => {
         }
         return DataConverter.getDateMonthNameDataYear(new Date(user.birthday))
     }, [user.birthday])
+    const {translation} = useTranslation()
 
     if (updateToggleContext.value) {
         return (
@@ -42,7 +44,9 @@ const UserContent: React.FC = () => {
             {
                 user.birthday && (
                     <Li>
-                        <MainParagraph>Birthday:&nbsp;</MainParagraph>
+                        <MainParagraph>
+                            {translation.feature['user-data']['user-content'].birthday}
+                        </MainParagraph>&nbsp;
                         <MainBoldParagraph>
                             {dateMonthNameDataYear}
                         </MainBoldParagraph>
@@ -50,12 +54,20 @@ const UserContent: React.FC = () => {
                 )
             }
             <Li>
-                <MainParagraph>Email:&nbsp;</MainParagraph>
-                <MainBoldParagraph>{user.email}</MainBoldParagraph>
+                <MainParagraph>
+                    {translation.feature['user-data']['user-content'].email}
+                </MainParagraph>&nbsp;
+                <MainBoldParagraph>
+                    {user.email}
+                </MainBoldParagraph>
             </Li>
             <Li>
-                <MainParagraph>Login:&nbsp;</MainParagraph>
-                <MainBoldParagraph>{user.login}</MainBoldParagraph>
+                <MainParagraph>
+                    {translation.feature['user-data']['user-content'].login}
+                </MainParagraph>&nbsp;
+                <MainBoldParagraph>
+                    {user.login}
+                </MainBoldParagraph>
             </Li>
             <Li>
                 <Chat />&nbsp;

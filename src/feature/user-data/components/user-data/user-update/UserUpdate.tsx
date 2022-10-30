@@ -8,6 +8,7 @@ import { privacySelector } from '../../../../../store'
 import useAppStyles from '../../../../../hooks/useAppStyles'
 import useUpdateUser from '../../../hooks/useUpdateUser'
 import UpdateToggle from '../../../context/update-toggle'
+import { useTranslation } from '../../../../internationalization'
 
 const UserUpdate: React.FC = () => {
     const privacyList = useAppSelector(privacySelector)
@@ -26,11 +27,12 @@ const UserUpdate: React.FC = () => {
         handleSubmit,
     } = useUpdateUser()
     const {handleSetFalse} = useContext(UpdateToggle)
+    const {translation} = useTranslation()
 
     return (
         <Form className={className} onSubmit={handleSubmit}>
             <InputWithLabel 
-                label="Enter your name"
+                label={translation.feature['user-data']['user-update'].field.name}
                 isValid={isValidName}
                 value={name}
                 onChange={handleChangeName}
@@ -38,13 +40,13 @@ const UserUpdate: React.FC = () => {
                 type="text"
             />
             <InputWithLabel 
-                label="Enter your surname"
+                label={translation.feature['user-data']['user-update'].field.surname}
                 value={surname}
                 onChange={handleChangeSurname}
                 type="text"
             />
             <InputWithLabel 
-                label="Enter your email"
+                label={translation.feature['user-data']['user-update'].field.email}
                 isValid={isValidEmail}
                 value={email}
                 onChange={handleChangeEmail}
@@ -52,7 +54,7 @@ const UserUpdate: React.FC = () => {
                 type="email"
             />
             <InputWithLabel 
-                label="Enter your login"
+                label={translation.feature['user-data']['user-update'].field.login}
                 isValid={isValidLogin}
                 value={login}
                 onChange={handleChangeLogin}
@@ -60,14 +62,14 @@ const UserUpdate: React.FC = () => {
                 type="text"
             />
             <InputWithLabel 
-                label="Enter your birthday"
+                label={translation.feature['user-data']['user-update'].field.birthday}
                 value={birthday}
                 onChange={handleChangeBirthday}
                 type="date"
             />
             <OptionsProvider options={privacyList.data || []}>
                 <InputList 
-                    label="Enter your privacy"
+                    label={translation.feature['user-data']['user-update'].field.privacy}
                     isValid={isValidPrivacy}
                     value={privacy}
                     onChange={handleChangePrivacy}
@@ -76,10 +78,10 @@ const UserUpdate: React.FC = () => {
             </OptionsProvider>
             <Div>
                 <MainButton onClick={handleSubmit}>
-                    Update
+                    {translation.feature['user-data']['user-update'].button.update}
                 </MainButton>&nbsp;
                 <SecondaryButton onClick={handleSetFalse}>
-                    Cancel
+                    {translation.feature['user-data']['user-update'].button.cancel}
                 </SecondaryButton>
             </Div>
         </Form>
