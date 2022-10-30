@@ -21,11 +21,7 @@ const unsubscribe = new RequestNotifier<typeof subscribeAPI.unsubscribe>({
 })
 
 const getSubscribe = new RequestNotifier<typeof subscribeAPI.getSubscribe>({
-    apiMethod: (...data) => subscribeAPI.getSubscribe(...data),
-    before: () => notification.loading('getSubscribe request has been sent'),
-    narrowing: (response) => response.data === null,
-    success: ({ id, response }) => notification.success(id, response.message),
-    reject: ({ id, response }) => notification.error(id, response.message)
+    apiMethod: (...data) => subscribeAPI.getSubscribe(...data)
 })
 
 const subscribeNotifier = {
