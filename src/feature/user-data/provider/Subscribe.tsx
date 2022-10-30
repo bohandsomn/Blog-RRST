@@ -1,11 +1,9 @@
 import React from 'react'
 import SubscribeContext from '../context/subscribe'
 import useSubscribe from '../hooks/useSubscribe'
-import type { ErrorResponse } from '../../../utility/type'
-import type { SubscribeResponse } from '../interface'
 
-const SubscribeProvider: React.FC<Props> = ({ children, subscribe }) => {
-    const value = useSubscribe(subscribe)
+const SubscribeProvider: React.FC<Props> = ({ children }) => {
+    const value = useSubscribe()
     return (
         <SubscribeContext.Provider value={value}>
             {children}
@@ -15,7 +13,6 @@ const SubscribeProvider: React.FC<Props> = ({ children, subscribe }) => {
 
 type Props = {
     children?: any
-    subscribe: ErrorResponse | SubscribeResponse.GetSubscribe
 }
 
 export default SubscribeProvider
