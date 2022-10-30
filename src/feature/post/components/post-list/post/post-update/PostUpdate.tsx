@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useContext } from 'react'
 import { Div, Form, MainButton, PostImg } from '@/components/atoms'
 import InputWithLabel from '@/components/input-with-label'
 import InputList from '@/components/input-list'
@@ -12,6 +12,7 @@ import UserContext from '../../../../context/user'
 import useAppSelector from '../../../../../../hooks/useAppSelector'
 import { privacySelector } from '../../../../../../store'
 import { useTranslation } from '../../../../../internationalization'
+import useValidPrivacy from '../../../../../../hooks/useValidPrivacy'
 
 const PostUpdate: React.FC = () => {
     const query = useAppQuery('post')
@@ -27,7 +28,7 @@ const PostUpdate: React.FC = () => {
         handleChangePrivacy,
         handleSubmit,
     } = usePostUpdate()
-    const isValidPrivacy = useMemo(() => privacyList.data?.find(({ value }) => value === privacy) !== undefined, [privacyList, privacy])
+    const { isValidPrivacy } = useValidPrivacy(privacy)
     const {translation} = useTranslation()
 
     return (
