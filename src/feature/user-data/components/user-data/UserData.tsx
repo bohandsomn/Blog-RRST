@@ -8,6 +8,7 @@ import UserSettings from './user-settings'
 import useAppQuery from '../../../../hooks/useAppQuery'
 import UpdateToggleProvider from '../../provider/UpdateToggle'
 import SubscribeProvider from '../../provider/Subscribe'
+import Friendships from './friendships'
 
 const UserData: React.FC = () => {
     const user = useContext(UserDataContext)
@@ -28,6 +29,7 @@ const UserData: React.FC = () => {
                         <SubscribeProvider>
                             <UserContent />
                         </SubscribeProvider>
+                        <Friendships />
                     </WithPhoto>
                     <UserSettings />
                 </Div>
