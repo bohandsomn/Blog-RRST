@@ -11,6 +11,7 @@ export function* saga() {
         authorizationSaga.autoLogin, 
         authorizationSaga.login,
         authorizationSaga.logout,
+        authorizationSaga.update,
         privacySaga.create,
         privacySaga.getMany,
     ]

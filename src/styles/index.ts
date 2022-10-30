@@ -152,6 +152,9 @@ const STYLES = {
     "position-sticky": {
         "position": "sticky"
     },
+    "position-static": {
+        "position": "static"
+    },
     "top-0": {
         "top": "0"
     },
@@ -177,6 +180,11 @@ const STYLES = {
             "&:not(:last-child)": {
                 "margin-right": "10px"
             }
+        }
+    },
+    "children/display-flex": {
+        "> *": {
+            "display": "flex"
         }
     }
 }

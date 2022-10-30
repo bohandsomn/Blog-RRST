@@ -7,8 +7,9 @@ namespace SubscribeResponse {
         subscriberId: number    
     }
     
-    export type Subscribe = JsonResponse<SubscribeDTO[]>
-    export type Unsubscribe = JsonResponse<SubscribeDTO[]>
+    export type Subscribe = JsonResponse<SubscribeDTO>
+    export type Unsubscribe = JsonResponse<number>
+    export type GetSubscribe = JsonResponse<SubscribeDTO>
 }
 
 export default SubscribeResponse

@@ -183,6 +183,27 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['position-sticky', 'top-0']
+        },
+        'user': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'align-items-flex-start', 'flex-1', 'justify-content-space-between']
+        },
+        'user-content': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['children/display-flex']
+        },
+        'user-friendships': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'justify-content-space-between']
         }
     }
 })
