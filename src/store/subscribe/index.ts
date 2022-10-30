@@ -5,3 +5,4 @@ export {
     subscribeAPI,
     subscribeNotifier
 }
+export * from './interface'
