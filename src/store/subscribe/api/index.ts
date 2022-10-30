@@ -10,6 +10,10 @@ class SubscribeAPI extends HandleAPI {
     async unsubscribe(data: SubscribeRequest.Unsubscribe) {
         return this.json<SubscribeResponse.Unsubscribe>({method: 'get', url: `/${data.subscriberId}/unsubscribe`})
     }
+
+    async getSubscribe(data: SubscribeRequest.GetSubscribe) {
+        return this.json<SubscribeResponse.GetSubscribe>({method: 'get', url: `/${data.subscriberId}`})
+    }
 }
 
 const subscribeAPI = new SubscribeAPI({url: 'subscribe'})

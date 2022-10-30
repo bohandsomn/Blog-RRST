@@ -5,6 +5,9 @@ namespace SubscribeRequest {
     export type Unsubscribe = {
         subscriberId: string
     }
+    export type GetSubscribe = {
+        subscriberId: string
+    }
 }
 
 export default SubscribeRequest

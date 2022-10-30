@@ -9,6 +9,7 @@ namespace SubscribeResponse {
     
     export type Subscribe = JsonResponse<SubscribeDTO[]>
     export type Unsubscribe = JsonResponse<SubscribeDTO[]>
+    export type GetSubscribe = JsonResponse<SubscribeDTO>
 }
 
 export default SubscribeResponse
