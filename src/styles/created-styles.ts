@@ -197,6 +197,13 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['children/display-flex']
+        },
+        'user-friendships': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'justify-content-space-between']
         }
     }
 })

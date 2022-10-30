@@ -152,6 +152,9 @@ const STYLES = {
     "position-sticky": {
         "position": "sticky"
     },
+    "position-static": {
+        "position": "static"
+    },
     "top-0": {
         "top": "0"
     },
