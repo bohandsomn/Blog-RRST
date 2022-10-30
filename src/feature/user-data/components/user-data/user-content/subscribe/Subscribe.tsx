@@ -10,8 +10,8 @@ const Subscribe: React.FC = () => {
     const authorization = useAppSelector(authorizationSelector)
     const user = useContext(UserDataContext)
     const isNotAuthorizaized = authorization.data === null && authorization.isLoading === false
-    const isMyAccount = user.id === authorization.data?.id
-    if (isNotAuthorizaized || isMyAccount) {
+    const isMatchUser = user.id === authorization.data?.id
+    if (isNotAuthorizaized || isMatchUser) {
         return <></>
     }
 

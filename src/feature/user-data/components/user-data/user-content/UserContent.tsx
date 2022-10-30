@@ -6,6 +6,7 @@ import UpdateToggle from '../../../context/update-toggle'
 import UserUpdate from '../user-update'
 import DataConverter from 'src/service/data-converter'
 import Subscribe from './subscribe'
+import Chat from './chat'
 
 const UserContent: React.FC = () => {
     const user = useContext(UserDataContext)
@@ -57,9 +58,7 @@ const UserContent: React.FC = () => {
                 <MainBoldParagraph>{user.login}</MainBoldParagraph>
             </Li>
             <Li>
-                <MainButton>
-                    Chat
-                </MainButton>&nbsp;
+                <Chat />&nbsp;
                 <Subscribe />
             </Li>
         </Ul>
