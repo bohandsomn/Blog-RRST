@@ -1,5 +1,5 @@
 import React from 'react'
-import type { CommentDTO, UserDTO } from '../utility/interface'
+import type { CommentDTO, UserDTO } from '../interface'
 
 export type ICommentContext = {
     data: CommentDTO

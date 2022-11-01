@@ -4,12 +4,18 @@ import { Li, MainBoldParagraph, PreviewImg } from '@/components/atoms'
 import WithPhoto from '@/components/with-photo'
 import { UserContext } from '../../../../../../post'
 import { useTranslation } from '../../../../../../internationalization'
+import useAppStyles from 'src/hooks/useAppStyles'
+import useGoToPage from 'src/hooks/useGoToPage'
 
 const FriendshipsListItem: React.FC = () => {
     const user = useContext(UserContext)
     const {translation} = useTranslation()
+    const className = useAppStyles('cursor-pointer')
+    const { handleGoToUserPage } = useGoToPage({
+        user: {id: user.data?.id}
+    })
     return (
-        <Li>
+        <Li className={className} onClick={handleGoToUserPage}>
             <WithPhoto
                 img={
                     <PreviewImg 

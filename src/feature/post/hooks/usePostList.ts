@@ -4,7 +4,7 @@ import { State } from '../../../hooks/useFetch/interface'
 import { ErrorResponse } from '../../../utility/type'
 import { postNotifier } from '../api'
 import type { IPostListContext } from '../context/post-list'
-import type { PostDTO } from '../utility/interface'
+import type { PostDTO } from '../interface'
 import type PostResponse from '../../../store/post/api/response'
 
 const usePostList = (posts: ErrorResponse | PostResponse.GetMany): IPostListContext => {
@@ -53,8 +53,8 @@ const usePostList = (posts: ErrorResponse | PostResponse.GetMany): IPostListCont
         const createResponse = await postNotifier.create.call(dataCreate)
         if (createResponse.data) {
             onSuccess([
-                ...(data || []),
-                createResponse.data
+                createResponse.data,
+                ...(data || [])
             ])
         } else {
             onReject(createResponse.message)

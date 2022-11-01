@@ -1,5 +1,5 @@
 import type { IOptions } from '@/components/input-list/context/Options'
-import type { PostDTO, CommentDTO, LikesPostDTO, LikesCommentDTO, UserDTO } from '../utility/interface'
+import type { PostDTO, CommentDTO, LikesPostDTO, LikesCommentDTO, UserDTO } from '../interface'
 
 enum POST_ID {
     FIRST = 1,

@@ -1,5 +1,5 @@
 import React from 'react'
-import type { LikesCommentDTO, LikesCommentRequest } from '../utility/interface'
+import type { LikesCommentDTO, LikesCommentRequest } from '../interface'
 
 export type ICommentLikesContext = {
     data: LikesCommentDTO | null

@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import CommentContext, { ICommentContext } from '../context/comment'
 import UserContext from '../context/user'
-import type { CommentDTO } from '../utility/interface'
+import type { CommentDTO } from '../interface'
 
 const CommentProvider: React.FC<Props> = ({ children, comment }) => {
     const user = useContext(UserContext).data

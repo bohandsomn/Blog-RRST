@@ -1,7 +1,7 @@
 import React from 'react'
 import UserContext from '../context/user'
 import useUser from '../hooks/useUser'
-import type { UserDTO } from '../utility/interface'
+import type { UserDTO } from '../interface'
 
 const UserProvider: React.FC<Props> = ({ children, userId }) => {
     const value = useUser(userId)

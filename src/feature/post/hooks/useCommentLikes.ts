@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect } from 'react'
 import type { ICommentLikesContext } from '../context/comment-likes'
-import type { LikesCommentDTO } from '../utility/interface'
+import type { LikesCommentDTO } from '../interface'
 import useFetch from '../../../hooks/useFetch'
 import CommentContext from '../context/comment'
 import useAppSelector from '../../../hooks/useAppSelector'

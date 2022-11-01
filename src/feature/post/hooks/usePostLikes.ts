@@ -5,7 +5,7 @@ import { authorizationSelector } from '../../../store'
 import { likesPostApi } from '../api'
 import PostContext from '../context/post'
 import { IPostLikesContext } from '../context/post-likes'
-import { LikesPostDTO } from '../utility/interface'
+import { LikesPostDTO } from '../interface'
 
 const usePostLikes = (): IPostLikesContext => {
     const { data, onSuccess, onReject, onPending } = useFetch<LikesPostDTO>()

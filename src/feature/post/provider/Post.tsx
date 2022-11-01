@@ -1,6 +1,6 @@
 import React from 'react'
 import PostContext from '../context/post'
-import type { PostDTO } from '../utility/interface'
+import type { PostDTO } from '../interface'
 
 const PostProvider: React.FC<Props> = ({ children, post }) => {
     return (

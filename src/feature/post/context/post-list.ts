@@ -1,6 +1,6 @@
 import React from 'react'
 import { UseFetchReturned } from '../../../hooks/useFetch/interface'
-import type { PostDTO, PostRequest } from '../utility/interface'
+import type { PostDTO, PostRequest } from '../interface'
 
 export type IPostListContext = UseFetchReturned<PostDTO[]> & {
     create: (data: PostRequest.Create) => Promise<void>

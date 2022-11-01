@@ -4,13 +4,13 @@ import WithPhoto from '@/components/with-photo'
 import useAppStyles from '../../../../../hooks/useAppStyles'
 import useAppSelector from '../../../../../hooks/useAppSelector'
 import { authorizationSelector } from '../../../../../store'
-import useAuthentication from '../../../hooks/useAuthentication'
+import useGoToPage from '../../../../../hooks/useGoToPage'
 import { useTranslation } from '../../../../internationalization'
 
 const Authentication: React.FC = () => {
     const user = useAppSelector(authorizationSelector)
     const className = useAppStyles('children/margin-right-10')
-    const { handleGoToRegistrationPage, handleGoToLogInPage } = useAuthentication()
+    const { handleGoToRegistrationPage, handleGoToLogInPage } = useGoToPage()
     const { translation } = useTranslation()
 
     if (user.data) {

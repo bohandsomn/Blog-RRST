@@ -36,7 +36,7 @@ const UserContent: React.FC = () => {
                 {
                     user.surname && (
                         <MainBigParagraph>
-                            &nbsp;{user.surname}
+                            {user.surname}
                         </MainBigParagraph>
                     )
                 }
@@ -46,7 +46,7 @@ const UserContent: React.FC = () => {
                     <Li>
                         <MainParagraph>
                             {translation.feature['user-data']['user-content'].birthday}
-                        </MainParagraph>&nbsp;
+                        </MainParagraph>
                         <MainBoldParagraph>
                             {dateMonthNameDataYear}
                         </MainBoldParagraph>
@@ -56,7 +56,7 @@ const UserContent: React.FC = () => {
             <Li>
                 <MainParagraph>
                     {translation.feature['user-data']['user-content'].email}
-                </MainParagraph>&nbsp;
+                </MainParagraph>
                 <MainBoldParagraph>
                     {user.email}
                 </MainBoldParagraph>
@@ -64,7 +64,7 @@ const UserContent: React.FC = () => {
             <Li>
                 <MainParagraph>
                     {translation.feature['user-data']['user-content'].login}
-                </MainParagraph>&nbsp;
+                </MainParagraph>
                 <MainBoldParagraph>
                     {user.login}
                 </MainBoldParagraph>

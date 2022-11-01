@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react'
 import useFetch from '../../../hooks/useFetch'
 import { userNotifier } from '../api'
 import type { IUserContext } from '../context/user'
-import type { UserDTO } from '../utility/interface'
+import type { UserDTO } from '../interface'
 
 const useUser = (userId: UserDTO['id']): IUserContext => {
     const { data, previous, isLoading, error, onSuccess, onReject, onPending } = useFetch<UserDTO>()

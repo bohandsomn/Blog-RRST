@@ -3,7 +3,7 @@ import useFetch from '../../../hooks/useFetch'
 import { commentNotifier } from '../api'
 import PostContext from '../context/post'
 import type { ICommentListContext } from '../context/comment-list'
-import type { CommentDTO } from '../utility/interface'
+import type { CommentDTO } from '../interface'
 
 const useCommentList = (): ICommentListContext => {
     const postContext = useContext(PostContext)

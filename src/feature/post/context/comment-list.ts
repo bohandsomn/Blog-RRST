@@ -1,6 +1,6 @@
 import React from 'react'
 import { UseFetchReturned } from '../../../hooks/useFetch/interface'
-import type { CommentDTO, CommentRequest } from '../utility/interface'
+import type { CommentDTO, CommentRequest } from '../interface'
 
 export type ICommentListContext = UseFetchReturned<CommentDTO[]> & {
     create: (data: CommentRequest.Create) => Promise<void>
