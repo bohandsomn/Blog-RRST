@@ -113,6 +113,50 @@ const ru: typeof en = {
                 "search-posts": "Поиск постов",
                 "log-out": "Выйти"
             }
+        },
+        "user-data": {
+            "photo": {
+                "title": "Пользователь"
+            },
+            "user-update": {
+                "field": {
+                    "name": "Введите ваше имя",
+                    "surname": "Введите вашу фамилию",
+                    "email": "Введите адрес электронной почты",
+                    "login": "Введите свой логин",
+                    "birthday": "Введите свой день рождения",
+                    "privacy": "Введите вашу приватность",
+                },
+                "button": {
+                    "update": "Обновить",
+                    "cancel": "Отмена",
+                }
+            },
+            "user-content": {
+                "birthday": "День рождения:",
+                "email": "Эл. адрес:",
+                "login": "Авторизоваться:",
+                "chat": "Чат",
+                "subcribe": "Подписаться",
+                "unsubcribe": "Отписаться",
+            },
+            "user-settings": {
+                "chat": "Чат",
+                "update": "Обновить"
+            },
+            "friendships": {
+                "friendships-list": {
+                    "friendships-list-item": {
+                        "photo": {
+                            "title": "Пользователь"
+                        }
+                    }
+                },
+                "chevron": {
+                    "subscribers": "Подписчики",
+                    "subscriptions": "Подписки",
+                }
+            }
         }
     },
     "components": {

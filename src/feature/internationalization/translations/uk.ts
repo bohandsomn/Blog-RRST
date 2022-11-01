@@ -113,6 +113,50 @@ const uk: typeof en = {
                 "search-posts": "Пошук постів",
                 "log-out": "Вийти"
             }
+        },
+        "user-data": {
+            "photo": {
+                "title": "Користувач"
+            },
+            "user-update": {
+                "field": {
+                    "name": "Введіть ім'я",
+                    "surname": "Введіть своє прізвище",
+                    "email": "Введіть адресу електронної пошти",
+                    "login": "Введіть свій логін",
+                    "birthday": "Введіть свій день народження",
+                    "privacy": "Введіть свою приватність",
+                },
+                "button": {
+                    "update": "Оновити",
+                    "cancel": "Скасувати",
+                }
+            },
+            "user-content": {
+                "birthday": "День народження:",
+                "email": "Електронна пошта:",
+                "login": "Логін:",
+                "chat": "Чат",
+                "subcribe": "Підписатись",
+                "unsubcribe": "Відписатися",
+            },
+            "user-settings": {
+                "chat": "Чат",
+                "update": "Оновити"
+            },
+            "friendships": {
+                "friendships-list": {
+                    "friendships-list-item": {
+                        "photo": {
+                            "title": "Користувач"
+                        }
+                    }
+                },
+                "chevron": {
+                    "subscribers": "Підписники",
+                    "subscriptions": "Підписки",
+                }
+            }
         }
     },
     "components": {
