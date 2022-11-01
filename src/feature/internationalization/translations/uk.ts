@@ -157,6 +157,19 @@ const uk: typeof en = {
                     "subscriptions": "Підписки",
                 }
             }
+        },
+        "post-creator": {
+            "form": {
+                "header": "Створити пост",
+                "field": {
+                    "title": "Введіть назву",
+                    "content": "Введіть вміст",
+                    "privacy": "Введіть приватність",
+                },
+                "button": {
+                    "submit": "Створити"
+                }
+            }
         }
     },
     "components": {

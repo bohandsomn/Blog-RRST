@@ -155,6 +155,19 @@ const en = {
                     "subscriptions": "Subscriptions",
                 }
             }
+        },
+        "post-creator": {
+            "form": {
+                "header": "Create post",
+                "field": {
+                    "title": "Enter title",
+                    "content": "Enter content",
+                    "privacy": "Enter privacy",
+                },
+                "button": {
+                    "submit": "Create"
+                }
+            }
         }
     },
     "components": {

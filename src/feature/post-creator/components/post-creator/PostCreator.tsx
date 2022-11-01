@@ -7,7 +7,8 @@ import { SecondaryBackground } from '../../../../layouts/wrapper'
 import useAppSelector from '../../../../hooks/useAppSelector'
 import { privacySelector } from '../../../../store'
 import useCreatePost from '../../hooks/useCreatePost'
-import useAppStyles from 'src/hooks/useAppStyles'
+import useAppStyles from '../../../../hooks/useAppStyles'
+import { useTranslation } from '../../../../feature/internationalization'
 
 const PostCreator: React.FC = () => {
     const privacyList = useAppSelector(privacySelector)
@@ -20,20 +21,23 @@ const PostCreator: React.FC = () => {
         isValidPrivacy, handleSubmit
     } = useCreatePost()
     const className = useAppStyles('children/margin-bottom-10')
+    const {translation} = useTranslation()
 
     return (
         <SecondaryBackground>
             <Form onSubmit={handleSubmit} className={className}>
-                <MainBigParagraph>Create post</MainBigParagraph>
+                <MainBigParagraph>
+                    {translation.feature['post-creator'].form.header}
+                </MainBigParagraph>
                 <InputWithLabel 
-                    label={'Enter title'} ////////////////
+                    label={translation.feature['post-creator'].form.field.title} 
                     isValid={isValidTitle}
                     onFocus={handleSetIsFocusedTitleTrue}
                     value={title}
                     onChange={handleChangeTitle}
                 />
                 <InputWithLabel 
-                    label={'Enter content'} ////////////////
+                    label={translation.feature['post-creator'].form.field.content} 
                     isValid={isValidContent}
                     onFocus={handleSetIsFocusedContentTrue}
                     value={content}
@@ -41,14 +45,14 @@ const PostCreator: React.FC = () => {
                 />
                 <OptionsProvider options={privacyList.data || []}>
                     <InputList 
-                        label={'Enter privacy'} ////////////////
+                        label={translation.feature['post-creator'].form.field.privacy} 
                         isValid={isValidPrivacy}
                         value={privacy}
                         onChange={handleChangePrivacy}
                     />
                 </OptionsProvider>
                 <MainButton onClick={handleSubmit}>
-                    Create
+                    {translation.feature['post-creator'].form.button.submit}
                 </MainButton>
             </Form>
         </SecondaryBackground>

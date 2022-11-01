@@ -157,6 +157,19 @@ const ru: typeof en = {
                     "subscriptions": "Подписки",
                 }
             }
+        },
+        "post-creator": {
+            "form": {
+                "header": "Создать сообщение",
+                "field": {
+                    "title": "Введите название",
+                    "content": "Введите содержание",
+                    "privacy": "Введите приватность",
+                },
+                "button": {
+                    "submit": "Создавать"
+                }
+            }
         }
     },
     "components": {
