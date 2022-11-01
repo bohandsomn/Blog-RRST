@@ -196,7 +196,7 @@ const createdStyles = appCreate({
             small: [],
             medium: [],
             large: [],
-            extraLarge: ['children/display-flex']
+            extraLarge: ['width-290']
         },
         'user-friendships': {
             extraSmall: [],

@@ -131,6 +131,9 @@ const STYLES = {
     "width-702": {
         "width": "702px"
     },
+    "width-290": {
+        "width": "290px"
+    },
     "width-473": {
         "width": "473px"
     },
