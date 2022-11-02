@@ -12,7 +12,7 @@ class PrivateChatAPI extends HandleAPI {
     }
 
     async getOne(data: PrivateChatRequest.GetOne) {
-        return this.json<PrivateChatResponse.GetOne>({method: 'get', url: `/${data.id}`})
+        return this.json<PrivateChatResponse.GetOne>({method: 'get', url: `/${data.interlocutorId}/${data.userId}`})
     }
 
     async delete(data: PrivateChatRequest.Delete) {
