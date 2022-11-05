@@ -109,7 +109,8 @@ const en = {
                 "home": "Home",
                 "user": "User",
                 "search-posts": "Search posts",
-                "log-out": "Log out"
+                "log-out": "Log out",
+                "chat": "Chat"
             }
         },
         "user-data": {

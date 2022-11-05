@@ -111,7 +111,8 @@ const uk: typeof en = {
                 "home": "Додому",
                 "user": "Користувач",
                 "search-posts": "Пошук постів",
-                "log-out": "Вийти"
+                "log-out": "Вийти",
+                "chat": "Чат"
             }
         },
         "user-data": {

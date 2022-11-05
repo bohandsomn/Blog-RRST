@@ -44,6 +44,9 @@ const STYLES = {
     "justify-content-center": {
         "justify-content": "center"
     },
+    "justify-content-flex-start": {
+        "justify-content": "flex-start"
+    },
     "border-radius-50%": {
         "border-radius": "50%"
     },

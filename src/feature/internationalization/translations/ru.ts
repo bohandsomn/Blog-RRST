@@ -111,7 +111,8 @@ const ru: typeof en = {
                 "home": "Домой",
                 "user": "Пользователь",
                 "search-posts": "Поиск постов",
-                "log-out": "Выйти"
+                "log-out": "Выйти",
+                "chat": "Чат"
             }
         },
         "user-data": {

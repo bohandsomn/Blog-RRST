@@ -9,7 +9,7 @@ const useNavigation = () => {
     const dispatch = useAppDispatch()
     const user = useAppSelector(authorizationSelector)
 
-    const { handleGoToHomePage, handleGoToUserPage, handleGoToSeatchPostsPage } = useGoToPage({
+    const { handleGoToHomePage, handleGoToUserPage, handleGoToSeatchPostsPage, handleGoToChat } = useGoToPage({
         user: {id: user.data?.id}
     })
 
@@ -21,8 +21,9 @@ const useNavigation = () => {
         handleGoToHomePage,
         handleGoToUserPage,
         handleGoToSeatchPostsPage,
-        handleGoToLogoutPage
-    }), [handleGoToHomePage, handleGoToUserPage, handleGoToSeatchPostsPage, handleGoToLogoutPage])
+        handleGoToLogoutPage, 
+        handleGoToChat
+    }), [handleGoToHomePage, handleGoToUserPage, handleGoToSeatchPostsPage, handleGoToLogoutPage, handleGoToChat])
 }
 
 export default useNavigation
