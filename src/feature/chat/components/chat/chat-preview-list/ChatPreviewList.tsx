@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { Div, Ul } from '@/components/atoms'
 import ChatListContext from '../../../../chat/context/chat-list'
 import ChatPreviewListItem from './chat-preview-list-item'
-import NavigateToHome from './navigate-to-home'
 import ChatListItemProvider from '../../../provider/ChatListItem'
 import { SecondaryBackground } from '../../../../../layouts/wrapper'
 import useAppStyles from '../../../../../hooks/useAppStyles'
@@ -15,7 +14,6 @@ const ChatPreviewList: React.FC = () => {
     return (
         <Div query={query}>
             <SecondaryBackground>
-                <NavigateToHome />
                 <Ul className={classNameList}>
                     {
                         chatListContext.data?.map((chat) => (
