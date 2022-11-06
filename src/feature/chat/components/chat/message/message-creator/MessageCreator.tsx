@@ -9,6 +9,7 @@ const MessageCreator: React.FC = () => {
     return (
         <Form className={className} onSubmit={handleSubmit}>
             <MainInput 
+                placeholder={'Enter message'} ///////////////////////
                 value={message}
                 onChange={changeMessage}
                 isValid={isValid}

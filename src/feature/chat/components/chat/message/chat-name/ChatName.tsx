@@ -8,7 +8,7 @@ const ChatName: React.FC = () => {
     const chatContext = useContext(ChatContext)
     const className = useAppStyles('display-flex', 'justify-content-center')
     if (chatContext.data?.name === undefined || chatContext.isLoading) {
-        return <Skeleton />
+        return <Skeleton height={39} />
     }
     
     return (
