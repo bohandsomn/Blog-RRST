@@ -164,6 +164,9 @@ const STYLES = {
     "top-0": {
         "top": "0"
     },
+    "text-decoration-underline": {
+        "text-decoration": "underline"
+    },
     "cursor-pointer": {
         "cursor": "pointer"
     },
@@ -191,6 +194,18 @@ const STYLES = {
     "children/display-flex": {
         "> *": {
             "display": "flex"
+        }
+    },
+    "children/height-80": {
+        "height": "80%",
+        "div, ul": {
+            "height": "100%"
+        }
+    },
+    "children/height-auto": {
+        "height": "auto",
+        "div, ul, *": {
+            "height": "auto"
         }
     }
 }

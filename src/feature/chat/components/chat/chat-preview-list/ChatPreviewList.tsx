@@ -2,17 +2,20 @@ import React, { useContext } from 'react'
 import { Div, Ul } from '@/components/atoms'
 import ChatListContext from '../../../../chat/context/chat-list'
 import ChatPreviewListItem from './chat-preview-list-item'
+import NavigateToHome from './navigate-to-home'
 import ChatListItemProvider from '../../../provider/ChatListItem'
-import { SecondaryBackground, SidebarContainer } from '../../../../../layouts/wrapper'
+import { SecondaryBackground } from '../../../../../layouts/wrapper'
 import useAppStyles from '../../../../../hooks/useAppStyles'
+import useAppQuery from '../../../../../hooks/useAppQuery'
 
 const ChatPreviewList: React.FC = () => {
     const chatListContext = useContext(ChatListContext)
     const classNameList = useAppStyles('children/margin-bottom-10')
-    const classNameWrapper = useAppStyles('flex-1')
+    const query = useAppQuery('container-sidebar', {remove: ['margin-0-auto']})
     return (
-        <Div className={classNameWrapper}>
+        <Div query={query}>
             <SecondaryBackground>
+                <NavigateToHome />
                 <Ul className={classNameList}>
                     {
                         chatListContext.data?.map((chat) => (

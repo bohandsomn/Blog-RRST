@@ -26,6 +26,9 @@ body.dark {
     padding: 0;
     box-sizing: border-box;
 }
+body, body > * {
+    height: 100vh;
+}
 *, input {
     font-family: var(--font-family);
 }
