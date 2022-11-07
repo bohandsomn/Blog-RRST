@@ -169,6 +169,34 @@ const en = {
                     "submit": "Create"
                 }
             }
+        },
+        "chat": {
+            "chat-preview-list": {
+                "item": {
+                    "photo": {
+                        "title": "Chat",
+                    }
+                }
+            },
+            "message": {
+                "creator": {
+                    "field": {
+                        "message": {
+                            "placeholder": "Enter message"
+                        }
+                    },
+                    "button": {
+                        "submit": "Send"
+                    }
+                },
+                "list": {
+                    "item": {
+                        "photo": {
+                            "title": "User"
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {

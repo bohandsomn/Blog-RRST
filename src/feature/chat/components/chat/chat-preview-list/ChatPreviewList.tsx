@@ -9,7 +9,7 @@ import useAppQuery from '../../../../../hooks/useAppQuery'
 
 const ChatPreviewList: React.FC = () => {
     const chatListContext = useContext(ChatListContext)
-    const classNameList = useAppStyles('children/margin-bottom-10')
+    const classNameList = useAppStyles('children/margin-bottom-10', 'overflow-y-scroll')
     const query = useAppQuery('container-sidebar', {remove: ['margin-0-auto']})
     return (
         <Div query={query}>

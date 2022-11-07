@@ -171,6 +171,34 @@ const ru: typeof en = {
                     "submit": "Создавать"
                 }
             }
+        },
+        "chat": {
+            "chat-preview-list": {
+                "item": {
+                    "photo": {
+                        "title": "Чат",
+                    }
+                }
+            },
+            "message": {
+                "creator": {
+                    "field": {
+                        "message": {
+                            "placeholder": "Введите сообщение"
+                        }
+                    },
+                    "button": {
+                        "submit": "Отправить"
+                    }
+                },
+                "list": {
+                    "item": {
+                        "photo": {
+                            "title": "Пользователь"
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {

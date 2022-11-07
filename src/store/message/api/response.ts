@@ -11,3 +11,5 @@ namespace MessageResponse {
     export type Create = MessageDTO | void
     export type GetMany = MessageDTO[] | void
 }
+
+export default MessageResponse

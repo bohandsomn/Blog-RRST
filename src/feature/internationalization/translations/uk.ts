@@ -171,6 +171,34 @@ const uk: typeof en = {
                     "submit": "Створити"
                 }
             }
+        },
+        "chat": {
+            "chat-preview-list": {
+                "item": {
+                    "photo": {
+                        "title": "Чат",
+                    }
+                }
+            },
+            "message": {
+                "creator": {
+                    "field": {
+                        "message": {
+                            "placeholder": "Введіть повідомлення"
+                        }
+                    },
+                    "button": {
+                        "submit": "Надіслати"
+                    }
+                },
+                "list": {
+                    "item": {
+                        "photo": {
+                            "title": "Користувач"
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {

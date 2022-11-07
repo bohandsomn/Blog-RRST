@@ -47,6 +47,9 @@ const STYLES = {
     "justify-content-flex-start": {
         "justify-content": "flex-start"
     },
+    "justify-content-flex-end": {
+        "justify-content": "flex-end"
+    },
     "border-radius-50%": {
         "border-radius": "50%"
     },
@@ -146,6 +149,9 @@ const STYLES = {
     "height-100vh": {
         "height": "100vh"
     },
+    "height-583": {
+        "height": "583px !important"
+    },
     "white-space-normal": {
         "white-space": "normal"
     },
@@ -169,6 +175,9 @@ const STYLES = {
     },
     "cursor-pointer": {
         "cursor": "pointer"
+    },
+    "overflow-y-scroll": {
+        "overflow-y": "scroll"
     },
     "children/margin-bottom-10": {
         "> *": {

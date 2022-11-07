@@ -1,4 +1,4 @@
-import { useCallback, useContext, useMemo } from 'react'
+import { useCallback, useContext, useEffect, useMemo } from 'react'
 import useFetch from '../../../hooks/useFetch'
 import { IMessageContext } from '../context/message'
 import { messageAPI } from '../api'
@@ -7,10 +7,12 @@ import ChatContext from '../context/chat'
 import useAppSelector from '../../../hooks/useAppSelector'
 import { authorizationSelector } from '../../../store'
 import useNumber from '../../../hooks/useNumber'
+import useConnect from './useConnect'
 
 const useMessage = (): IMessageContext => {
     const chat = useContext(ChatContext)
     const user = useAppSelector(authorizationSelector)
+    const { isConnected, handleJoinRoom, handleLeaveRoom } = useConnect()
     const { number, increment, reset } = useNumber(1)
 
     const distinguish = (
@@ -27,10 +29,19 @@ const useMessage = (): IMessageContext => {
         return Object.values(store)
     }
 
+    useEffect(() => {
+        handleJoinRoom()
+        return handleLeaveRoom
+    }, [handleJoinRoom, handleLeaveRoom])
+
+    useEffect(() => {
+        getMany()
+    }, [user.data?.id, chat.data?.id, isConnected])
+
     const ERROR_MESSAGE = 'Something went wrong'
     const { data, previous, isLoading, error, onSuccess, onReject, onPending } = useFetch<MessageResponse.MessageDTO[]>()
     const getMany: IMessageContext['getMany'] = useCallback(() => {
-        if (user.data?.id === undefined || chat.data?.id === undefined) {
+        if (user.data?.id === undefined || chat.data?.id === undefined || !isConnected) {
             return
         }
 
@@ -39,7 +50,7 @@ const useMessage = (): IMessageContext => {
         const getManyHandler = messageAPI.getMany({
             userId: user.data?.id,
             chatId: chat.data?.id,
-            page: 1
+            page: number - 1
         })
         getManyHandler((messages) => {
             if (messages) {
@@ -49,10 +60,10 @@ const useMessage = (): IMessageContext => {
                 onReject(ERROR_MESSAGE)
             }
         })
-    }, [onPending, onSuccess, onReject, ERROR_MESSAGE, user.data?.id, chat.data?.id, increment, reset])
+    }, [onPending, onSuccess, onReject, ERROR_MESSAGE, user.data?.id, chat.data?.id, increment, reset, isConnected])
 
     const addMany: IMessageContext['addMany'] = useCallback(() => {
-        if (user.data?.id === undefined || chat.data?.id === undefined) {
+        if (user.data?.id === undefined || chat.data?.id === undefined || !isConnected) {
             return
         }
 
@@ -70,10 +81,10 @@ const useMessage = (): IMessageContext => {
                 onReject(ERROR_MESSAGE)
             }
         })
-    }, [onPending, onSuccess, onReject, data, ERROR_MESSAGE, user.data?.id, chat.data?.id, number, increment])
+    }, [onPending, onSuccess, onReject, data, ERROR_MESSAGE, user.data?.id, chat.data?.id, number, increment, isConnected])
 
     const create: IMessageContext['create'] = useCallback(({ content }) => {
-        if (user.data?.id === undefined || chat.data?.id === undefined) {
+        if (user.data?.id === undefined || chat.data?.id === undefined || !isConnected) {
             return
         }
 
@@ -90,7 +101,7 @@ const useMessage = (): IMessageContext => {
                 onReject(ERROR_MESSAGE)
             }
         })
-    }, [onPending, onSuccess, onReject, data, ERROR_MESSAGE, user.data?.id, chat.data?.id])
+    }, [onPending, onSuccess, onReject, data, ERROR_MESSAGE, user.data?.id, chat.data?.id, isConnected])
 
     return useMemo(() => ({
         data, 

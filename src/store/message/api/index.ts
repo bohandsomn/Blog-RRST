@@ -1,5 +1,6 @@
 import HandleSocket from '../../../service/api/handle-socket'
 import type MessageRequest from './request'
+import type MessageResponse from './response'
 
 class MessageAPI extends HandleSocket {
     joinRoom(request: MessageRequest.JoinRoom) {
@@ -18,3 +19,7 @@ class MessageAPI extends HandleSocket {
         return this.json<MessageRequest.GetMany, MessageResponse.GetMany>('get-many', request)
     }
 }
+
+const messageAPI = new MessageAPI()
+
+export default messageAPI

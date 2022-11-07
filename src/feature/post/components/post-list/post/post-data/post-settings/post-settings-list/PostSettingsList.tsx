@@ -8,6 +8,7 @@ import UpdateToggle from '../../../../../../context/update-toggle'
 import useAppSelector from '../../../../../../../../hooks/useAppSelector'
 import { authorizationSelector } from '../../../../../../../../store'
 import { useTranslation } from '../../../../../../../internationalization'
+import useGoToPage from 'src/hooks/useGoToPage'
 
 const PostSettingsList: React.FC = () => {
     const user = useAppSelector(authorizationSelector)
@@ -15,6 +16,11 @@ const PostSettingsList: React.FC = () => {
     const { delete: deletePost } = useContext(PostListContext)
     const { id, userId } = useContext(PostContext)
     const {translation} = useTranslation()
+    const { handleGoToUserPage } = useGoToPage({
+        user: {
+            id: userId
+        }
+    })
 
     const handleDeletePost = useCallback(() => {
         deletePost({
@@ -25,7 +31,7 @@ const PostSettingsList: React.FC = () => {
     return (
         <>
             <ToggleProvider>
-                <ListItem right={<Account />}>
+                <ListItem right={<Account />} onClick={handleGoToUserPage}>
                     {translation.feature.post['post-data']['post-settings']['list-item'].user}
                 </ListItem>
             </ToggleProvider>

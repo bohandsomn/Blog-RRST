@@ -1,38 +1,23 @@
-import { useCallback, useContext, useMemo } from 'react'
-import useAppSelector from '../../../hooks/useAppSelector'
+import { useCallback, useMemo } from 'react'
 import useValidField from '../../../hooks/useValidField'
-import { authorizationSelector } from '../../../store'
 import useInput from '../../../hooks/useInput'
-import { messageAPI } from '../api'
-import ChatContext from '../context/chat'
+import useMessage from './useMessage'
 
 const useCreateMessage = () => {
     const [message, changeMessage, resetMessage] = useInput('')
     const [isValid, handleSetIsFocusedTrue, handleSetIsFocusedFalse] = useValidField(message)
-    const user = useAppSelector(authorizationSelector)
-    const chat = useContext(ChatContext)
+    const { create } = useMessage()
     const handleSubmit = useCallback((event: {preventDefault: () => void}) => {
         event.preventDefault()
-        if (
-            user.data?.id === undefined ||
-            chat.data?.id === undefined
-        ) {
-            return
-        }
-
         if (!isValid || message === '') {
             return
         }
 
-        const response = messageAPI.create({
-            userId: user.data.id,
-            chatId: chat.data.id,
-            content: message
-        })
+        create({content: message})
 
         resetMessage()
         handleSetIsFocusedFalse()
-    }, [isValid, message, resetMessage, handleSetIsFocusedFalse, user.data?.id, chat.data?.id])
+    }, [isValid, message, create, resetMessage, handleSetIsFocusedFalse])
 
     return useMemo(() => ({
         message,

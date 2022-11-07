@@ -210,7 +210,7 @@ const createdStyles = appCreate({
             small: [],
             medium: [],
             large: [],
-            extraLarge: ['display-flex', 'justify-content-flex-start']
+            extraLarge: ['display-flex', 'justify-content-space-between', 'children/margin-right-10']
         }
     }
 })

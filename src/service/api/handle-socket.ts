@@ -19,7 +19,7 @@ class HandleSocket {
     protected json<Request, Response>(event: string, request: Request) {
         this.socket.emit(event, request)
         return (callback: (response: Response) => any) => {
-            this.socket.on(event, callback)
+            this.socket.once(event, callback)
         }
     }
 }
