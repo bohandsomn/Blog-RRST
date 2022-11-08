@@ -7,7 +7,8 @@ namespace PrivateChatRequest {
         name: string
     }
     export type GetOne = {
-        id: string
+        interlocutorId: string
+        userId: string
     }
     export type Delete = {
         id: string

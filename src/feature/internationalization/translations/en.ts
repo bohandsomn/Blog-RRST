@@ -109,7 +109,8 @@ const en = {
                 "home": "Home",
                 "user": "User",
                 "search-posts": "Search posts",
-                "log-out": "Log out"
+                "log-out": "Log out",
+                "chat": "Chat"
             }
         },
         "user-data": {
@@ -166,6 +167,34 @@ const en = {
                 },
                 "button": {
                     "submit": "Create"
+                }
+            }
+        },
+        "chat": {
+            "chat-preview-list": {
+                "item": {
+                    "photo": {
+                        "title": "Chat",
+                    }
+                }
+            },
+            "message": {
+                "creator": {
+                    "field": {
+                        "message": {
+                            "placeholder": "Enter message"
+                        }
+                    },
+                    "button": {
+                        "submit": "Send"
+                    }
+                },
+                "list": {
+                    "item": {
+                        "photo": {
+                            "title": "User"
+                        }
+                    }
                 }
             }
         }

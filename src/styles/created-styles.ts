@@ -204,6 +204,13 @@ const createdStyles = appCreate({
             medium: [],
             large: [],
             extraLarge: ['display-flex', 'justify-content-space-between']
+        },
+        'chat-wrapper': {
+            extraSmall: [],
+            small: [],
+            medium: [],
+            large: [],
+            extraLarge: ['display-flex', 'justify-content-space-between', 'children/margin-right-10']
         }
     }
 })

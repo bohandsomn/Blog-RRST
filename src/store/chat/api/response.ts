@@ -1,18 +1,18 @@
 import { JsonResponse } from '../../../utility/type'
 
 namespace ChatResponse {
-    export type Chat = {
+    export type ChatDTO = {
         id: number
         name: string
         privacyId: number
     }
     
-    export type Create = JsonResponse<Chat>
-    export type GetMany = JsonResponse<Chat[]>
-    export type Update = JsonResponse<Chat>
-    export type GetOne = JsonResponse<Chat>
+    export type Create = JsonResponse<ChatDTO>
+    export type GetMany = JsonResponse<ChatDTO[]>
+    export type Update = JsonResponse<ChatDTO>
+    export type GetOne = JsonResponse<ChatDTO>
     export type Delete = void
-    export type GetByUserId = JsonResponse<Chat>
+    export type GetByUserId = JsonResponse<ChatDTO>
 }
 
 export default ChatResponse

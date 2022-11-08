@@ -4,7 +4,7 @@ enum PATH {
     LOG_IN = '/log-in',
     SEARCH_POSTS='/search-posts',
     USERS='/users',
-    PRIVATE_CHAT='/private-chat'
+    CHAT='/chat'
 }
 
 export default PATH
