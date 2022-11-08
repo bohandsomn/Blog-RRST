@@ -38,3 +38,8 @@ npm run dev
 # or
 yarn dev
 ```
+
+# Link
+
+- [Web design](https://www.figma.com/file/1JzG4YZiFItGZfk7aKq9PZ/Blog2.0)
+- [Vercel](https://blog-client-puce.vercel.app)
