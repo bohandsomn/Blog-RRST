@@ -26,16 +26,26 @@ type Props = {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const posts = await postNotifier.getMany.call({
-        title: '',
-        content: '',
-        page: '1',
-        privacy: 'PUBLIC'
-    })
-
-    return {
-        props: {
-            posts
+    try {
+        const posts = await postNotifier.getMany.call({
+            title: '',
+            content: '',
+            page: '1',
+            privacy: 'PUBLIC'
+        })
+    
+        return {
+            props: {
+                posts
+            }
+        } 
+    } catch (error) {
+        return {
+            props: {
+                posts: {
+                    message: 'SOMETHING WENT WRONG'
+                }
+            }
         }
     }
 }

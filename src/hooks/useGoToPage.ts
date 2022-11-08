@@ -11,13 +11,12 @@ type UseGoToPage = {
         title: string
         content: string
     }
-    privateChat: {
-        interlocutorId?: string | number
-        userId?: string | number
+    chat: {
+        id?: string | number
     }
 }
 
-const useGoToPage = ({ user, seatchPosts, privateChat }: Partial<UseGoToPage> = {}) => {
+const useGoToPage = ({ user, seatchPosts, chat }: Partial<UseGoToPage> = {}) => {
     const router = useRouter()
     const locale = router?.locale === undefined ? '' : '/' + router.locale
 
@@ -46,12 +45,13 @@ const useGoToPage = ({ user, seatchPosts, privateChat }: Partial<UseGoToPage> = 
     }, [router.push, locale, user?.id])
 
     const handleGoToChat = useCallback(() => {
-        const { interlocutorId, userId } = privateChat || {}
-        if (interlocutorId || userId) {
+        const { id } = chat || {}
+        if (id === undefined) {
+            router.push(locale + PATH.CHAT)
             return
         }
-        router.push(locale + PATH.PRIVATE_CHAT + `/${interlocutorId}/${userId}`)
-    }, [router.push, locale, privateChat])
+        router.push(locale + PATH.CHAT + `/${id}`)
+    }, [router.push, locale, chat])
 
     return useMemo(() => ({
         handleGoToHomePage,

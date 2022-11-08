@@ -111,7 +111,8 @@ const uk: typeof en = {
                 "home": "Додому",
                 "user": "Користувач",
                 "search-posts": "Пошук постів",
-                "log-out": "Вийти"
+                "log-out": "Вийти",
+                "chat": "Чат"
             }
         },
         "user-data": {
@@ -168,6 +169,34 @@ const uk: typeof en = {
                 },
                 "button": {
                     "submit": "Створити"
+                }
+            }
+        },
+        "chat": {
+            "chat-preview-list": {
+                "item": {
+                    "photo": {
+                        "title": "Чат",
+                    }
+                }
+            },
+            "message": {
+                "creator": {
+                    "field": {
+                        "message": {
+                            "placeholder": "Введіть повідомлення"
+                        }
+                    },
+                    "button": {
+                        "submit": "Надіслати"
+                    }
+                },
+                "list": {
+                    "item": {
+                        "photo": {
+                            "title": "Користувач"
+                        }
+                    }
                 }
             }
         }

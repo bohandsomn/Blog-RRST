@@ -1,9 +1,12 @@
 import React from 'react'
 import { TwentyIndent } from '../../layouts/wrapper'
 
-const WithPhoto: React.FC<Props> = ({ children, img }) => {
+const WithPhoto: React.FC<Props> = ({ children, img, right = false }) => {
     return (
-        <TwentyIndent left={img}>
+        <TwentyIndent 
+            left={!right ? img : undefined}
+            right={right ? img : undefined}
+        >
             {children}
         </TwentyIndent>
     )
@@ -11,6 +14,7 @@ const WithPhoto: React.FC<Props> = ({ children, img }) => {
 
 type Props = {
     children?: any
+    right?: boolean
     img: JSX.Element
 }
 

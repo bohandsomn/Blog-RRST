@@ -45,29 +45,35 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    const { id } = context.query
-    if (typeof id !== 'string') {
+    try {
+        const { id } = context.query
+        if (typeof id !== 'string') {
+            return {
+                notFound: true
+            }
+        }
+    
+        const user = await userNotifier.getOne.call({
+            userId: id
+        })
+    
+        if (user.data === undefined) {
+            return {
+                notFound: true
+            }
+        }
+    
+        const posts = await postNotifier.getManyByUserId.call({userId: id})
+    
+        return {
+            props: {
+                user: user.data,
+                posts
+            }
+        }
+    } catch (error) {
         return {
             notFound: true
-        }
-    }
-
-    const user = await userNotifier.getOne.call({
-        userId: id
-    })
-
-    if (user.data === undefined) {
-        return {
-            notFound: true
-        }
-    }
-
-    const posts = await postNotifier.getManyByUserId.call({userId: id})
-
-    return {
-        props: {
-            user: user.data,
-            posts
         }
     }
 }

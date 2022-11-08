@@ -1,5 +1,5 @@
 import React from 'react'
-import { Account, Div, Home, LogOut, Search } from '@/components/atoms'
+import { Account, Chat, Div, Home, LogOut, Search } from '@/components/atoms'
 import { List, ListItem } from '@/components/list'
 import ToggleProvider from '../../../../../provider/toggle'
 import useAppQuery from '../../../../../hooks/useAppQuery'
@@ -10,7 +10,7 @@ import { useTranslation } from '../../../../internationalization'
 
 const SidebarList: React.FC = () => {
     const query = useAppQuery('sidebar')
-    const { handleGoToHomePage, handleGoToUserPage, handleGoToSeatchPostsPage, handleGoToLogoutPage } = useNavigation()
+    const { handleGoToHomePage, handleGoToUserPage, handleGoToSeatchPostsPage, handleGoToLogoutPage, handleGoToChat } = useNavigation()
     const user = useAppSelector(authorizationSelector)
     const { translation } = useTranslation()
 
@@ -38,11 +38,18 @@ const SidebarList: React.FC = () => {
                 </ToggleProvider>
                 {
                     user.data && (
-                        <ToggleProvider>
-                            <ListItem right={<LogOut />} onClick={handleGoToLogoutPage}>
-                                {translation.feature.sidebar.list['log-out']}
-                            </ListItem>
-                        </ToggleProvider>
+                        <>
+                            <ToggleProvider>
+                                <ListItem right={<Chat />} onClick={handleGoToChat}>
+                                    {translation.feature.sidebar.list.chat}
+                                </ListItem>
+                            </ToggleProvider>
+                            <ToggleProvider>
+                                <ListItem right={<LogOut />} onClick={handleGoToLogoutPage}>
+                                    {translation.feature.sidebar.list['log-out']}
+                                </ListItem>
+                            </ToggleProvider>
+                        </>
                     )
                 }
             </List>

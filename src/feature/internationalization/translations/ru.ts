@@ -111,7 +111,8 @@ const ru: typeof en = {
                 "home": "Домой",
                 "user": "Пользователь",
                 "search-posts": "Поиск постов",
-                "log-out": "Выйти"
+                "log-out": "Выйти",
+                "chat": "Чат"
             }
         },
         "user-data": {
@@ -168,6 +169,34 @@ const ru: typeof en = {
                 },
                 "button": {
                     "submit": "Создавать"
+                }
+            }
+        },
+        "chat": {
+            "chat-preview-list": {
+                "item": {
+                    "photo": {
+                        "title": "Чат",
+                    }
+                }
+            },
+            "message": {
+                "creator": {
+                    "field": {
+                        "message": {
+                            "placeholder": "Введите сообщение"
+                        }
+                    },
+                    "button": {
+                        "submit": "Отправить"
+                    }
+                },
+                "list": {
+                    "item": {
+                        "photo": {
+                            "title": "Пользователь"
+                        }
+                    }
                 }
             }
         }

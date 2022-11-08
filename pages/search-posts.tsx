@@ -33,18 +33,28 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const { page = '1', title = '', content = '' } = context.query
-
-    const posts = await postNotifier.getMany.call({
-        title: Array.isArray(title) ? title.join('') : title,
-        content: Array.isArray(content) ? content.join('') : content,
-        page: Array.isArray(page) ? page.join('') : page,
-        privacy: 'PUBLIC'
-    })
-
-    return {
-        props: {
-            posts
+    try {
+        const { page = '1', title = '', content = '' } = context.query
+    
+        const posts = await postNotifier.getMany.call({
+            title: Array.isArray(title) ? title.join('') : title,
+            content: Array.isArray(content) ? content.join('') : content,
+            page: Array.isArray(page) ? page.join('') : page,
+            privacy: 'PUBLIC'
+        })
+    
+        return {
+            props: {
+                posts
+            }
+        }
+    } catch (error) {
+        return {
+            props: {
+                posts: {
+                    message: 'SOMETHING WENT WRONG'
+                }
+            }
         }
     }
 }

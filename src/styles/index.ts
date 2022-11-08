@@ -44,6 +44,12 @@ const STYLES = {
     "justify-content-center": {
         "justify-content": "center"
     },
+    "justify-content-flex-start": {
+        "justify-content": "flex-start"
+    },
+    "justify-content-flex-end": {
+        "justify-content": "flex-end"
+    },
     "border-radius-50%": {
         "border-radius": "50%"
     },
@@ -143,6 +149,9 @@ const STYLES = {
     "height-100vh": {
         "height": "100vh"
     },
+    "height-583": {
+        "height": "583px !important"
+    },
     "white-space-normal": {
         "white-space": "normal"
     },
@@ -161,8 +170,14 @@ const STYLES = {
     "top-0": {
         "top": "0"
     },
+    "text-decoration-underline": {
+        "text-decoration": "underline"
+    },
     "cursor-pointer": {
         "cursor": "pointer"
+    },
+    "overflow-y-scroll": {
+        "overflow-y": "scroll"
     },
     "children/margin-bottom-10": {
         "> *": {
@@ -188,6 +203,18 @@ const STYLES = {
     "children/display-flex": {
         "> *": {
             "display": "flex"
+        }
+    },
+    "children/height-80": {
+        "height": "80%",
+        "div, ul": {
+            "height": "100%"
+        }
+    },
+    "children/height-auto": {
+        "height": "auto",
+        "div, ul, *": {
+            "height": "auto"
         }
     }
 }
