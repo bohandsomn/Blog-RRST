@@ -26,27 +26,27 @@ const Template: ComponentStory<ComponentPropsStorybook<Required<typeof WithPhoto
 export const Original = Template.bind({})
 Original.args = {
     theme: 'light',
-    img: <OriginalImg />,
+    img: <OriginalImg src="" alt="" title="" />,
     children: 'Original'
 }
 
 export const Post = Template.bind({})
 Post.args = {
     theme: 'light',
-    img: <PostImg />,
+    img: <PostImg src="" alt="" title="" />,
     children: 'Post'
 }
 
 export const Preview = Template.bind({})
 Preview.args = {
     theme: 'light',
-    img: <PreviewImg />,
+    img: <PreviewImg src="" alt="" title="" />,
     children: 'Preview'
 }
 
 export const Message = Template.bind({})
 Message.args = {
     theme: 'light',
-    img: <MessageImg />,
+    img: <MessageImg src="" alt="" title="" />,
     children: 'Message'
 }

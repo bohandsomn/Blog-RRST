@@ -14,7 +14,6 @@ const ErrorBoundary: React.FC<Props> = ({
         <SecondaryBackground>
             <TwentyIndent 
                 top={<MainBigParagraph>{error}</MainBigParagraph>}
-                children={<Div className={className}>{children}</Div>}
                 bottom={
                     <TenIndent 
                         left={<MainButton onClick={onReload}>Reload</MainButton>}
@@ -25,7 +24,11 @@ const ErrorBoundary: React.FC<Props> = ({
                         }
                     />
                 }
-            />
+            >
+                <Div className={className}>
+                    {children}
+                </Div>
+            </TwentyIndent>
         </SecondaryBackground>
     )
 }

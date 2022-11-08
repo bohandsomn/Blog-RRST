@@ -24,7 +24,7 @@ const MessageList: React.FC = () => {
         return () => {
             ref.current?.removeEventListener('scroll', listener)
         }
-    }, [messageContext.addMany])
+    }, [messageContext.addMany, ref.current])
 
     if (messageContext.data === null) {
         <MainBackground>

@@ -24,7 +24,7 @@ const useFetch = <Data>(initialState?: Partial<State<Data>>): UseFetchReturned<D
         })
         handleSetFalse()
         setError(error)
-    }, [setData, setPrevious, handleSetTrue, setError])
+    }, [setData, setPrevious, handleSetFalse, setError])
 
     const onPending = useCallback(() => {
         handleSetTrue()

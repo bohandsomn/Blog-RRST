@@ -1,10 +1,5 @@
 import React, { useCallback, useContext } from 'react'
-import { Ul } from '@/components/atoms'
-import useAppStyles from '../../../../../../hooks/useAppStyles'
-import { MainBackground } from '../../../../../../layouts/wrapper'
 import MessageContext from '../../../../context/message'
-import MessageListItem from './message-list-item'
-import MessageItemPrivider from 'src/feature/chat/provider/MessageItem'
 import ErrorBoundary from '@/components/error-boundary'
 
 const MessageListBoundary: React.FC<Props> = ({ children }) => {
